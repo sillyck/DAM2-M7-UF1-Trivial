@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preguntas>
+	<pregunta>
+		<texto>Cual es el libro mas vendido de la historia</texto>
+		<respuestas>
+			<correcta>La biblia</correcta>
+			<incorrecta>Don Quijote de la Mancha</incorrecta>
+			<incorrecta>Citas del Presidente Mao Tse-Tung</incorrecta>
+			<incorrecta>Harry Potter</incorrecta>
+		</respuestas>
+	</pregunta>
+	<pregunta>
+		<texto>Cuántos litros de sangre tiene una persona adulta</texto>
+		<respuestas>
+			<correcta>Tiene entre 4 y 6 litros</correcta>
+			<incorrecta>Tiene entre 2 y 4 litros</incorrecta>
+			<incorrecta>Tiene 7 litros</incorrecta>
+			<incorrecta>Tiene 9 litros</incorrecta>
+		</respuestas>
+	</pregunta>
+	<pregunta>
+		<texto>A que país pertenece Gibraltar</texto>
+		<respuestas>
+			<correcta>Reino Unido</correcta>
+			<incorrecta>España</incorrecta>
+			<incorrecta>Portugal</incorrecta>
+			<incorrecta>Marruecos</incorrecta>
+		</respuestas>
+	</pregunta>
+	<pregunta>
+		<texto>Cual el pais mas poblado del mundo</texto>
+		<respuestas>
+			<correcta>China</correcta>
+			<incorrecta>India</incorrecta>
+			<incorrecta>Estados Unidos</incorrecta>
+			<incorrecta>Pakistan</incorrecta>
+		</respuestas>
+	</pregunta>
+	<pregunta>
+		<texto>Quién pintó la bóveda de la capilla sixtina</texto>
+		<respuestas>
+			<correcta>Miguel Angel</correcta>
+			<incorrecta>Leonardo da Vinci</incorrecta>
+			<incorrecta>Rafael</incorrecta>
+			<incorrecta>Donatello</incorrecta>
+		</respuestas>
+	</pregunta>
+	<pregunta>
+		<texto>Con que nombre se fundó el municipio de Valls</texto>
+		<respuestas>
+			<correcta>Vilar-Gros</correcta>
+			<incorrecta>Rocabruna</incorrecta>
+			<incorrecta>La Vall</incorrecta>
+			<incorrecta>Vilavall</incorrecta>
+		</respuestas>
+	</pregunta>
+
+	<pregunta>
+		<texto>Cuántos decimales tiene el número pi</texto>
+		<respuestas>
+			<correcta>Infinits</correcta>
+			<incorrecta>2</incorrecta>
+			<incorrecta>100</incorrecta>
+			<incorrecta>1000</incorrecta>
+		</respuestas>
+	</pregunta>
+	<pregunta>
+		<texto>Cuántos jugadores pueden participar por equipo en el basquetbol?</texto>
+		<respuestas>
+			<correcta>5</correcta>
+			<incorrecta>4</incorrecta>
+			<incorrecta>6</incorrecta>
+			<incorrecta>7</incorrecta>
+		</respuestas>
+	</pregunta>
+	<pregunta>
+		<texto>Cuál es el planeta más grande del sistema solar?</texto>
+		<respuestas>
+			<correcta>Jupiter</correcta>
+			<incorrecta>Saturn</incorrecta>
+			<incorrecta>Ura</incorrecta>
+			<incorrecta>Neptuno</incorrecta>
+		</respuestas>
+	</pregunta>
+	<pregunta>
+		<texto>Marca la respuesta correcta de la siguiente operacion matematica: 3x(1+1+1+1)</texto>
+		<respuestas>
+			<correcta>12</correcta>
+			<incorrecta>1</incorrecta>
+			<incorrecta>3</incorrecta>
+			<incorrecta>4</incorrecta>
+		</respuestas>
+	</pregunta>
+</preguntas>
