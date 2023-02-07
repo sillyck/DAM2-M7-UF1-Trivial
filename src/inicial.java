@@ -1,4 +1,5 @@
 import java.awt.Container;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,7 +16,6 @@ public class inicial extends JFrame{
 		Container container = getContentPane();
 		
 		JPanel titol = new JPanel();
-		JPanel subtitol = new JPanel();
 		
 		
 		JLabel label1 = new JLabel("Benvinguts al Trivial");
@@ -24,12 +24,11 @@ public class inicial extends JFrame{
 		
 		JLabel label2 = new JLabel("Per a jugar introduïu els vostres noms");
 		label2.setHorizontalAlignment(SwingConstants.CENTER);
-		subtitol.add(label2);
+		titol.add(label2);
 		
-		
+		titol.setLayout(new GridLayout(2, 1));
 		
 		container.add(titol);
-//		container.add(subtitol);
 		
 	}
 
