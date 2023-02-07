@@ -16,6 +16,7 @@ public class inicial extends JFrame{
 		Container container = getContentPane();
 		
 		JPanel titol = new JPanel();
+		JPanel jugadors = new JPanel();
 		
 		
 		JLabel label1 = new JLabel("Benvinguts al Trivial");
@@ -26,7 +27,12 @@ public class inicial extends JFrame{
 		label2.setHorizontalAlignment(SwingConstants.CENTER);
 		titol.add(label2);
 		
+		
+		
+		
 		titol.setLayout(new GridLayout(2, 1));
+		jugadors.setLayout(new GridLayout(2, 4));
+		
 		
 		container.add(titol);
 		
