@@ -5,6 +5,7 @@ public class Tauler extends JFrame
 {
 	public String playerName[] = new String[2];
 	public int score[] = new int[2];
+	public String imgPaths[] = new String[8];
 	
 	public Tauler()
 	{
@@ -16,9 +17,14 @@ public class Tauler extends JFrame
 		super("Trivial");
 		setSize(1500, 800);
 		
+		imgPaths = new String[]
+		{
+		
+		};
+		
 		Container container = getContentPane();
 		
-		
+		pack();
 	}
 	
 	public void setPlayerNames(String player1, String player2)
