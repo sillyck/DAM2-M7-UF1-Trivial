@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class Tauler extends JFrame
 {
@@ -14,10 +15,21 @@ public class Tauler extends JFrame
 	{
 		super("Trivial");
 		setSize(1500, 800);
+		
+		Container container = getContentPane();
+		
+		
 	}
 	
 	public void setPlayerNames(String player1, String player2)
 	{
 		playerName = new String[]{player1,player2};
+	}
+	
+	public JFrame ConstruirUI(JFrame jframe)
+	{
+		
+		
+		return jframe;
 	}
 }

@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="095a5da9-86e9-4d81-a364-21d88d1cd362" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.mainTrivial">
+  <component name="RunManager" selected="Application.mainTesting">
     <configuration name="mainTesting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mainTesting" />
       <module name="DAM2-M7-UF1-Act1.10" />
@@ -63,8 +63,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.mainTrivial" />
         <item itemvalue="Application.mainTesting" />
+        <item itemvalue="Application.mainTrivial" />
       </list>
     </recent_temporary>
   </component>
@@ -76,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675788499727</updated>
-      <workItem from="1675788501403" duration="868000" />
+      <workItem from="1675788501403" duration="2154000" />
     </task>
     <servers />
   </component>
