@@ -5,15 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/res/PresentacioIconesTaulerTrivial.pptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/taulerClar-jugador100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/taulerClar-jugador50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/taulerClar-jugador95.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/taulerClar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/taulerFosc-jugador100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/taulerFosc-jugador50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/taulerFosc-jugador95.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/taulerFosc.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mainTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainTesting.java" afterDir="false" />
@@ -45,20 +36,20 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Code With Me",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.mainTesting">
     <configuration name="mainTesting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mainTesting" />
@@ -92,10 +83,15 @@
       <workItem from="1675788501403" duration="2154000" />
       <workItem from="1675867872195" duration="221000" />
       <workItem from="1675868107736" duration="2484000" />
+      <workItem from="1675953340974" duration="3892000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
