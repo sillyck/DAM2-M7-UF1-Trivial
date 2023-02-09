@@ -65,7 +65,7 @@ public class Tauler extends JFrame
 		Container topContainer = new Container();
 		topContainer.setLayout(topLayout);
 		JLabel jLabel = new JLabel("Torn de:{nom_jugador}");
-		
+		jLabel.setFont(new Font("Tahoma",Font.BOLD, 32));
 		Border jLabelBorder = jLabel.getBorder();
 		Border jLabelMargin = new EmptyBorder(10,10,10,10);
 		jLabel.setBorder(new CompoundBorder(jLabelBorder, jLabelMargin));
@@ -77,6 +77,10 @@ public class Tauler extends JFrame
 		Container bottomContainer = new Container();
 		bottomContainer.setLayout(bottomLayout);
 		JButton jButton = new JButton("Continuar");
+		jButton.setBackground(new Color(167,114,125));
+		jButton.setForeground(new Color(255,255,255));
+		jButton.setFocusPainted(false);
+		jButton.setFont(new Font("Tahoma", Font.BOLD, 24));
 		Border jButtonBorder = jButton.getBorder();
 		Border jButtonMargin = new EmptyBorder(10,10,10,10);
 		jButton.setBorder(new CompoundBorder(jButtonBorder, jButtonMargin));
