@@ -29,7 +29,8 @@ public class Tauler extends JFrame
 		super("Trivial");
 		setSize(1500, 800);
 		setPlayerNames(player1, player2);
-		score = new int[]{0,0};
+		score[0] = 0;
+		score[1] = 0;
 		paintColoursTiles();
 		paintPlayerPositions();
 		
@@ -155,8 +156,8 @@ public class Tauler extends JFrame
 	
 	public void paintPlayerPositions() throws IOException
 	{
-		System.out.println("mainTesting.tauler.score[0] = " + mainTesting.tauler.score[0]);
-		System.out.println("mainTesting.tauler.score[1] = " + mainTesting.tauler.score[1]);
+		System.out.println("mainTesting.tauler.score[0] = " + /*mainTesting.tauler.*/score[0]);
+		System.out.println("mainTesting.tauler.score[1] = " + /*mainTesting.tauler.*/score[1]);
 		BufferedImage bufferedImage1;
 		bufferedImage1 = score[0] % 2==0
 				? ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerClar-jugador95.png"))
