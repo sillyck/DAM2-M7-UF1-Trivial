@@ -200,6 +200,12 @@ public class Tauler extends JFrame
 //
 //		this.repaint();
 		
-		mainTesting.refresh();
+//		mainTesting.refresh();
+		
+		SwingUtilities.updateComponentTreeUI(this);
+		
+		invalidate();
+		validate();
+		repaint();
 	}
 }
