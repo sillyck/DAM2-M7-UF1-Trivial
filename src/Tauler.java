@@ -28,9 +28,10 @@ public class Tauler extends JFrame
 	{
 		super("Trivial");
 		setSize(1500, 800);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPlayerNames(player1, player2);
 		score[0] = 0;
-		score[1] = 0;
+		score[1] = 5;
 		paintColoursTiles();
 		paintPlayerPositions();
 		
@@ -41,7 +42,7 @@ public class Tauler extends JFrame
 	
 	public void setPlayerNames(String player1, String player2)
 	{
-		playerName = new String[]{player1,player2};
+		playerName = new String[] { player1, player2 };
 	}
 	
 	public void /*JFrame*/ ConstruirUI(/*JFrame jframe*/)
@@ -121,11 +122,18 @@ public class Tauler extends JFrame
 //		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
 //		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
 		
+		JLabel l1 = new JLabel();
+		JLabel l2 = new JLabel();
+		JLabel ls = new JLabel("· Res");
+		
 		bottomContainer.add(j1m);
 		bottomContainer.add(j1p);
 		bottomContainer.add(j2m);
 		bottomContainer.add(j2p);
 		bottomContainer.add(jButton);
+		bottomContainer.add(l1);
+		bottomContainer.add(l2);
+		bottomContainer.add(ls);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 		
 //		return jframe;
@@ -176,9 +184,22 @@ public class Tauler extends JFrame
 		score[0] = posP1;
 		score[1] = posP2;
 		
+		
+		
 		paintColoursTiles();
 		paintPlayerPositions();
 		
-		ConstruirUI();
+//		SwingUtilities.updateComponentTreeUI(this);
+//		invalidate();
+//		validate();
+//		repaint();
+//		setVisible(false);
+//		setVisible(true);
+//		revalidate();
+//		repaint();
+//
+//		this.repaint();
+		
+		mainTesting.refresh();
 	}
 }

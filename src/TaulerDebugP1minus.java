@@ -8,9 +8,10 @@ public class TaulerDebugP1minus implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		System.out.println("Click rebut a DBG1-");
+		mainTesting.tauler.score[0]--;
 		try
 		{
-			mainTesting.tauler.updatePlayerPosition(--mainTesting.tauler.score[0],mainTesting.tauler.score[1]);
+			mainTesting.tauler.updatePlayerPosition(mainTesting.tauler.score[0],mainTesting.tauler.score[1]);
 		}
 		catch(IOException ex)
 		{
