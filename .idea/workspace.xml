@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TaulerDebugP1minus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TaulerDebugP1plus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TaulerDebugP2minus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TaulerDebugP2plus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

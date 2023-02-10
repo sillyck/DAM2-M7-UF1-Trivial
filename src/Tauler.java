@@ -34,6 +34,18 @@ public class Tauler extends JFrame
 		paintColoursTiles();
 		paintPlayerPositions();
 		
+		ConstruirUI();
+		
+		pack();
+	}
+	
+	public void setPlayerNames(String player1, String player2)
+	{
+		playerName = new String[]{player1,player2};
+	}
+	
+	public void /*JFrame*/ ConstruirUI(/*JFrame jframe*/)
+	{
 		Container c = getContentPane();
 		c.setBackground(Color.decode("#F9F5E7"));
 		BorderLayout borderLayout = new BorderLayout();
@@ -116,19 +128,7 @@ public class Tauler extends JFrame
 		bottomContainer.add(jButton);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 		
-		pack();
-	}
-	
-	public void setPlayerNames(String player1, String player2)
-	{
-		playerName = new String[]{player1,player2};
-	}
-	
-	public JFrame ConstruirUI(JFrame jframe)
-	{
-		
-		
-		return jframe;
+//		return jframe;
 	}
 	
 	public void paintColoursTiles() throws IOException
@@ -178,5 +178,7 @@ public class Tauler extends JFrame
 		
 		paintColoursTiles();
 		paintPlayerPositions();
+		
+		ConstruirUI();
 	}
 }
