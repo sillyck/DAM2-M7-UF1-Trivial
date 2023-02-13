@@ -12,6 +12,10 @@ import java.util.Map;
 
 public class Tauler extends JFrame
 {
+	public int round = 0;
+	
+	public int currentTurn = 0;
+	
 	@SuppressWarnings("CStyleArrayDeclaration")
 	public String playerName[] = new String[2];
 	
@@ -21,9 +25,8 @@ public class Tauler extends JFrame
 	@SuppressWarnings("CStyleArrayDeclaration")
 	public JLabel images[] = new JLabel[16];
 	
-	private Map<String,Image> readyImage;
+	private Map<String, ImageIcon> readyImage;
 	
-//	private String pathCollection[] = new String[0];
 	private Map<String,String> pathCollection;
 	
 	public Tauler() throws IOException
@@ -54,21 +57,28 @@ public class Tauler extends JFrame
 		pathCollection.put("taulerClar-bandera100",System.getProperty("user.dir")+"/res/taulerClar-bandera100.png");
 		pathCollection.put("taulerFosc-bandera100",System.getProperty("user.dir")+"/res/taulerFosc-bandera100.png");
 		
-		readyImage = new HashMap<>();
-		readyImage.put("taulerClar",           System.getProperty("user.dir")+"/res/taulerClar.png");
-		readyImage.put("taulerFosc",           System.getProperty("user.dir")+"/res/taulerFosc.png");
-		readyImage.put("taulerClar-jugador50", System.getProperty("user.dir")+"/res/taulerClar-jugador50.png");
-		readyImage.put("taulerFosc-jugador50", System.getProperty("user.dir")+"/res/taulerFosc-jugador50.png");
-		readyImage.put("taulerClar-jugador95", System.getProperty("user.dir")+"/res/taulerClar-jugador95.png");
-		readyImage.put("taulerFosc-jugador95", System.getProperty("user.dir")+"/res/taulerFosc-jugador95.png");
-		readyImage.put("taulerClar-jugador100",System.getProperty("user.dir")+"/res/taulerClar-jugador100.png");
-		readyImage.put("taulerFosc-jugador100",System.getProperty("user.dir")+"/res/taulerFosc-jugador100.png");
-		readyImage.put("taulerClar-bandera50", System.getProperty("user.dir")+"/res/taulerClar-bandera50.png");
-		readyImage.put("taulerFosc-bandera50", System.getProperty("user.dir")+"/res/taulerFosc-bandera50.png");
-		readyImage.put("taulerClar-bandera95", System.getProperty("user.dir")+"/res/taulerClar-bandera95.png");
-		readyImage.put("taulerFosc-bandera95", System.getProperty("user.dir")+"/res/taulerFosc-bandera95.png");
-		readyImage.put("taulerClar-bandera100",System.getProperty("user.dir")+"/res/taulerClar-bandera100.png");
-		readyImage.put("taulerFosc-bandera100",System.getProperty("user.dir")+"/res/taulerFosc-bandera100.png");
+		
+//		BufferedImage bufferedImage1;
+//		bufferedImage1 = score[0] % 2==0
+//				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
+//				: ImageIO.read(new File(pathCollection.get("taulerFosc-jugador95")));
+//		images[score[0]] = new JLabel(new ImageIcon(Utils.resize(bufferedImage1, 175, 175)));
+		
+		readyImage = new HashMap<String,ImageIcon>();
+		readyImage.put("taulerClar",           new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar"))),175,175)));
+		readyImage.put("taulerFosc",           new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerFosc"))),175,175)));
+		readyImage.put("taulerClar-jugador50", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar-jugador50"))),175,175)));
+		readyImage.put("taulerFosc-jugador50", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerFosc-jugador50"))),175,175)));
+		readyImage.put("taulerClar-jugador95", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar-jugador95"))),175,175)));
+		readyImage.put("taulerFosc-jugador95", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerFosc-jugador95"))),175,175)));
+		readyImage.put("taulerClar-jugador100",new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar-jugador100"))),175,175)));
+		readyImage.put("taulerFosc-jugador100",new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerFosc-jugador100"))),175,175)));
+		readyImage.put("taulerClar-bandera50", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar-bandera50"))),175,175)));
+		readyImage.put("taulerFosc-bandera50", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerFosc-bandera50"))),175,175)));
+		readyImage.put("taulerClar-bandera95", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar-bandera95"))),175,175)));
+		readyImage.put("taulerFosc-bandera95", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerFosc-bandera95"))),175,175)));
+		readyImage.put("taulerClar-bandera100",new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar-bandera100"))),175,175)));
+		readyImage.put("taulerFosc-bandera100",new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerFosc-bandera100"))),175,175)));
 		
 		score[0] = 0;
 		score[1] = 5;
