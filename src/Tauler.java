@@ -12,22 +12,58 @@ import java.util.Map;
 
 public class Tauler extends JFrame
 {
+	
+	/**
+	 * Número que indica la ronda actual. Una ronda passa quan els dos jugadors han tingut els dos una oportunitat de moviment.
+	 */
 	public int round = 0;
 	
+	/**
+	 * A qui li toca tirar?
+	 * <li>0 = principi del joc; valor inicial</li>
+	 * <li>1 = torn del jugador 1</li>
+	 * <li>2 = torn del jugador 2</li>
+	 * <li>3 = final de ronda, preparatius per començar una nova ronda</li>
+	 */
 	public int currentTurn = 0;
 	
+	/**
+	 * Simple array de dos llocs d'Strings que conte els noms del jugadors.
+	 * <li><tt>playerName[0]</tt> es el nom del jugador 1.</li>
+	 * <li><tt>playerName[1]</tt> es el nom del jugador 2.</li>
+	 */
 	@SuppressWarnings("CStyleArrayDeclaration")
 	public String playerName[] = new String[2];
 	
+	/**
+	 * Simple array de dos llocs d'ints que conte les puntuacions dels jugadors.
+	 *
+	 * <p>"Puntuacions" num "posicions" son sinonims per referir-se a aquesta variable.
+	 * <li><tt>score[0]</tt> es el jugador 1.</li>
+	 * <li><tt>score[1]</tt> es el jugador 2.</li>
+	 */
 	@SuppressWarnings("CStyleArrayDeclaration")
 	public int score[] = new int[2];
 	
+	/**
+	 * Array de JLabels (amb ImageIcons dins, que es lo que importa) que guarden les imatges que es mostraran en el GridLayout del tauler.
+	 *
+	 * <p>Els valors d'entre 0 num 7 son per la fila superior (jugador 1) num valors d'entre 8 num 15 son per la fila inferior (jugador 2).
+	 */
 	@SuppressWarnings("CStyleArrayDeclaration")
 	public JLabel images[] = new JLabel[16];
 	
-	private Map<String, ImageIcon> readyImage;
+	/**
+	 * Una HasList que inclou imatges ja preparades num precuinades per a un rapid canvi
+	 */
+	@Deprecated
+	private Map<String,ImageIcon> readyImage;
 	
+	/**
+	 * Una HashList que inclou les rutes de les imatges.
+	 */
 	private Map<String,String> pathCollection;
+	
 	
 	public Tauler() throws IOException
 	{
@@ -58,7 +94,7 @@ public class Tauler extends JFrame
 		pathCollection.put("taulerClar-bandera100",System.getProperty("user.dir")+"/res/taulerClar-bandera100.png");
 		pathCollection.put("taulerFosc-bandera100",System.getProperty("user.dir")+"/res/taulerFosc-bandera100.png");
 		
-		readyImage = new HashMap<>();
+//		readyImage = new HashMap<>();
 //		readyImage.put("taulerClar",           System.getProperty("user.dir")+"/res/taulerClar.png");
 //		readyImage.put("taulerFosc",           System.getProperty("user.dir")+"/res/taulerFosc.png");
 //		readyImage.put("taulerClar-jugador50", System.getProperty("user.dir")+"/res/taulerClar-jugador50.png");
@@ -108,11 +144,20 @@ public class Tauler extends JFrame
 		setLocationRelativeTo(null);
 	}
 	
+	/**
+	 * Posa els noms dels jugadors.
+	 *
+	 * @param player1 Nom per el primer jugador (fila de dalt)
+	 * @param player2 Nom per el jugador dos (fila de baix)
+	 */
 	public void setPlayerNames(String player1, String player2)
 	{
 		playerName = new String[] { player1, player2 };
 	}
 	
+	/**
+	 * Metode que s'encarra de construir el la majoria de la finestra de dialeg.
+	 */
 	public void /*JFrame*/ ConstruirUI(/*JFrame jframe*/)
 	{
 		Container c = getContentPane();
@@ -240,12 +285,21 @@ public class Tauler extends JFrame
 //		return jframe;
 	}
 	
+	/**
+	 * Pinta tot el tauler per primera vegada.
+	 *
+	 * <p>Es important que aquest metode s'executi abans de la primera crida a {@link #paintColoursTiles()}.
+	 * Perque el que fa {@link #paintColoursTiles()} es actualitzar la imatge d'ImageIcon(s) ja existents;
+	 * aquest metode els crea per primera vegada.
+	 *
+	 * @throws IOException
+	 */
 	public void firstPaintTiles() throws IOException
 	{
 		for(int i=0; i<16; i++)
 		{
 			BufferedImage bufferedImage;
-//			switch(i)
+//			switch(num)
 //			{
 //				case 0: case 8:
 //					bufferedImage = ImageIO.read(new File(System.getProperty("user.dir")+"/res/taulerClar-jugador95.png"));
@@ -255,7 +309,7 @@ public class Tauler extends JFrame
 //				bufferedImage = ImageIO.read(new File(pathCollection.get("taulerFosc-bandera50")));
 //				break;
 //				default:
-//					bufferedImage = i % 2==0
+//					bufferedImage = num % 2==0
 //							? ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerClar.png"))
 //							: ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerFosc
 					bufferedImage = i % 2==0
@@ -264,11 +318,26 @@ public class Tauler extends JFrame
 //					break;
 //			}
 			images[i] = new JLabel(new ImageIcon(Utils.resize(bufferedImage, 175, 175)));
-//			images[i].setIcon((Icon)Utils.resize(bufferedImage,175,175));
-//			images[i].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
+//			images[num].setIcon((Icon)Utils.resize(bufferedImage,175,175));
+//			images[num].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
 		}
 	}
 	
+	/**
+	 * Pinta els colors clars num foscos del tauler num les banderes a les ultimes caselles.
+	 *
+	 * <p>Aqui no es pinten els jugadores, aixo ho fa el metode {@link #paintPlayerPositions()}.
+	 *
+	 * <p>El que fem aqui, es passar casella a casella del array {@link #images}; en les caselles 7 num 15 (les ultimes
+	 * columnes de cada fila), pintem una bandera fosca directament. Per les altres caselles, mirem si el numero es
+	 * parell o senar num pintem de color clar o fosc, segons correspongui.
+	 *
+	 * <p>Es important concretar de que l'array ha d'estar initialitzat en aquest punt (no ha d'estar null).
+	 * Per aixo, en el constructor de la classe, s'executa el metode {@link #firstPaintTiles()} que es similar a aquest
+	 * metode, pero creant nous objectes JLabel num ImageIcons enlloc de reutilitzar els ja existeints.
+	 *
+	 * @throws IOException
+	 */
 	public void paintColoursTiles() throws IOException
 	{
 		for(int i=0; i<16; i++)
@@ -284,7 +353,7 @@ public class Tauler extends JFrame
 					bufferedImage = ImageIO.read(new File(pathCollection.get("taulerFosc-bandera50")));
 					break;
 				default:
-//					bufferedImage = i % 2==0
+//					bufferedImage = num % 2==0
 //							? ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerClar.png"))
 //							: ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerFosc
 					bufferedImage = i % 2==0
@@ -292,12 +361,21 @@ public class Tauler extends JFrame
 							: ImageIO.read(new File(pathCollection.get("taulerFosc")));
 					break;
 			}
-//			images[i] = new JLabel(new ImageIcon(Utils.resize(bufferedImage, 175, 175)));
-//			images[i].setIcon((Icon)Utils.resize(bufferedImage,175,175));
+//			images[num] = new JLabel(new ImageIcon(Utils.resize(bufferedImage, 175, 175)));
+//			images[num].setIcon((Icon)Utils.resize(bufferedImage,175,175));
 			images[i].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
 		}
 	}
 	
+	/**
+	 * Aquest metode dibuixa als jugadors a allá on els hi toqui. Basicament canvia la imatge ja existent per la del
+	 * jugador.
+	 *
+	 * <p>El <tt>bufferedImage1</tt> es refereix al primer jugador (el de la fila de dalt), num el <tt>bufferedImage2</tt>
+	 * al segon jugador (fila de baix).
+	 *
+	 * @throws IOException
+	 */
 	public void paintPlayerPositions() throws IOException
 	{
 		System.out.println("mainTesting.tauler.score[0] = " + /*mainTesting.tauler.*/score[0]);
@@ -323,6 +401,21 @@ public class Tauler extends JFrame
 		images[score[1]+8].setIcon(new ImageIcon(Utils.resize(bufferedImage2,175,175)));
 	}
 	
+	/**
+	 * Actualitza les posicions del jugador via puntuacions relatives.
+	 *
+	 * <p>En quan a "puntuació relativa" es refereix, es la diferencia de puntuació.
+	 * Es a dir, una diferencia de "-1", significa que al jugador corresponent se'l-hi restará un punt,
+	 * mentres que "1" sumará un punt.
+	 *
+	 * <p>En el correcte funcionament del joc, un jugador sols podrá avançar una casella o quedar-se quiet; mai podrá
+	 * avançar mes d'1 casella en un sol torn o anar endarrere, no obstant aixo es possible de fer via els botons
+	 * "debug", que vam utilitzar a mode de proves.
+	 *
+	 * @param newScoreP1 La diferencia de puntuació del jugador 1
+	 * @param newScoreP2 La diferencia de puntuació del jugador 2
+	 * @throws IOException
+	 */
 	public void updatePlayerScore(int newScoreP1, int newScoreP2) throws IOException
 	{
 		score[0] = score[0] + newScoreP1;
@@ -331,17 +424,43 @@ public class Tauler extends JFrame
 		for(int i=0; i<score.length; i++)
 		{
 			if(score[i]<=0) score[i] = 0;
-			if(score[i]>=7) score[i] = 7; // score[i] = 8;
+			if(score[i]>=7) score[i] = 7; // score[num] = 8;
 		}
 		
 		updatePlayerPosition();
 	}
 	
+	/**
+	 * Actualitza la posició dels jugadors (redibuixa el tauler amb els jugadors amb les posicions actuals).
+	 *
+	 * <p>En executar aquest metode, s'intueix que la nova posició dels jugadors (si es que ha canviat), ja s'ha
+	 * modificat abans d'executar aquest metode.
+	 *
+	 * <p>De lo contrarí, si es que cal especificar una nova posició, cal utilitzar {@link #updatePlayerPosition(int, int)}
+	 * per canvis de posicions absoluts o {@link #updatePlayerScore(int, int)} per a canvis relatius.
+	 *
+	 * @throws IOException
+	 */
 	public void updatePlayerPosition() throws IOException
 	{
-		updatePlayerPosition(score[0], score[1]);
+		updatePlayerPosition(score[0],score[1]);
 	}
 	
+	/**
+	 * Actualitza la posició dels jugadors (redibuixa el tauler amb els jugadors amb les posicions actuals).
+	 *
+	 * <p>Amb aquesta crida, es passen per parametres les noves posicions absolutes dels jugadors.
+	 * Aquestes noves posicions reemplaçaran les posicions actuals.
+	 *
+	 * <p>Després de posar les variables; aquest metode executa els metodes {@link #paintColoursTiles()} num
+	 * {@link #paintPlayerPositions()}, per tal de redibuixar el tauler amb els jugadores en les noves posicions.
+	 *
+	 * <p>Els metodes {@link #updatePlayerScore(int, int)} num {@link #updatePlayerPosition()} també criden internament a aqui.
+	 *
+	 * @param posP1 La nova posició absoluta del jugador 1
+	 * @param posP2 La nova posició absoluta del jugador 2
+	 * @throws IOException
+	 */
 	public void updatePlayerPosition(int posP1, int posP2) throws IOException
 	{
 		score[0] = posP1;
@@ -350,11 +469,11 @@ public class Tauler extends JFrame
 		paintColoursTiles();
 		paintPlayerPositions();
 		
-//		for(int i=0; i<images.length; i++)
+//		for(int num=0; num<images.length; num++)
 //		{
-//			images[i].paint(images[i].getGraphics());
-//			images[i].repaint();
-//			images[i].revalidate();
+//			images[num].paint(images[num].getGraphics());
+//			images[num].repaint();
+//			images[num].revalidate();
 //		}
 		
 //		SwingUtilities.updateComponentTreeUI(this);

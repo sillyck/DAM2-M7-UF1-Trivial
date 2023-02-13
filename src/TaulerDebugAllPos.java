@@ -4,19 +4,20 @@ import java.io.IOException;
 
 public class TaulerDebugAllPos implements ActionListener
 {
-	int i = 0;
+	private int num;
 	
-	public TaulerDebugAllPos(int i)
+	public TaulerDebugAllPos(int num)
 	{
-		this.i = i;
+		this.num = num;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
+		System.out.println("Click rebut a DBG"+ num);
 		try
 		{
-			mainTesting.tauler.updatePlayerPosition(i,i);
+			mainTesting.tauler.updatePlayerPosition(num, num);
 		}
 		catch(IOException ex)
 		{
