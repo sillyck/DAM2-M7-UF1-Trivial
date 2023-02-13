@@ -12,7 +12,6 @@ import java.util.Map;
 
 public class Tauler extends JFrame
 {
-	
 	/**
 	 * Número que indica la ronda actual. Una ronda passa quan els dos jugadors han tingut els dos una oportunitat de moviment.
 	 */
@@ -74,7 +73,6 @@ public class Tauler extends JFrame
 	{
 		super("Trivial");
 		setSize(1500, 800);
-//		Utils.scaleWindowDimensions(this, );
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPlayerNames(player1, player2);
 		
@@ -94,29 +92,7 @@ public class Tauler extends JFrame
 		pathCollection.put("taulerClar-bandera100",System.getProperty("user.dir")+"/res/taulerClar-bandera100.png");
 		pathCollection.put("taulerFosc-bandera100",System.getProperty("user.dir")+"/res/taulerFosc-bandera100.png");
 		
-//		readyImage = new HashMap<>();
-//		readyImage.put("taulerClar",           System.getProperty("user.dir")+"/res/taulerClar.png");
-//		readyImage.put("taulerFosc",           System.getProperty("user.dir")+"/res/taulerFosc.png");
-//		readyImage.put("taulerClar-jugador50", System.getProperty("user.dir")+"/res/taulerClar-jugador50.png");
-//		readyImage.put("taulerFosc-jugador50", System.getProperty("user.dir")+"/res/taulerFosc-jugador50.png");
-//		readyImage.put("taulerClar-jugador95", System.getProperty("user.dir")+"/res/taulerClar-jugador95.png");
-//		readyImage.put("taulerFosc-jugador95", System.getProperty("user.dir")+"/res/taulerFosc-jugador95.png");
-//		readyImage.put("taulerClar-jugador100",System.getProperty("user.dir")+"/res/taulerClar-jugador100.png");
-//		readyImage.put("taulerFosc-jugador100",System.getProperty("user.dir")+"/res/taulerFosc-jugador100.png");
-//		readyImage.put("taulerClar-bandera50", System.getProperty("user.dir")+"/res/taulerClar-bandera50.png");
-//		readyImage.put("taulerFosc-bandera50", System.getProperty("user.dir")+"/res/taulerFosc-bandera50.png");
-//		readyImage.put("taulerClar-bandera95", System.getProperty("user.dir")+"/res/taulerClar-bandera95.png");
-//		readyImage.put("taulerFosc-bandera95", System.getProperty("user.dir")+"/res/taulerFosc-bandera95.png");
-//		readyImage.put("taulerClar-bandera100",System.getProperty("user.dir")+"/res/taulerClar-bandera100.png");
-//		readyImage.put("taulerFosc-bandera100",System.getProperty("user.dir")+"/res/taulerFosc-bandera100.png");
-		
-//		BufferedImage bufferedImage1;
-//		bufferedImage1 = score[0] % 2==0
-//				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
-//				: ImageIO.read(new File(pathCollection.get("taulerFosc-jugador95")));
-//		images[score[0]] = new JLabel(new ImageIcon(Utils.resize(bufferedImage1, 175, 175)));
-		
-		readyImage = new HashMap<String,ImageIcon>();
+		readyImage = new HashMap<>();
 		readyImage.put("taulerClar",           new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar"))),175,175)));
 		readyImage.put("taulerFosc",           new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerFosc"))),175,175)));
 		readyImage.put("taulerClar-jugador50", new ImageIcon(Utils.resize(ImageIO.read(new File(pathCollection.get("taulerClar-jugador50"))),175,175)));
@@ -158,7 +134,7 @@ public class Tauler extends JFrame
 	/**
 	 * Metode que s'encarra de construir el la majoria de la finestra de dialeg.
 	 */
-	public void /*JFrame*/ ConstruirUI(/*JFrame jframe*/)
+	public void ConstruirUI()
 	{
 		Container c = getContentPane();
 		c.setBackground(Color.decode("#F9F5E7"));
@@ -197,73 +173,24 @@ public class Tauler extends JFrame
 		
 		JButton j1m = new JButton("DBG1-");
 		j1m.addActionListener(new TaulerDebugP1minus());
-//		j1m.setBackground(new Color(167,114,125));
-//		j1m.setForeground(new Color(255,255,255));
-//		j1m.setFocusPainted(false);
-//		j1m.setFont(new Font("Tahoma", Font.BOLD, 24));
-//		Border jButtonBorder1 = j1m.getBorder();
-//		Border jButtonMargin1 = new EmptyBorder(10,10,10,10);
-//		j1m.setBorder(new CompoundBorder(jButtonBorder1, jButtonMargin1));
 		
 		JButton j1p = new JButton("DBG1+");
 		j1p.addActionListener(new TaulerDebugP1plus());
-//		j1p.setBackground(new Color(167,114,125));
-//		j1p.setForeground(new Color(255,255,255));
-//		j1p.setFocusPainted(false);
-//		j1p.setFont(new Font("Tahoma", Font.BOLD, 24));
-//		Border jButtonBorder2 = j1p.getBorder();
-//		Border jButtonMargin2 = new EmptyBorder(10,10,10,10);
-//		j1p.setBorder(new CompoundBorder(jButtonBorder2, jButtonMargin2));
 		
 		JButton j2m = new JButton("DBG2-");
 		j2m.addActionListener(new TaulerDebugP2minus());
-//		j2m.setBackground(new Color(167,114,125));
-//		j2m.setForeground(new Color(255,255,255));
-//		j2m.setFocusPainted(false);
-//		j2m.setFont(new Font("Tahoma", Font.BOLD, 24));
-//		Border jButtonBorder3 = j2m.getBorder();
-//		Border jButtonMargin3 = new EmptyBorder(10,10,10,10);
-//		j2m.setBorder(new CompoundBorder(jButtonBorder3, jButtonMargin3));
 		
 		JButton j2p = new JButton("DBG2+");
 		j2p.addActionListener(new TaulerDebugP2plus());
-//		j2p.setBackground(new Color(167,114,125));
-//		j2p.setForeground(new Color(255,255,255));
-//		j2p.setFocusPainted(false);
-//		j2p.setFont(new Font("Tahoma", Font.BOLD, 24));
-//		Border jButtonBorder4 = j2p.getBorder();
-//		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
-//		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
 		
 		JButton j0 = new JButton("DBG0");
 		j0.addActionListener(new TaulerDebugAllPos(0));
-//		j2p.setBackground(new Color(167,114,125));
-//		j2p.setForeground(new Color(255,255,255));
-//		j2p.setFocusPainted(false);
-//		j2p.setFont(new Font("Tahoma", Font.BOLD, 24));
-//		Border jButtonBorder4 = j2p.getBorder();
-//		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
-//		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
 		
 		JButton j6 = new JButton("DBG6");
 		j6.addActionListener(new TaulerDebugAllPos(6));
-//		j2p.setBackground(new Color(167,114,125));
-//		j2p.setForeground(new Color(255,255,255));
-//		j2p.setFocusPainted(false);
-//		j2p.setFont(new Font("Tahoma", Font.BOLD, 24));
-//		Border jButtonBorder4 = j2p.getBorder();
-//		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
-//		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
 		
 		JButton j7 = new JButton("DBG7");
 		j7.addActionListener(new TaulerDebugAllPos(7));
-//		j2p.setBackground(new Color(167,114,125));
-//		j2p.setForeground(new Color(255,255,255));
-//		j2p.setFocusPainted(false);
-//		j2p.setFont(new Font("Tahoma", Font.BOLD, 24));
-//		Border jButtonBorder4 = j2p.getBorder();
-//		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
-//		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
 		
 //		JLabel l1 = new JLabel();
 //		JLabel l2 = new JLabel();
@@ -281,8 +208,6 @@ public class Tauler extends JFrame
 //		bottomContainer.add(l2);
 		bottomContainer.add(ls);
 		c.add(bottomContainer, BorderLayout.SOUTH);
-		
-//		return jframe;
 	}
 	
 	/**
@@ -299,27 +224,10 @@ public class Tauler extends JFrame
 		for(int i=0; i<16; i++)
 		{
 			BufferedImage bufferedImage;
-//			switch(num)
-//			{
-//				case 0: case 8:
-//					bufferedImage = ImageIO.read(new File(System.getProperty("user.dir")+"/res/taulerClar-jugador95.png"));
-//					break;
-//				case 7: case 15:
-//					bufferedImage = ImageIO.read(new File(System.getProperty("user.dir")+"/res/taulerFosc-bandera50.png"));
-//				bufferedImage = ImageIO.read(new File(pathCollection.get("taulerFosc-bandera50")));
-//				break;
-//				default:
-//					bufferedImage = num % 2==0
-//							? ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerClar.png"))
-//							: ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerFosc
-					bufferedImage = i % 2==0
-							? ImageIO.read(new File(pathCollection.get("taulerClar")))
-							: ImageIO.read(new File(pathCollection.get("taulerFosc")));
-//					break;
-//			}
+			bufferedImage = i % 2==0
+					? ImageIO.read(new File(pathCollection.get("taulerClar")))
+					: ImageIO.read(new File(pathCollection.get("taulerFosc")));
 			images[i] = new JLabel(new ImageIcon(Utils.resize(bufferedImage, 175, 175)));
-//			images[num].setIcon((Icon)Utils.resize(bufferedImage,175,175));
-//			images[num].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
 		}
 	}
 	
@@ -345,24 +253,15 @@ public class Tauler extends JFrame
 			BufferedImage bufferedImage;
 			switch(i)
 			{
-//				case 0: case 8:
-//					bufferedImage = ImageIO.read(new File(System.getProperty("user.dir")+"/res/taulerClar-jugador95.png"));
-//					break;
 				case 7: case 15:
-//					bufferedImage = ImageIO.read(new File(System.getProperty("user.dir")+"/res/taulerFosc-bandera50.png"));
 					bufferedImage = ImageIO.read(new File(pathCollection.get("taulerFosc-bandera50")));
 					break;
 				default:
-//					bufferedImage = num % 2==0
-//							? ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerClar.png"))
-//							: ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerFosc
 					bufferedImage = i % 2==0
 							? ImageIO.read(new File(pathCollection.get("taulerClar")))
 							: ImageIO.read(new File(pathCollection.get("taulerFosc")));
 					break;
 			}
-//			images[num] = new JLabel(new ImageIcon(Utils.resize(bufferedImage, 175, 175)));
-//			images[num].setIcon((Icon)Utils.resize(bufferedImage,175,175));
 			images[i].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
 		}
 	}
@@ -378,26 +277,18 @@ public class Tauler extends JFrame
 	 */
 	public void paintPlayerPositions() throws IOException
 	{
-		System.out.println("mainTesting.tauler.score[0] = " + /*mainTesting.tauler.*/score[0]);
-		System.out.println("mainTesting.tauler.score[1] = " + /*mainTesting.tauler.*/score[1]);
+		System.out.println("mainTesting.tauler.score[0] = " + score[0]);
+		System.out.println("mainTesting.tauler.score[1] = " + score[1]);
 		BufferedImage bufferedImage1;
-//		bufferedImage1 = score[0] % 2==0
-//				? ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerClar-jugador95.png"))
-//				: ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerFosc-jugador95.png"));
 		bufferedImage1 = score[0] % 2==0
 				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
 				: ImageIO.read(new File(pathCollection.get("taulerFosc-jugador95")));
-//		images[score[0]] = new JLabel(new ImageIcon(Utils.resize(bufferedImage1, 175, 175)));
 		images[score[0]].setIcon(new ImageIcon(Utils.resize(bufferedImage1,175,175)));
 		
 		BufferedImage bufferedImage2;
-//		bufferedImage2 = score[1] % 2==0
-//				? ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerClar-jugador95.png"))
-//				: ImageIO.read(new File(System.getProperty("user.dir") + "/res/taulerFosc-jugador95.png"));
 		bufferedImage2 = score[1] % 2==0
 				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
 				: ImageIO.read(new File(pathCollection.get("taulerFosc-jugador95")));
-//		images[score[1]+8] = new JLabel(new ImageIcon(Utils.resize(bufferedImage2, 175, 175)));
 		images[score[1]+8].setIcon(new ImageIcon(Utils.resize(bufferedImage2,175,175)));
 	}
 	
@@ -424,9 +315,8 @@ public class Tauler extends JFrame
 		for(int i=0; i<score.length; i++)
 		{
 			if(score[i]<=0) score[i] = 0;
-			if(score[i]>=7) score[i] = 7; // score[num] = 8;
+			if(score[i]>=7) score[i] = 7;
 		}
-		
 		updatePlayerPosition();
 	}
 	
@@ -468,31 +358,5 @@ public class Tauler extends JFrame
 		
 		paintColoursTiles();
 		paintPlayerPositions();
-		
-//		for(int num=0; num<images.length; num++)
-//		{
-//			images[num].paint(images[num].getGraphics());
-//			images[num].repaint();
-//			images[num].revalidate();
-//		}
-		
-//		SwingUtilities.updateComponentTreeUI(this);
-//		invalidate();
-//		validate();
-//		repaint();
-//		setVisible(false);
-//		setVisible(true);
-//		revalidate();
-//		repaint();
-//
-//		this.repaint();
-		
-//		mainTesting.refresh();
-		
-//		SwingUtilities.updateComponentTreeUI(this);
-		
-//		invalidate();
-//		validate();
-//		repaint();
 	}
 }

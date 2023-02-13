@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preguntas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/preguntas.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TaulerDebugAllPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaulerDebugAllPos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaulerDebugP1minus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaulerDebugP1minus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaulerDebugP1plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaulerDebugP1plus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaulerDebugP2minus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaulerDebugP2minus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaulerDebugP2plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaulerDebugP2plus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +100,7 @@
       <workItem from="1676118707725" duration="3057000" />
       <workItem from="1676297401506" duration="6256000" />
       <workItem from="1676311911935" duration="3617000" />
-      <workItem from="1676325744550" duration="4014000" />
+      <workItem from="1676325744550" duration="4717000" />
     </task>
     <servers />
   </component>

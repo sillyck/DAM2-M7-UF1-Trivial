@@ -23,14 +23,5 @@ public class TaulerDebugAllPos implements ActionListener
 		{
 			throw new RuntimeException(ex);
 		}
-//		mainTesting.tauler.score[0]--;
-//		try
-//		{
-//			mainTesting.tauler.updatePlayerPosition(mainTesting.tauler.score[0],mainTesting.tauler.score[1]);
-//		}
-//		catch(IOException ex)
-//		{
-//			throw new RuntimeException(ex);
-//		}
 	}
 }

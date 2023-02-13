@@ -10,19 +10,4 @@ public class mainTesting
 		tauler = new Tauler("","");
 		tauler.setVisible(true);
 	}
-	
-//	public static void refresh()
-//	{
-//		SwingUtilities.updateComponentTreeUI(tauler);
-//		tauler.invalidate();
-//		tauler.validate();
-//		tauler.repaint();
-//		tauler.setVisible(false);
-//		tauler.setVisible(true);
-//		tauler.revalidate();
-//		tauler.repaint();
-//		tauler.ConstruirUI();
-//
-//		this.repaint();
-//	}
 }

@@ -23,14 +23,4 @@ public class Utils
 		
 		return dimg;
 	}
-	
-	@Deprecated
-	public static void scaleWindowDimensions(JFrame frame, GraphicsDevice gd)
-	{
-		Rectangle bounds = gd.getDefaultConfiguration().getBounds();
-		int screenX = (int) bounds.getWidth();
-		int screenY = (int) bounds.getHeight();
-		// substitute this for however you're setting the size of the JFrame; this is simply how I sometimes do it
-		frame.getContentPane().setPreferredSize(new Dimension(screenX, screenY));
-	}
 }
