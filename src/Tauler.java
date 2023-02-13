@@ -291,12 +291,12 @@ public class Tauler extends JFrame
 		paintColoursTiles();
 		paintPlayerPositions();
 		
-		for(int i=0; i<images.length; i++)
-		{
+//		for(int i=0; i<images.length; i++)
+//		{
 //			images[i].paint(images[i].getGraphics());
 //			images[i].repaint();
-			images[i].revalidate();
-		}
+//			images[i].revalidate();
+//		}
 		
 //		SwingUtilities.updateComponentTreeUI(this);
 //		invalidate();
@@ -311,10 +311,10 @@ public class Tauler extends JFrame
 		
 //		mainTesting.refresh();
 		
-		SwingUtilities.updateComponentTreeUI(this);
+//		SwingUtilities.updateComponentTreeUI(this);
 		
-		invalidate();
-		validate();
-		repaint();
+//		invalidate();
+//		validate();
+//		repaint();
 	}
 }
