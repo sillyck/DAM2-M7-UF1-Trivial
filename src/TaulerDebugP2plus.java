@@ -8,14 +8,22 @@ public class TaulerDebugP2plus implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		System.out.println("Click rebut a DBG2+");
-		mainTesting.tauler.score[1]++;
 		try
 		{
-			mainTesting.tauler.updatePlayerPosition(mainTesting.tauler.score[0],mainTesting.tauler.score[1]);
+			mainTesting.tauler.updatePlayerScore(0,1);
 		}
 		catch(IOException ex)
 		{
 			throw new RuntimeException(ex);
 		}
+//		mainTesting.tauler.score[1]++;
+//		try
+//		{
+//			mainTesting.tauler.updatePlayerPosition(mainTesting.tauler.score[0],mainTesting.tauler.score[1]);
+//		}
+//		catch(IOException ex)
+//		{
+//			throw new RuntimeException(ex);
+//		}
 	}
 }

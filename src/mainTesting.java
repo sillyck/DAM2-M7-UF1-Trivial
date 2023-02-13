@@ -11,8 +11,8 @@ public class mainTesting
 		tauler.setVisible(true);
 	}
 	
-	public static void refresh()
-	{
+//	public static void refresh()
+//	{
 //		SwingUtilities.updateComponentTreeUI(tauler);
 //		tauler.invalidate();
 //		tauler.validate();
@@ -21,8 +21,8 @@ public class mainTesting
 //		tauler.setVisible(true);
 //		tauler.revalidate();
 //		tauler.repaint();
-		tauler.ConstruirUI();
+//		tauler.ConstruirUI();
 //
 //		this.repaint();
-	}
+//	}
 }
