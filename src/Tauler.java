@@ -165,17 +165,50 @@ public class Tauler extends JFrame
 //		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
 //		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
 		
-		JLabel l1 = new JLabel();
-		JLabel l2 = new JLabel();
+		JButton j0 = new JButton("DBG0");
+		j0.addActionListener(new TaulerDebugAllPos(0));
+//		j2p.setBackground(new Color(167,114,125));
+//		j2p.setForeground(new Color(255,255,255));
+//		j2p.setFocusPainted(false);
+//		j2p.setFont(new Font("Tahoma", Font.BOLD, 24));
+//		Border jButtonBorder4 = j2p.getBorder();
+//		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
+//		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
+		
+		JButton j6 = new JButton("DBG6");
+		j6.addActionListener(new TaulerDebugAllPos(6));
+//		j2p.setBackground(new Color(167,114,125));
+//		j2p.setForeground(new Color(255,255,255));
+//		j2p.setFocusPainted(false);
+//		j2p.setFont(new Font("Tahoma", Font.BOLD, 24));
+//		Border jButtonBorder4 = j2p.getBorder();
+//		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
+//		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
+		
+		JButton j7 = new JButton("DBG7");
+		j7.addActionListener(new TaulerDebugAllPos(7));
+//		j2p.setBackground(new Color(167,114,125));
+//		j2p.setForeground(new Color(255,255,255));
+//		j2p.setFocusPainted(false);
+//		j2p.setFont(new Font("Tahoma", Font.BOLD, 24));
+//		Border jButtonBorder4 = j2p.getBorder();
+//		Border jButtonMargin4 = new EmptyBorder(10,10,10,10);
+//		j2p.setBorder(new CompoundBorder(jButtonBorder4, jButtonMargin4));
+		
+//		JLabel l1 = new JLabel();
+//		JLabel l2 = new JLabel();
 		JLabel ls = new JLabel("· Res");
 		
+		bottomContainer.add(j0);
+		bottomContainer.add(j6);
+		bottomContainer.add(j7);
 		bottomContainer.add(j1m);
 		bottomContainer.add(j1p);
 		bottomContainer.add(j2m);
 		bottomContainer.add(j2p);
 		bottomContainer.add(jButton);
-		bottomContainer.add(l1);
-		bottomContainer.add(l2);
+//		bottomContainer.add(l1);
+//		bottomContainer.add(l2);
 		bottomContainer.add(ls);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 		
