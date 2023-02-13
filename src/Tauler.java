@@ -72,7 +72,7 @@ public class Tauler extends JFrame
 //		readyImage.put("taulerFosc-bandera100",System.getProperty("user.dir")+"/res/taulerFosc-bandera100.png");
 		
 		score[0] = 0;
-		score[1] = 5;
+		score[1] = 0;
 		firstPaintTiles();
 		paintColoursTiles();
 		paintPlayerPositions();
