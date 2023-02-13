@@ -35,6 +35,7 @@ public class Tauler extends JFrame
 	{
 		super("Trivial");
 		setSize(1500, 800);
+//		Utils.scaleWindowDimensions(this, );
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPlayerNames(player1, player2);
 		
