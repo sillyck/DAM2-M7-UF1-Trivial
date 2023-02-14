@@ -92,7 +92,6 @@ public class Tauler extends JFrame implements ActionListener
 	 */
 	private JLabel jlabelTitle;
 	
-	
 	public Tauler() throws IOException
 	{
 		new Tauler("Jugador 1", "Jugador 2", false);
@@ -146,12 +145,10 @@ public class Tauler extends JFrame implements ActionListener
 		paintPlayerPositions();
 		
 		ConstruirUI();
-		
 		pack();
 		setLocationRelativeTo(null);
 		
 		advance();
-//		toggleImage();
 	}
 	
 	/**
@@ -231,8 +228,6 @@ public class Tauler extends JFrame implements ActionListener
 		JButton jadv = new JButton("DBG-ADV");
 		jadv.addActionListener(new TaulerDebugAdvance());
 		
-//		JLabel l1 = new JLabel();
-//		JLabel l2 = new JLabel();
 		JLabel ls = new JLabel("· Res");
 		
 		if(!debugMode)
@@ -247,12 +242,7 @@ public class Tauler extends JFrame implements ActionListener
 			bottomContainer.add(jadv);
 		}
 		bottomContainer.add(jButton);
-		if(!debugMode)
-		{
-//		    bottomContainer.add(l1);
-//		    bottomContainer.add(l2);
-			bottomContainer.add(ls);
-		}
+		if(!debugMode) bottomContainer.add(ls);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 	}
 	
@@ -538,14 +528,6 @@ public class Tauler extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-//		try
-//		{
-//			answer(true);
-//		}
-//		catch(IOException ex)
-//		{
-//			throw new RuntimeException(ex);
-//		}
 		inQuestion = true;
 		// ====================================================
 		//       POSAR AQUI LA CRIDA CAP A LES PREGUNTES
