@@ -4,14 +4,18 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Tauler extends JFrame
+public class Tauler extends JFrame implements ActionListener
 {
+	private final boolean debugMode;
+	
 	/**
 	 * Número que indica la ronda actual. Una ronda passa quan els dos jugadors han tingut els dos una oportunitat de moviment.
 	 */
@@ -65,15 +69,19 @@ public class Tauler extends JFrame
 	 */
 	private Map<String,String> pathCollection;
 	
+	private JLabel jlabelTitle;
+	
 	
 	public Tauler() throws IOException
 	{
-		new Tauler("Jugador 1", "Jugador 2");
+		new Tauler("Jugador 1", "Jugador 2", false);
+		debugMode = false;
 	}
 	
-	public Tauler(String player1, String player2) throws IOException
+	public Tauler(String player1, String player2, boolean debugMode) throws IOException
 	{
 		super("Trivial");
+		this.debugMode = debugMode;
 		setSize(1500, 800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPlayerNames(player1, player2);
@@ -112,6 +120,7 @@ public class Tauler extends JFrame
 		
 		score[0] = 0;
 		score[1] = 0;
+//		currentTurn = 1;
 		firstPaintTiles();
 		paintColoursTiles();
 		paintPlayerPositions();
@@ -121,7 +130,8 @@ public class Tauler extends JFrame
 		pack();
 		setLocationRelativeTo(null);
 		
-		toggleImage();
+		advance();
+//		toggleImage();
 	}
 	
 	/**
@@ -138,6 +148,7 @@ public class Tauler extends JFrame
 	/**
 	 * Metode que s'encarra de construir el la majoria de la finestra de dialeg.
 	 */
+	@SuppressWarnings("ForLoopReplaceableByForEach")
 	public void ConstruirUI()
 	{
 		Container c = getContentPane();
@@ -154,13 +165,13 @@ public class Tauler extends JFrame
 		FlowLayout topLayout = new FlowLayout();
 		Container topContainer = new Container();
 		topContainer.setLayout(topLayout);
-		JLabel jLabel = new JLabel("\nTorn de: {nom_jugador}\n");
-		jLabel.setFont(new Font("Tahoma",Font.BOLD, 32));
-		Border jLabelBorder = jLabel.getBorder();
+		jlabelTitle = new JLabel("\nRonda NaN\nTorn de: null\n");
+		jlabelTitle.setFont(new Font("Tahoma",Font.BOLD, 32));
+		Border jLabelBorder = jlabelTitle.getBorder();
 		Border jLabelMargin = new EmptyBorder(10,10,10,10);
-		jLabel.setBorder(new CompoundBorder(jLabelBorder, jLabelMargin));
+		jlabelTitle.setBorder(new CompoundBorder(jLabelBorder, jLabelMargin));
 		
-		topContainer.add(jLabel);
+		topContainer.add(jlabelTitle);
 		c.add(topContainer, BorderLayout.NORTH);
 		
 		FlowLayout bottomLayout = new FlowLayout();
@@ -174,6 +185,7 @@ public class Tauler extends JFrame
 		Border jButtonBorder = jButton.getBorder();
 		Border jButtonMargin = new EmptyBorder(10,10,10,10);
 		jButton.setBorder(new CompoundBorder(jButtonBorder, jButtonMargin));
+		jButton.addActionListener(this);
 		
 		JButton j1m = new JButton("DBG1-");
 		j1m.addActionListener(new TaulerDebugP1minus());
@@ -196,6 +208,9 @@ public class Tauler extends JFrame
 		JButton j7 = new JButton("DBG7");
 		j7.addActionListener(new TaulerDebugAllPos(7));
 		
+		JButton jadv = new JButton("DBG-ADV");
+		jadv.addActionListener(new TaulerDebugAdvance());
+		
 //		JLabel l1 = new JLabel();
 //		JLabel l2 = new JLabel();
 		JLabel ls = new JLabel("· Res");
@@ -207,6 +222,7 @@ public class Tauler extends JFrame
 		bottomContainer.add(j1p);
 		bottomContainer.add(j2m);
 		bottomContainer.add(j2p);
+		bottomContainer.add(jadv);
 		bottomContainer.add(jButton);
 //		bottomContainer.add(l1);
 //		bottomContainer.add(l2);
@@ -281,8 +297,8 @@ public class Tauler extends JFrame
 	 */
 	public void paintPlayerPositions() throws IOException
 	{
-		System.out.println("mainTesting.tauler.score[0] = " + score[0]);
-		System.out.println("mainTesting.tauler.score[1] = " + score[1]);
+		System.out.println("score[0] = " + score[0]);
+		System.out.println("score[1] = " + score[1]);
 		BufferedImage bufferedImage1;
 		bufferedImage1 = score[0] % 2==0
 				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
@@ -379,61 +395,102 @@ public class Tauler extends JFrame
 		images[cellPos].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
 	}
 	
-	public void hideImage()
+	public void toggleImage()
 	{
 		SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>()
 		{
+			final int startPlayerCell = activePlayerCell;
+			
+			@SuppressWarnings("BusyWait")
 			@Override
 			protected Void doInBackground() throws Exception
 			{
-				// Wait for some time in the background
-				Thread.sleep(3000);
+				for(;;)
+				{
+					overwriteWithEmptyCell(startPlayerCell);
+					Thread.sleep(1000);
+					if(startPlayerCell!=activePlayerCell) break;
+					
+//					paintColoursTiles();
+					paintPlayerPositions();
+					Thread.sleep(500);
+					if(startPlayerCell!=activePlayerCell) break;
+				}
 				return null;
-			}
-			
-			@Override
-			protected void done()
-			{
-				// Remove the image from the label
-//				label.setIcon(null);
 			}
 		};
 		worker.execute();
 	}
 	
-	public void toggleImage()
+	public void advance() throws IOException
 	{
-		SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>()
+		activePlayerCell = -1;
+		paintColoursTiles();
+		paintPlayerPositions();
+		if(currentTurn!=0) updateTitle();
+		switch(currentTurn)
 		{
-			int startI = activePlayerCell;
-			
-			@Override
-			protected Void doInBackground() throws Exception
-			{
-				// Wait for some time in the background
-//				Thread.sleep(3000);
+			case 0:
+				currentTurn = 1;
+				round++;
+				updateTitle();
+				activePlayerCell = score[0];
+				toggleImage();
+				break;
+			case 1:
+				currentTurn = 2;
+				activePlayerCell = score[1]+8;
+				toggleImage();
+				break;
+			case 2:
+				currentTurn = 3;
 				
-				for(;;)
-				{
-					overwriteWithEmptyCell(startI);
-					Thread.sleep(1000);
-					if(startI!=activePlayerCell) break;
-					
-//					paintColoursTiles();
-					paintPlayerPositions();
-					Thread.sleep(500);
-					if(startI!=activePlayerCell) break;
-				}
-				return null;
-			}
-			
-			@Override
-			protected void done()
+				currentTurn = 1;
+				round++;
+				updateTitle();
+				activePlayerCell = score[0];
+				toggleImage();
+				
+				break;
+			case 3:
+				break;
+		}
+	}
+	
+	@SuppressWarnings("unused")
+	public void answer(boolean correct) throws IOException
+	{
+		if(correct)
+		{
+			if(currentTurn==1 || currentTurn==2)
 			{
-				// Remove the image from the label
-//				label.setIcon(null);
+				score[currentTurn-1]++;
 			}
-		};
-		worker.execute();
+		}
+		advance();
+	}
+	
+	public void updateTitle()
+	{
+//		jlabelTitle = new JLabel("\nRonda NaN\nTorn de: null\n");
+		jlabelTitle.setText("\nRonda "+round+"\nTorn de: "+playerName[currentTurn-1]);
+	}
+	
+	/**
+	 * Invoked when an action occurs.
+	 *
+	 * @param e
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		try
+		{
+			answer(true);
+		}
+		catch(IOException ex)
+		{
+			throw new RuntimeException(ex);
+		}
 	}
 }
