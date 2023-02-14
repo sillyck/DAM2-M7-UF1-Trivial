@@ -26,6 +26,8 @@ public class Tauler extends JFrame
 	 */
 	public int currentTurn = 0;
 	
+	private int activePlayerCell = 0;
+	
 	/**
 	 * Simple array de dos llocs d'Strings que conte els noms del jugadors.
 	 * <li><tt>playerName[0]</tt> es el nom del jugador 1.</li>
@@ -118,6 +120,8 @@ public class Tauler extends JFrame
 		
 		pack();
 		setLocationRelativeTo(null);
+		
+		toggleImage();
 	}
 	
 	/**
@@ -358,5 +362,78 @@ public class Tauler extends JFrame
 		
 		paintColoursTiles();
 		paintPlayerPositions();
+	}
+	
+	public void overwriteWithEmptyCell(int cellPos) throws IOException
+	{
+//		BufferedImage bufferedImage1;
+//		bufferedImage1 = score[0] % 2==0
+//				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
+//				: ImageIO.read(new File(pathCollection.get("taulerFosc-jugador95")));
+//		images[score[0]].setIcon(new ImageIcon(Utils.resize(bufferedImage1,175,175)));
+		
+		BufferedImage bufferedImage;
+		bufferedImage = /*images[*/cellPos/*]*/ % 2==0
+				? ImageIO.read(new File(pathCollection.get("taulerClar")))
+				: ImageIO.read(new File(pathCollection.get("taulerFosc")));
+		images[cellPos].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
+	}
+	
+	public void hideImage()
+	{
+		SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>()
+		{
+			@Override
+			protected Void doInBackground() throws Exception
+			{
+				// Wait for some time in the background
+				Thread.sleep(3000);
+				return null;
+			}
+			
+			@Override
+			protected void done()
+			{
+				// Remove the image from the label
+//				label.setIcon(null);
+			}
+		};
+		worker.execute();
+	}
+	
+	public void toggleImage()
+	{
+		SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>()
+		{
+			int startI = activePlayerCell;
+			
+			@Override
+			protected Void doInBackground() throws Exception
+			{
+				// Wait for some time in the background
+//				Thread.sleep(3000);
+				
+				for(;;)
+				{
+					overwriteWithEmptyCell(startI);
+					Thread.sleep(1000);
+					if(startI!=activePlayerCell) break;
+					
+//					paintColoursTiles();
+					paintPlayerPositions();
+					Thread.sleep(500);
+					if(startI!=activePlayerCell) break;
+				}
+				return null;
+			}
+			
+			@Override
+			protected void done()
+			{
+				// Remove the image from the label
+//				label.setIcon(null);
+			}
+		};
+		worker.execute();
 	}
 }
