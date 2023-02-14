@@ -120,7 +120,6 @@ public class Tauler extends JFrame implements ActionListener
 		
 		score[0] = 0;
 		score[1] = 0;
-//		currentTurn = 1;
 		firstPaintTiles();
 		paintColoursTiles();
 		paintPlayerPositions();
@@ -388,14 +387,8 @@ public class Tauler extends JFrame implements ActionListener
 	
 	public void overwriteWithEmptyCell(int cellPos) throws IOException
 	{
-//		BufferedImage bufferedImage1;
-//		bufferedImage1 = score[0] % 2==0
-//				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
-//				: ImageIO.read(new File(pathCollection.get("taulerFosc-jugador95")));
-//		images[score[0]].setIcon(new ImageIcon(Utils.resize(bufferedImage1,175,175)));
-		
 		BufferedImage bufferedImage;
-		bufferedImage = /*images[*/cellPos/*]*/ % 2==0
+		bufferedImage = cellPos % 2==0
 				? ImageIO.read(new File(pathCollection.get("taulerClar")))
 				: ImageIO.read(new File(pathCollection.get("taulerFosc")));
 		images[cellPos].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
@@ -416,8 +409,6 @@ public class Tauler extends JFrame implements ActionListener
 					overwriteWithEmptyCell(startPlayerCell);
 					Thread.sleep(1000);
 					if(startPlayerCell!=activePlayerCell) break;
-					
-//					paintColoursTiles();
 					paintPlayerPositions();
 					Thread.sleep(500);
 					if(startPlayerCell!=activePlayerCell) break;
@@ -436,7 +427,7 @@ public class Tauler extends JFrame implements ActionListener
 		if(currentTurn!=0) updateTitle();
 		switch(currentTurn)
 		{
-			case 0:
+			case 0: case 2: case 3:
 				currentTurn = 1;
 				round++;
 				updateTitle();
@@ -447,13 +438,6 @@ public class Tauler extends JFrame implements ActionListener
 				currentTurn = 2;
 				updateTitle();
 				activePlayerCell = score[1]+8;
-				toggleImage();
-				break;
-			case 2: case 3:
-				currentTurn = 1;
-				round++;
-				updateTitle();
-				activePlayerCell = score[0];
 				toggleImage();
 				break;
 		}
@@ -470,19 +454,12 @@ public class Tauler extends JFrame implements ActionListener
 		//  encertat i fals si s'ha fallat
 		// ====================================================
 		
-		if(correct)
-		{
-			if(currentTurn==1 || currentTurn==2)
-			{
-				score[currentTurn-1]++;
-			}
-		}
+		if(correct && (currentTurn==1 || currentTurn==2)) score[currentTurn-1]++;
 		advance();
 	}
 	
 	public void updateTitle()
 	{
-//		jlabelTitle = new JLabel("\nRonda NaN\nTorn de: null\n");
 		jlabelTitle.setText("Ronda "+round+"; torn de: "+playerName[currentTurn-1]);
 	}
 	
