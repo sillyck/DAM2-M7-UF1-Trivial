@@ -462,6 +462,14 @@ public class Tauler extends JFrame implements ActionListener
 	@SuppressWarnings("unused")
 	public void answer(boolean correct) throws IOException
 	{
+		// ====================================================
+		//       AL TANCAR UNA FINESTRA DE PREGUNTA,
+		//       AQUESTA ES LA FUNCIÓ QUE S'EXECUTA
+		//
+		//  El boolean correct es true si la pregunta s'ha
+		//  encertat i fals si s'ha fallat
+		// ====================================================
+		
 		if(correct)
 		{
 			if(currentTurn==1 || currentTurn==2)
@@ -494,5 +502,9 @@ public class Tauler extends JFrame implements ActionListener
 //		{
 //			throw new RuntimeException(ex);
 //		}
+		
+		// ====================================================
+		//       POSAR AQUI LA CRIDA CAP A LES PREGUNTES
+		// ====================================================
 	}
 }
