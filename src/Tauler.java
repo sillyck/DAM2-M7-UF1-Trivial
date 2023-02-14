@@ -14,6 +14,9 @@ import java.util.Map;
 
 public class Tauler extends JFrame implements ActionListener
 {
+	/**
+	 * Si es true, fará visibles botons i labels que han estat utils per el desenvolupament d'aquesta aplicació.
+	 */
 	private final boolean debugMode;
 	
 	/**
@@ -27,9 +30,15 @@ public class Tauler extends JFrame implements ActionListener
 	 * <li>1 = torn del jugador 1</li>
 	 * <li>2 = torn del jugador 2</li>
 	 * <li>3 = final de ronda, preparatius per començar una nova ronda</li>
+	 *
+	 * <p>Teoricament, aquesta variable hauría de passar ben poca estona en valors 0 o 3; hauría d'estar gairabé tot el rato a 1 o 2.
 	 */
 	public int currentTurn = 0;
 	
+	/**
+	 * La posició de l'array {@link #images} a on fará efecte l'animació d'apareixer i desapareixer.
+	 * <p>Quan el jugador actual sigui l'1, aquest valor estará entre 0 i 7, perque aquestes son les caselles de la fila superior, on es mou el primer jugador; el segon jugador tindrá valors d'entre 8 i 15.
+	 */
 	private int activePlayerCell = 0;
 	
 	/**
@@ -51,9 +60,11 @@ public class Tauler extends JFrame implements ActionListener
 	public int score[] = new int[2];
 	
 	/**
-	 * Array de JLabels (amb ImageIcons dins, que es lo que importa) que guarden les imatges que es mostraran en el GridLayout del tauler.
+	 * Array de JLabels (amb ImageIcons dins, que es lo que importa) que guarden les imatges que es mostraran en el
+	 * GridLayout del tauler.
 	 *
-	 * <p>Els valors d'entre 0 num 7 son per la fila superior (jugador 1) num valors d'entre 8 num 15 son per la fila inferior (jugador 2).
+	 * <p>Els valors d'entre 0 num 7 son per la fila superior (jugador 1) num valors d'entre 8 num 15 son per la fila
+	 * inferior (jugador 2).
 	 */
 	@SuppressWarnings("CStyleArrayDeclaration")
 	public JLabel images[] = new JLabel[16];
@@ -69,6 +80,10 @@ public class Tauler extends JFrame implements ActionListener
 	 */
 	private Map<String,String> pathCollection;
 	
+	/**
+	 * L'unic component de la interficie que esta declarat com una variable no local de {@link #ConstruirUI()},
+	 * aixo es perque {@link #updateTitle()} hi pugui accedir i es pugui canviar el text de dins mes facilment.
+	 */
 	private JLabel jlabelTitle;
 	
 	
@@ -385,6 +400,14 @@ public class Tauler extends JFrame implements ActionListener
 		paintPlayerPositions();
 	}
 	
+	/**
+	 * Aquesta es la funció que "borra el contingut" d'una casella. En veritat el que fa es posar com a imatge de la
+	 * cel·la una imatge buida, sense jugador ni bandera.
+	 *
+	 * @param cellPos Posició del array {@link #images} a on es "borrará" la casella. Valors d'entre 0-7 per la fila
+	 *                superior i d'entre 8-15 per la fila inferior.
+	 * @throws IOException
+	 */
 	public void overwriteWithEmptyCell(int cellPos) throws IOException
 	{
 		BufferedImage bufferedImage;
@@ -394,13 +417,30 @@ public class Tauler extends JFrame implements ActionListener
 		images[cellPos].setIcon(new ImageIcon(Utils.resize(bufferedImage,175,175)));
 	}
 	
-	public void toggleImage()
+	/**
+	 * Un metode que s'encarga de crear i executar un SwingWorker que fa que la imatge del jugador actual aparegui i desaparegui.
+	 */
+	private void toggleImage()
 	{
+		@SuppressWarnings("JavadocDeclaration")
 		SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>()
 		{
+			/**
+			 * Guarda quina es la posició del jugador actiu en el moment de començar l'aniamció actual de mostrar/amagar.
+			 * <p>En el loop del SwingWorker ({@link #doInBackground()}), es comprovará si el valor acutal de
+			 * activePlayerCell coincideix amb aquest integer. Si difereixen, es que el jugador actual ha canviat i/o
+			 * s'ha mogut i es parará l'animacio.
+			 */
 			final int startPlayerCell = activePlayerCell;
 			
-			@SuppressWarnings("BusyWait")
+			/**
+			 * El "main loop" del SwingWorker. Activa i desactiva la imatge del jugador actual utilitzant
+			 * uns timers un poc imprecicos.
+			 *
+			 * @return
+			 * @throws Exception
+			 */
+			@SuppressWarnings({ "BusyWait", "javadoc" })
 			@Override
 			protected Void doInBackground() throws Exception
 			{
@@ -419,6 +459,11 @@ public class Tauler extends JFrame implements ActionListener
 		worker.execute();
 	}
 	
+	/**
+	 * Progresa en el loop del joc. Finalitza el torn d'un jugador i fa que l'altre jugador sigui l'actiu.
+	 *
+	 * @throws IOException
+	 */
 	public void advance() throws IOException
 	{
 		activePlayerCell = -1;
@@ -443,6 +488,13 @@ public class Tauler extends JFrame implements ActionListener
 		}
 	}
 	
+	/**
+	 * Registra el resultat de la resposta actual, actualitza la puntuació si s'ha encertat i després executa un
+	 * {@link #advance()} per progresar en el joc.
+	 *
+	 * @param correct Si la pregunta actual s'ha respós bé o no
+	 * @throws IOException
+	 */
 	@SuppressWarnings("unused")
 	public void answer(boolean correct) throws IOException
 	{
@@ -453,11 +505,13 @@ public class Tauler extends JFrame implements ActionListener
 		//  El boolean correct es true si la pregunta s'ha
 		//  encertat i fals si s'ha fallat
 		// ====================================================
-		
 		if(correct && (currentTurn==1 || currentTurn==2)) score[currentTurn-1]++;
 		advance();
 	}
 	
+	/**
+	 * Actualitza el text de {@link #jlabelTitle} amb la ronda actual i el nom del jugador acutal.
+	 */
 	public void updateTitle()
 	{
 		jlabelTitle.setText("Ronda "+round+"; torn de: "+playerName[currentTurn-1]);
