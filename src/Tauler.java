@@ -39,6 +39,7 @@ public class Tauler extends JFrame implements ActionListener
 	 * Si es true, es que actualment el popup de preguntes esta obert; fals si no ho esta.
 	 * <p>En estar a true, moltes interacions d'aquesta finestra no estaran disponibles.
 	 */
+	@SuppressWarnings("unused")
 	private boolean inQuestion = false;
 	
 	/**
@@ -78,6 +79,7 @@ public class Tauler extends JFrame implements ActionListener
 	/**
 	 * Una HasList que inclou imatges ja preparades num precuinades per a un rapid canvi
 	 */
+	@SuppressWarnings({ "FieldCanBeLocal", "DeprecatedIsStillUsed", "MismatchedQueryAndUpdateOfCollection" })
 	@Deprecated
 	private Map<String,ImageIcon> readyImage;
 	
@@ -92,6 +94,7 @@ public class Tauler extends JFrame implements ActionListener
 	 */
 	private JLabel jlabelTitle;
 	
+	@SuppressWarnings("unused")
 	public Tauler() throws IOException
 	{
 		new Tauler("Jugador 1", "Jugador 2", false);
@@ -392,6 +395,7 @@ public class Tauler extends JFrame implements ActionListener
 	 * @param posP2 La nova posició absoluta del jugador 2
 	 * @throws IOException
 	 */
+	@SuppressWarnings("javadoc")
 	public void updatePlayerPosition(int posP1, int posP2) throws IOException
 	{
 		score[0] = posP1;
@@ -525,6 +529,7 @@ public class Tauler extends JFrame implements ActionListener
 	 *
 	 * @param e
 	 */
+	@SuppressWarnings("javadoc")
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
