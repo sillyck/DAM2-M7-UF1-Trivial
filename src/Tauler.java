@@ -215,18 +215,24 @@ public class Tauler extends JFrame implements ActionListener
 //		JLabel l2 = new JLabel();
 		JLabel ls = new JLabel("· Res");
 		
-		bottomContainer.add(j0);
-		bottomContainer.add(j6);
-		bottomContainer.add(j7);
-		bottomContainer.add(j1m);
-		bottomContainer.add(j1p);
-		bottomContainer.add(j2m);
-		bottomContainer.add(j2p);
-		bottomContainer.add(jadv);
+		if(!debugMode)
+		{
+			bottomContainer.add(j0);
+			bottomContainer.add(j6);
+			bottomContainer.add(j7);
+			bottomContainer.add(j1m);
+			bottomContainer.add(j1p);
+			bottomContainer.add(j2m);
+			bottomContainer.add(j2p);
+			bottomContainer.add(jadv);
+		}
 		bottomContainer.add(jButton);
-//		bottomContainer.add(l1);
-//		bottomContainer.add(l2);
-		bottomContainer.add(ls);
+		if(!debugMode)
+		{
+//		    bottomContainer.add(l1);
+//		    bottomContainer.add(l2);
+			bottomContainer.add(ls);
+		}
 		c.add(bottomContainer, BorderLayout.SOUTH);
 	}
 	
@@ -439,20 +445,16 @@ public class Tauler extends JFrame implements ActionListener
 				break;
 			case 1:
 				currentTurn = 2;
+				updateTitle();
 				activePlayerCell = score[1]+8;
 				toggleImage();
 				break;
-			case 2:
-				currentTurn = 3;
-				
+			case 2: case 3:
 				currentTurn = 1;
 				round++;
 				updateTitle();
 				activePlayerCell = score[0];
 				toggleImage();
-				
-				break;
-			case 3:
 				break;
 		}
 	}
@@ -473,7 +475,7 @@ public class Tauler extends JFrame implements ActionListener
 	public void updateTitle()
 	{
 //		jlabelTitle = new JLabel("\nRonda NaN\nTorn de: null\n");
-		jlabelTitle.setText("\nRonda "+round+"\nTorn de: "+playerName[currentTurn-1]);
+		jlabelTitle.setText("Ronda "+round+"; torn de: "+playerName[currentTurn-1]);
 	}
 	
 	/**
@@ -484,13 +486,13 @@ public class Tauler extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		try
-		{
-			answer(true);
-		}
-		catch(IOException ex)
-		{
-			throw new RuntimeException(ex);
-		}
+//		try
+//		{
+//			answer(true);
+//		}
+//		catch(IOException ex)
+//		{
+//			throw new RuntimeException(ex);
+//		}
 	}
 }

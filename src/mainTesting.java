@@ -7,7 +7,7 @@ public class mainTesting
 	
 	public static void main(String[] args) throws IOException
 	{
-		tauler = new Tauler("","",true);
+		tauler = new Tauler("Unnamed player 1","Unnamed player 2",true);
 		tauler.setVisible(true);
 	}
 }
