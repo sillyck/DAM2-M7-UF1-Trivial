@@ -36,6 +36,12 @@ public class Tauler extends JFrame implements ActionListener
 	public int currentTurn = 0;
 	
 	/**
+	 * Si es true, es que actualment el popup de preguntes esta obert; fals si no ho esta.
+	 * <p>En estar a true, moltes interacions d'aquesta finestra no estaran disponibles.
+	 */
+	private boolean inQuestion = false;
+	
+	/**
 	 * La posició de l'array {@link #images} a on fará efecte l'animació d'apareixer i desapareixer.
 	 * <p>Quan el jugador actual sigui l'1, aquest valor estará entre 0 i 7, perque aquestes son les caselles de la fila superior, on es mou el primer jugador; el segon jugador tindrá valors d'entre 8 i 15.
 	 */
@@ -467,6 +473,7 @@ public class Tauler extends JFrame implements ActionListener
 	public void advance() throws IOException
 	{
 		activePlayerCell = -1;
+		inQuestion = false;
 		paintColoursTiles();
 		paintPlayerPositions();
 		if(currentTurn!=0) updateTitle();
@@ -533,7 +540,7 @@ public class Tauler extends JFrame implements ActionListener
 //		{
 //			throw new RuntimeException(ex);
 //		}
-		
+		inQuestion = true;
 		// ====================================================
 		//       POSAR AQUI LA CRIDA CAP A LES PREGUNTES
 		// ====================================================
