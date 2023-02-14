@@ -43,6 +43,16 @@ public class Tauler extends JFrame implements ActionListener
 	private boolean inQuestion = false;
 	
 	/**
+	 * <li>0 = Cap jugador pot guanyar inminentment</li>
+	 * <li>1 = el jugador 1 pot guanyar</li>
+	 * <li>2 = el jugador 2 pot guanyar</li>
+	 * <li>3 = jugador 1 ha gunyat</li>
+	 * <li>3 = jugador 2 ha gunyat</li>
+	 * <li>3 = empat</li>
+	 */
+	public int winningCondition = 0;
+	
+	/**
 	 * La posició de l'array {@link #images} a on fará efecte l'animació d'apareixer i desapareixer.
 	 * <p>Quan el jugador actual sigui l'1, aquest valor estará entre 0 i 7, perque aquestes son les caselles de la fila superior, on es mou el primer jugador; el segon jugador tindrá valors d'entre 8 i 15.
 	 */
@@ -537,5 +547,10 @@ public class Tauler extends JFrame implements ActionListener
 		// ====================================================
 		//       POSAR AQUI LA CRIDA CAP A LES PREGUNTES
 		// ====================================================
+	}
+	
+	private void checkWinningConditions()
+	{
+	
 	}
 }
