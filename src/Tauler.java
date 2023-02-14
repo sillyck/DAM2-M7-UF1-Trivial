@@ -265,6 +265,7 @@ public class Tauler extends JFrame implements ActionListener
 	 *
 	 * @throws IOException
 	 */
+	@SuppressWarnings("javadoc")
 	public void firstPaintTiles() throws IOException
 	{
 		for(int i=0; i<16; i++)
@@ -292,6 +293,7 @@ public class Tauler extends JFrame implements ActionListener
 	 *
 	 * @throws IOException
 	 */
+	@SuppressWarnings("javadoc")
 	public void paintColoursTiles() throws IOException
 	{
 		for(int i=0; i<16; i++)
@@ -321,6 +323,7 @@ public class Tauler extends JFrame implements ActionListener
 	 *
 	 * @throws IOException
 	 */
+	@SuppressWarnings("javadoc")
 	public void paintPlayerPositions() throws IOException
 	{
 		System.out.println("score[0] = " + score[0]);
@@ -353,6 +356,7 @@ public class Tauler extends JFrame implements ActionListener
 	 * @param newScoreP2 La diferencia de puntuació del jugador 2
 	 * @throws IOException
 	 */
+	@SuppressWarnings("javadoc")
 	public void updatePlayerScore(int newScoreP1, int newScoreP2) throws IOException
 	{
 		score[0] = score[0] + newScoreP1;
@@ -377,6 +381,7 @@ public class Tauler extends JFrame implements ActionListener
 	 *
 	 * @throws IOException
 	 */
+	@SuppressWarnings("javadoc")
 	public void updatePlayerPosition() throws IOException
 	{
 		updatePlayerPosition(score[0],score[1]);
@@ -414,6 +419,7 @@ public class Tauler extends JFrame implements ActionListener
 	 *                superior i d'entre 8-15 per la fila inferior.
 	 * @throws IOException
 	 */
+	@SuppressWarnings("javadoc")
 	public void overwriteWithEmptyCell(int cellPos) throws IOException
 	{
 		BufferedImage bufferedImage;
@@ -428,7 +434,6 @@ public class Tauler extends JFrame implements ActionListener
 	 */
 	private void toggleImage()
 	{
-		@SuppressWarnings("JavadocDeclaration")
 		SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>()
 		{
 			/**
@@ -470,6 +475,7 @@ public class Tauler extends JFrame implements ActionListener
 	 *
 	 * @throws IOException
 	 */
+	@SuppressWarnings("javadoc")
 	public void advance() throws IOException
 	{
 		activePlayerCell = -1;
@@ -502,7 +508,7 @@ public class Tauler extends JFrame implements ActionListener
 	 * @param correct Si la pregunta actual s'ha respós bé o no
 	 * @throws IOException
 	 */
-	@SuppressWarnings("unused")
+	@SuppressWarnings({ "unused", "javadoc" })
 	public void answer(boolean correct) throws IOException
 	{
 		// ====================================================
