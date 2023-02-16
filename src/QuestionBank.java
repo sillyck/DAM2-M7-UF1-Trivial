@@ -172,29 +172,31 @@ public class QuestionBank
 		System.out.println("Lectura del XML de preguntes fetes\n\tpreguntesJaFetes.size() = " + preguntesJaFetes.size());
 	}
 	
+	/**
+	 * Llegeix els nodes des del document XML especificat i afegeix els nodes a la llista especificada.
+	 *
+	 * @param document El Document de l'XML des del cual es vulgui llegir.
+	 * @param totesLesPreguntes La llista a on es vulguin guardar els nodes que es llegeixin.
+	 */
 	private static void LlegirNodesDelXml(Document document, List<Pregunta> totesLesPreguntes)
 	{
 		NodeList nodeList = document.getElementsByTagName("pregunta");
 		
-		for(int i=0; i<nodeList.getLength(); i++)
+		for(int i=0; i<nodeList.getLength(); i++) if(nodeList.item(i).getNodeType()==Node.ELEMENT_NODE)
 		{
-			Node node = nodeList.item(i);
-			if(node.getNodeType()==Node.ELEMENT_NODE)
-			{
-				Element element = (Element)node;
-				totesLesPreguntes.add(new Pregunta
-				(
-					getNode("texto", element),
-					new String[]
-					{
-						element.getElementsByTagName("correcta").item(0).getTextContent(),
-						element.getElementsByTagName("incorrecta").item(0).getTextContent(),
-						element.getElementsByTagName("incorrecta").item(1).getTextContent(),
-						element.getElementsByTagName("incorrecta").item(2).getTextContent()
-					},
-					element.getElementsByTagName("correcta").item(0).getTextContent()
-				));
-			}
+			Element element = (Element)nodeList.item(i);
+			totesLesPreguntes.add(new Pregunta
+			(
+				getNode("texto", (Element)nodeList.item(i)),
+				new String[]
+				{
+					element.getElementsByTagName("correcta").item(0).getTextContent(),
+					element.getElementsByTagName("incorrecta").item(0).getTextContent(),
+					element.getElementsByTagName("incorrecta").item(1).getTextContent(),
+					element.getElementsByTagName("incorrecta").item(2).getTextContent()
+				},
+				element.getElementsByTagName("correcta").item(0).getTextContent()
+			));
 		}
 	}
 }
