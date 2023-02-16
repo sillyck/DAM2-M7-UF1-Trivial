@@ -1,37 +1,56 @@
-import org.w3c.dom.*;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLReaderFactory;
-import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
-import java.util.Random;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.RandomAccessFile;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+/**
+ * Classe estatica que será la que interactuará amb els XMLs i els ArrayLists amb totes les preguntes.
+ */
+@SuppressWarnings("SpellCheckingInspection")
 public class QuestionBank
 {
+	/**
+	 * Em penso que aixo no funciona, aixi que millor no tocar-ho...
+	 * <p>Pero en el cas de que funcionés, en posar aixo a <tt>false</tt> hauría
+	 * d'ignorar les preguntes ja contestades i començar cada nova finestra amb totes les preguntes disponibles.
+	 */
 	private static final boolean CARGAR_PREGUNTES_JA_FETES = true;
+	
+	/**
+	 * Un ArrayList amb totes les preguntes de l'XML <tt>preguntas.xml</tt>.
+	 */
 	private static List<Pregunta> totesLesPreguntes;
+	
+	/**
+	 * Les preguntes disponibles per a la pantalla de mostrar preguntes.
+	 * S'actualitza cada vegada que es llegeix un XML o que es pilla una pregunta.
+	 */
 	private static List<Pregunta> preguntesDisponibles;
+	
+	/**
+	 * Un ArrayList amb les preguntes del fitxer <tt>preguntas-repe.xml</tt>.
+	 */
 	private static List<Pregunta> preguntesJaFetes;
 	
-	@SuppressWarnings("ForLoopReplaceableByForEach")
+	/**
+	 *<b>Aquesta funció s'ha d'executar abans d'executar-ne qualsevol altra d'aquesta classe.</b>
+	 * Funciona com un "constructor". Initialitza les variables i ho prepara tot.
+	 *
+	 * @throws IOException
+	 * @throws SAXException
+	 */
+	@SuppressWarnings({ "javadoc" })
 	public static void Start() throws IOException, SAXException
 	{
 		totesLesPreguntes = new ArrayList<>();
@@ -44,6 +63,11 @@ public class QuestionBank
 		CalcularPreguntesDisponibles();
 	}
 	
+	/**
+	 * Funció que calcula quines preguntes poden sortir en base a quines ja han sortit;
+	 * i col·loca les preguntes disponibles a l'ArrayList {@link #preguntesDisponibles}.
+	 */
+	@SuppressWarnings("ForLoopReplaceableByForEach")
 	private static void CalcularPreguntesDisponibles()
 	{
 		System.out.println("Començant el calcul de preguntes disponibles");
@@ -58,168 +82,121 @@ public class QuestionBank
 			}
 			if(preguntaDisponible) preguntesDisponibles.add(totesLesPreguntes.get(i));
 		}
-		System.out.println("Calcul de preguntes possibles acabat");
-		System.out.println("preguntesDisponibles.size() = " + preguntesDisponibles.size());
+		System.out.println("Calcul de preguntes possibles acabat\n\tpreguntesDisponibles.size() = " + preguntesDisponibles.size());
 	}
 	
+	/**
+	 * Obté una pregunta aleatoria des de {@link #preguntesDisponibles} i la retorna.
+	 *
+	 * @param marcarComJaFeta Si es <tt>true</tt> la pregunta s'apuntará a {@link #preguntesJaFetes} perque no torni a sortir.
+	 * @return Un objecte de classe Pregunta amb tota la informació de la pregunta escollida.
+	 */
+	@SuppressWarnings("unused")
 	public static Pregunta ObtindrePregunta(boolean marcarComJaFeta)
 	{
 		if(preguntesDisponibles==null || preguntesDisponibles.size()==0) return null;
-		
-		if(preguntesDisponibles.size()==1)
-		{
-			return preguntesDisponibles.get(0);
-		}
+		if(preguntesDisponibles.size()==1) return preguntesDisponibles.get(0);
 		else
 		{
-			Random random = new Random();
-			int randomNumber = random.nextInt(preguntesDisponibles.size());
+			int randomNumber = new Random().nextInt(preguntesDisponibles.size());
 			CalcularPreguntesDisponibles();
 			return preguntesDisponibles.get(randomNumber);
 		}
 	}
 	
+	/**
+	 * Llegeix l'XML <tt>preguntas.xml</tt> utilitzant DOM.
+	 *
+	 * @throws SAXException
+	 * @throws IOException
+	 */
+	@SuppressWarnings("javadoc")
 	private static void llegirFitxerTotal() throws SAXException, IOException
 	{
-//		XMLReader xmlReader = XMLReaderFactory.createXMLReader();
-//		QuestionXmlSaxReader questionXmlSaxReader = new QuestionXmlSaxReader();
-//		xmlReader.setContentHandler(questionXmlSaxReader);
-//		InputSource inputSource = new InputSource("preguntas.xml");
-//		xmlReader.parse(inputSource);
 		System.out.println("Començant lectura del XML de totes les preguntes");
 		try
 		{
-			try
-			{
-				DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-				DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-				Document document = documentBuilder.parse(new File("preguntas.xml"));
-				NodeList nodeList = document.getElementsByTagName("pregunta");
-				
-				for(int i=0; i<nodeList.getLength(); i++)
-				{
-					Node node = nodeList.item(i);
-					if(node.getNodeType()==Node.ELEMENT_NODE)
-					{
-						Element element = (Element)node;
-//						System.out.println("ID: " + getNode("id", element)+ "\tDNI: " + getNode("DNI", element)
-//								+ "\tNom: " + getNode("nom", element)+ "\tCognom: " + getNode("cognom", element)
-//								+ "\tEdat: " + getNode("edat", element)+ "\tSalari: " + getNode("salari", element));
-						totesLesPreguntes.add
-						(
-							new Pregunta
-							(
-								getNode("texto", element),
-								new String[]
-								{
-									element.getElementsByTagName("correcta").item(0).getTextContent(),
-									element.getElementsByTagName("incorrecta").item(0).getTextContent(),
-									element.getElementsByTagName("incorrecta").item(1).getTextContent(),
-									element.getElementsByTagName("incorrecta").item(2).getTextContent()
-								},
-								element.getElementsByTagName("correcta").item(0).getTextContent()
-							)
-						);
-					}
-				}
-			}
-			catch(ParserConfigurationException parserConfigurationException)
-			{
-				System.out.println(parserConfigurationException);
-			}
+			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+			Document document = documentBuilder.parse(new File("preguntas.xml"));
+			LlegirNodesDelXml(document, totesLesPreguntes);
 		}
-		catch(FileNotFoundException fileNotFoundException)
+		catch(ParserConfigurationException | FileNotFoundException exception)
 		{
-			System.out.println(fileNotFoundException);
+			exception.printStackTrace();
 		}
-		
-		System.out.println("Lectura del XML de totes les preguntes acabada");
-		System.out.println("totesLesPreguntes.size() = " + totesLesPreguntes.size());
+		System.out.println("Lectura del XML de totes les preguntes acabada\n\ttotesLesPreguntes.size() = " + totesLesPreguntes.size());
 	}
 	
-	@SuppressWarnings({ "SameParameterValue", "RedundantCast" })
-	static String getNode(String etiqueta, Element element)
+	/**
+	 * @param etiqueta L'etiqueta
+	 * @param element L'element
+	 * @return El node en format String
+	 */
+	@SuppressWarnings({ "SameParameterValue" })
+	private static String getNode(String etiqueta, Element element)
 	{
-		NodeList nodeList = element.getElementsByTagName(etiqueta).item(0).getChildNodes();
-		Node node = (Node)nodeList.item(0);
-		return node.getNodeValue();
+		return element.getElementsByTagName(etiqueta).item(0).getChildNodes().item(0).getNodeValue();
 	}
 	
+	/**
+	 * Llegeix l'XML <tt>preguntas-repe.xml</tt> utilitzant DOM.
+	 *
+	 * @throws SAXException
+	 * @throws IOException
+	 */
+	@SuppressWarnings({ "ResultOfMethodCallIgnored", "javadoc" })
 	private static void llegirFitxerJaFet() throws SAXException, IOException
 	{
-//		XMLReader xmlReader = XMLReaderFactory.createXMLReader();
-//		QuestionXmlSaxReader questionXmlSaxReader = new QuestionXmlSaxReader();
-//		xmlReader.setContentHandler(questionXmlSaxReader);
-//		InputSource inputSource = new InputSource("preguntas-repe.xml");
-//		xmlReader.parse(inputSource);
-		
 		File file = new File("preguntas-repe.xml");
-		
-		if(file.exists())
+		if(!file.exists()) try
 		{
-//			System.out.println("The file exists.");
+			file.createNewFile();
 		}
-		else
+		catch(IOException e)
 		{
-			try
-			{
-				file.createNewFile();
-//				System.out.println("The file was created.");
-			}
-			catch(IOException e)
-			{
-//				System.out.println("An error occurred while creating the file.");
-				e.printStackTrace();
-			}
+			e.printStackTrace();
 		}
 		System.out.println("Començant lectura del XML de preguntes fetes");
-//		if(file.get)
 		if(file.length()!=0) try
 		{
-			try
-			{
-				DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-				DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-				Document document = documentBuilder.parse(new File("preguntas-repe.xml"));
-				NodeList nodeList = document.getElementsByTagName("pregunta");
-				
-				for(int i=0; i<nodeList.getLength(); i++)
-				{
-					Node node = nodeList.item(i);
-					if(node.getNodeType()==Node.ELEMENT_NODE)
-					{
-						Element element = (Element)node;
-//						System.out.println("ID: " + getNode("id", element)+ "\tDNI: " + getNode("DNI", element)
-//								+ "\tNom: " + getNode("nom", element)+ "\tCognom: " + getNode("cognom", element)
-//								+ "\tEdat: " + getNode("edat", element)+ "\tSalari: " + getNode("salari", element));
-						preguntesJaFetes.add
-						(
-							new Pregunta
-							(
-								getNode("texto", element),
-								new String[]
-								{
-										element.getElementsByTagName("correcta").item(0).getTextContent(),
-										element.getElementsByTagName("incorrecta").item(0).getTextContent(),
-										element.getElementsByTagName("incorrecta").item(1).getTextContent(),
-										element.getElementsByTagName("incorrecta").item(2).getTextContent()
-								},
-								element.getElementsByTagName("correcta").item(0).getTextContent()
-							)
-						);
-					}
-				}
-			}
-			catch(ParserConfigurationException parserConfigurationException)
-			{
-				System.out.println(parserConfigurationException);
-			}
+			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+			Document document = documentBuilder.parse(new File("preguntas-repe.xml"));
+			LlegirNodesDelXml(document, preguntesJaFetes);
 		}
-		catch(FileNotFoundException fileNotFoundException)
+		catch(ParserConfigurationException | FileNotFoundException exception)
 		{
-			System.out.println(fileNotFoundException);
+			exception.printStackTrace();
 		}
-		System.out.println("Lectura del XML de preguntes fetes");
-		System.out.println("preguntesJaFetes.size() = " + preguntesJaFetes.size());
+		System.out.println("Lectura del XML de preguntes fetes\n\tpreguntesJaFetes.size() = " + preguntesJaFetes.size());
+	}
+	
+	/**
+	 * Llegeix els nodes des del document XML especificat i afegeix els nodes a la llista especificada.
+	 *
+	 * @param document El Document de l'XML des del cual es vulgui llegir.
+	 * @param totesLesPreguntes La llista a on es vulguin guardar els nodes que es llegeixin.
+	 */
+	private static void LlegirNodesDelXml(Document document, List<Pregunta> totesLesPreguntes)
+	{
+		NodeList nodeList = document.getElementsByTagName("pregunta");
+		
+		for(int i=0; i<nodeList.getLength(); i++) if(nodeList.item(i).getNodeType()==Node.ELEMENT_NODE)
+		{
+			Element element = (Element)nodeList.item(i);
+			totesLesPreguntes.add(new Pregunta
+			(
+				getNode("texto", (Element)nodeList.item(i)),
+				new String[]
+				{
+					element.getElementsByTagName("correcta").item(0).getTextContent(),
+					element.getElementsByTagName("incorrecta").item(0).getTextContent(),
+					element.getElementsByTagName("incorrecta").item(1).getTextContent(),
+					element.getElementsByTagName("incorrecta").item(2).getTextContent()
+				},
+				element.getElementsByTagName("correcta").item(0).getTextContent()
+			));
+		}
 	}
 }
