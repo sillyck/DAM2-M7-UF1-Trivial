@@ -17,7 +17,7 @@ public class Tauler extends JFrame implements ActionListener
 	/**
 	 * Si es true, fará visibles botons i labels que han estat utils per el desenvolupament d'aquesta aplicació.
 	 */
-	private final boolean debugMode;
+	private boolean debugMode;
 	
 	/**
 	 * Número que indica la ronda actual. Una ronda passa quan els dos jugadors han tingut els dos una oportunitat de moviment.
@@ -243,7 +243,7 @@ public class Tauler extends JFrame implements ActionListener
 		
 		JLabel ls = new JLabel("· Res");
 		
-		if(!debugMode)
+		if(debugMode)
 		{
 			bottomContainer.add(j0);
 			bottomContainer.add(j6);
@@ -255,7 +255,7 @@ public class Tauler extends JFrame implements ActionListener
 			bottomContainer.add(jadv);
 		}
 		bottomContainer.add(jButton);
-		if(!debugMode) bottomContainer.add(ls);
+		if(debugMode) bottomContainer.add(ls);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 	}
 	
@@ -329,8 +329,8 @@ public class Tauler extends JFrame implements ActionListener
 	@SuppressWarnings("javadoc")
 	public void paintPlayerPositions() throws IOException
 	{
-		System.out.println("score[0] = " + score[0]);
-		System.out.println("score[1] = " + score[1]);
+//		System.out.println("score[0] = " + score[0]);
+//		System.out.println("score[1] = " + score[1]);
 		BufferedImage bufferedImage1;
 		bufferedImage1 = score[0] % 2==0
 				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
@@ -463,14 +463,23 @@ public class Tauler extends JFrame implements ActionListener
 				{
 					overwriteWithEmptyCell(startPlayerCell);
 					Thread.sleep(1000);
-					if(startPlayerCell!=activePlayerCell) break;
+					if(startPlayerCell!=activePlayerCell)
+					{
+						System.out.println("Un SwingWorker en progrés ha notat que el jugador actiu ha canviat o s'ha mogut.\n\t(startPlayerCell: "+startPlayerCell+" != activePlayerCell: "+activePlayerCell+")\n\tAcabant amb l'animació actual.");
+						break;
+					}
 					paintPlayerPositions();
 					Thread.sleep(500);
-					if(startPlayerCell!=activePlayerCell) break;
+					if(startPlayerCell!=activePlayerCell)
+					{
+						System.out.println("Un SwingWorker en progrés ha notat que el jugador actiu ha canviat o s'ha mogut.\n\t(startPlayerCell: "+startPlayerCell+" != activePlayerCell: "+activePlayerCell+")\n\tAcabant amb l'animació actual.");
+						break;
+					}
 				}
 				return null;
 			}
 		};
+		System.out.println("Iniciant un nou SwingWorker per l'animació del jugador actiu actual.\n\tstartPlayerCell: "+activePlayerCell);
 		worker.execute();
 	}
 	
@@ -550,6 +559,11 @@ public class Tauler extends JFrame implements ActionListener
 	}
 	
 	private void checkWinningConditions()
+	{
+	
+	}
+	
+	private void raiseVictory()
 	{
 	
 	}
