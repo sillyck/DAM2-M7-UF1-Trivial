@@ -5,7 +5,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
-
+import java.util.Random;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -46,6 +46,8 @@ public class QuestionBank
 	
 	private static void CalcularPreguntesDisponibles()
 	{
+		System.out.println("Començant el calcul de preguntes disponibles");
+		preguntesDisponibles = new ArrayList<>();
 		if(totesLesPreguntes!=null && preguntesJaFetes!=null) for(int i=0; i<totesLesPreguntes.size(); i++)
 		{
 			boolean preguntaDisponible = true;
@@ -56,17 +58,25 @@ public class QuestionBank
 			}
 			if(preguntaDisponible) preguntesDisponibles.add(totesLesPreguntes.get(i));
 		}
+		System.out.println("Calcul de preguntes possibles acabat");
+		System.out.println("preguntesDisponibles.size() = " + preguntesDisponibles.size());
 	}
 	
 	public static Pregunta ObtindrePregunta(boolean marcarComJaFeta)
 	{
-		Pregunta theChossenOne = null;
 		if(preguntesDisponibles==null || preguntesDisponibles.size()==0) return null;
 		
-		
-		
-		CalcularPreguntesDisponibles();
-		return theChossenOne;
+		if(preguntesDisponibles.size()==1)
+		{
+			return preguntesDisponibles.get(0);
+		}
+		else
+		{
+			Random random = new Random();
+			int randomNumber = random.nextInt(preguntesDisponibles.size());
+			CalcularPreguntesDisponibles();
+			return preguntesDisponibles.get(randomNumber);
+		}
 	}
 	
 	private static void llegirFitxerTotal() throws SAXException, IOException
@@ -143,8 +153,28 @@ public class QuestionBank
 //		InputSource inputSource = new InputSource("preguntas-repe.xml");
 //		xmlReader.parse(inputSource);
 		
+		File file = new File("preguntas-repe.xml");
+		
+		if(file.exists())
+		{
+//			System.out.println("The file exists.");
+		}
+		else
+		{
+			try
+			{
+				file.createNewFile();
+//				System.out.println("The file was created.");
+			}
+			catch(IOException e)
+			{
+//				System.out.println("An error occurred while creating the file.");
+				e.printStackTrace();
+			}
+		}
 		System.out.println("Començant lectura del XML de preguntes fetes");
-		try
+//		if(file.get)
+		if(file.length()!=0) try
 		{
 			try
 			{
