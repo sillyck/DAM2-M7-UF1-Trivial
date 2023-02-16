@@ -17,6 +17,7 @@ import java.util.Random;
 /**
  * Classe estatica que será la que interactuará amb els XMLs i els ArrayLists amb totes les preguntes.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class QuestionBank
 {
 	/**
@@ -27,7 +28,7 @@ public class QuestionBank
 	private static final boolean CARGAR_PREGUNTES_JA_FETES = true;
 	
 	/**
-	 * Un ArrayList amb totes les preguntes del XML <tt>preguntas.xml</tt>.
+	 * Un ArrayList amb totes les preguntes de l'XML <tt>preguntas.xml</tt>.
 	 */
 	private static List<Pregunta> totesLesPreguntes;
 	
@@ -42,7 +43,14 @@ public class QuestionBank
 	 */
 	private static List<Pregunta> preguntesJaFetes;
 	
-	@SuppressWarnings("ForLoopReplaceableByForEach")
+	/**
+	 *<b>Aquesta funció s'ha d'executar abans d'executar-ne qualsevol altra d'aquesta classe.</b>
+	 * Funciona com un "constructor". Initialitza les variables i ho prepara tot.
+	 *
+	 * @throws IOException
+	 * @throws SAXException
+	 */
+	@SuppressWarnings({ "javadoc" })
 	public static void Start() throws IOException, SAXException
 	{
 		totesLesPreguntes = new ArrayList<>();
@@ -55,6 +63,10 @@ public class QuestionBank
 		CalcularPreguntesDisponibles();
 	}
 	
+	/**
+	 * Funció que calcula quines preguntes poden sortir en base a quines ja han sortit;
+	 * i col·loca les preguntes disponibles a l'ArrayList {@link #preguntesDisponibles}.
+	 */
 	@SuppressWarnings("ForLoopReplaceableByForEach")
 	private static void CalcularPreguntesDisponibles()
 	{
@@ -70,28 +82,35 @@ public class QuestionBank
 			}
 			if(preguntaDisponible) preguntesDisponibles.add(totesLesPreguntes.get(i));
 		}
-		System.out.println("Calcul de preguntes possibles acabat");
-		System.out.println("preguntesDisponibles.size() = " + preguntesDisponibles.size());
+		System.out.println("Calcul de preguntes possibles acabat\n\tpreguntesDisponibles.size() = " + preguntesDisponibles.size());
 	}
 	
+	/**
+	 * Obté una pregunta aleatoria des de {@link #preguntesDisponibles} i la retorna.
+	 *
+	 * @param marcarComJaFeta Si es <tt>true</tt> la pregunta s'apuntará a {@link #preguntesJaFetes} perque no torni a sortir.
+	 * @return Un objecte de classe Pregunta amb tota la informació de la pregunta escollida.
+	 */
 	@SuppressWarnings("unused")
 	public static Pregunta ObtindrePregunta(boolean marcarComJaFeta)
 	{
 		if(preguntesDisponibles==null || preguntesDisponibles.size()==0) return null;
-		
-		if(preguntesDisponibles.size()==1)
-		{
-			return preguntesDisponibles.get(0);
-		}
+		if(preguntesDisponibles.size()==1) return preguntesDisponibles.get(0);
 		else
 		{
-			Random random = new Random();
-			int randomNumber = random.nextInt(preguntesDisponibles.size());
+			int randomNumber = new Random().nextInt(preguntesDisponibles.size());
 			CalcularPreguntesDisponibles();
 			return preguntesDisponibles.get(randomNumber);
 		}
 	}
 	
+	/**
+	 * Llegeix l'XML <tt>preguntas.xml</tt> utilitzant DOM.
+	 *
+	 * @throws SAXException
+	 * @throws IOException
+	 */
+	@SuppressWarnings("javadoc")
 	private static void llegirFitxerTotal() throws SAXException, IOException
 	{
 		System.out.println("Començant lectura del XML de totes les preguntes");
@@ -100,47 +119,33 @@ public class QuestionBank
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 			Document document = documentBuilder.parse(new File("preguntas.xml"));
-			NodeList nodeList = document.getElementsByTagName("pregunta");
-			
-			for(int i=0; i<nodeList.getLength(); i++)
-			{
-				Node node = nodeList.item(i);
-				if(node.getNodeType()==Node.ELEMENT_NODE)
-				{
-					Element element = (Element)node;
-					totesLesPreguntes.add(new Pregunta
-					(
-						getNode("texto", element),
-						new String[]
-						{
-								element.getElementsByTagName("correcta").item(0).getTextContent(),
-								element.getElementsByTagName("incorrecta").item(0).getTextContent(),
-								element.getElementsByTagName("incorrecta").item(1).getTextContent(),
-								element.getElementsByTagName("incorrecta").item(2).getTextContent()
-						},
-						element.getElementsByTagName("correcta").item(0).getTextContent()
-					));
-				}
-			}
+			LlegirNodesDelXml(document, totesLesPreguntes);
 		}
 		catch(ParserConfigurationException | FileNotFoundException exception)
 		{
 			exception.printStackTrace();
 		}
-		
-		System.out.println("Lectura del XML de totes les preguntes acabada");
-		System.out.println("totesLesPreguntes.size() = " + totesLesPreguntes.size());
+		System.out.println("Lectura del XML de totes les preguntes acabada\n\ttotesLesPreguntes.size() = " + totesLesPreguntes.size());
 	}
 	
-	@SuppressWarnings({ "SameParameterValue", "RedundantCast" })
-	static String getNode(String etiqueta, Element element)
+	/**
+	 * @param etiqueta L'etiqueta
+	 * @param element L'element
+	 * @return El node en format String
+	 */
+	@SuppressWarnings({ "SameParameterValue" })
+	private static String getNode(String etiqueta, Element element)
 	{
-		NodeList nodeList = element.getElementsByTagName(etiqueta).item(0).getChildNodes();
-		Node node = (Node)nodeList.item(0);
-		return node.getNodeValue();
+		return element.getElementsByTagName(etiqueta).item(0).getChildNodes().item(0).getNodeValue();
 	}
 	
-	@SuppressWarnings("ResultOfMethodCallIgnored")
+	/**
+	 * Llegeix l'XML <tt>preguntas-repe.xml</tt> utilitzant DOM.
+	 *
+	 * @throws SAXException
+	 * @throws IOException
+	 */
+	@SuppressWarnings({ "ResultOfMethodCallIgnored", "javadoc" })
 	private static void llegirFitxerJaFet() throws SAXException, IOException
 	{
 		File file = new File("preguntas-repe.xml");
@@ -158,34 +163,38 @@ public class QuestionBank
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 			Document document = documentBuilder.parse(new File("preguntas-repe.xml"));
-			NodeList nodeList = document.getElementsByTagName("pregunta");
-			
-			for(int i=0; i<nodeList.getLength(); i++)
-			{
-				Node node = nodeList.item(i);
-				if(node.getNodeType()==Node.ELEMENT_NODE)
-				{
-					Element element = (Element)node;
-					preguntesJaFetes.add(new Pregunta
-					(
-						getNode("texto", element),
-						new String[]
-						{
-							element.getElementsByTagName("correcta").item(0).getTextContent(),
-							element.getElementsByTagName("incorrecta").item(0).getTextContent(),
-							element.getElementsByTagName("incorrecta").item(1).getTextContent(),
-							element.getElementsByTagName("incorrecta").item(2).getTextContent()
-						},
-						element.getElementsByTagName("correcta").item(0).getTextContent()
-					));
-				}
-			}
+			LlegirNodesDelXml(document, preguntesJaFetes);
 		}
 		catch(ParserConfigurationException | FileNotFoundException exception)
 		{
 			exception.printStackTrace();
 		}
-		System.out.println("Lectura del XML de preguntes fetes");
-		System.out.println("preguntesJaFetes.size() = " + preguntesJaFetes.size());
+		System.out.println("Lectura del XML de preguntes fetes\n\tpreguntesJaFetes.size() = " + preguntesJaFetes.size());
+	}
+	
+	private static void LlegirNodesDelXml(Document document, List<Pregunta> totesLesPreguntes)
+	{
+		NodeList nodeList = document.getElementsByTagName("pregunta");
+		
+		for(int i=0; i<nodeList.getLength(); i++)
+		{
+			Node node = nodeList.item(i);
+			if(node.getNodeType()==Node.ELEMENT_NODE)
+			{
+				Element element = (Element)node;
+				totesLesPreguntes.add(new Pregunta
+				(
+					getNode("texto", element),
+					new String[]
+					{
+						element.getElementsByTagName("correcta").item(0).getTextContent(),
+						element.getElementsByTagName("incorrecta").item(0).getTextContent(),
+						element.getElementsByTagName("incorrecta").item(1).getTextContent(),
+						element.getElementsByTagName("incorrecta").item(2).getTextContent()
+					},
+					element.getElementsByTagName("correcta").item(0).getTextContent()
+				));
+			}
+		}
 	}
 }
