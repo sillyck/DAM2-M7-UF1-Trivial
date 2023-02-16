@@ -7,7 +7,7 @@ public class mainTrivial {
 	public static void main(String[] args) throws IOException, SAXException
 	{
 		
-		pantallaInicial v = new pantallaInicial();
+		pantallaPreguntes v = new pantallaPreguntes();
 		v.setVisible(true);
 		
 		QuestionBank.Start();
