@@ -19,11 +19,12 @@ public class Pregunta
 	 * <p><b>Compte!</b> Aqui hi han respostes correctes (<tt>&lt;correcta&gt;</tt> en l'XML)
 	 * e incorrectes (<tt>&lt;incorrecta&gt;</tt>) barrejades!
 	 */
+	@SuppressWarnings("SpellCheckingInspection")
 	public String[] respostes;
 	
 	/**
 	 * Un simple String amb la resposta correcta de la pregunta (pillat des de l'element <tt>&lt;correcta&gt;</tt> de l'XML).
-	 * <p>El contingut d'aqui tmabé hauría d'estar dins l'array de respostes.
+	 * <p>El contingut d'aquí també hauria d'estar dins l'array de respostes.
 	 */
 	public String respostaCorrecta;
 	
@@ -55,7 +56,7 @@ public class Pregunta
 	 * Comprova si la resposta del jugador es correcta o no.
 	 *
 	 * @param intent La resposta que ha proposat el jugador.
-	 * @return Un boolean de <tt>true</tt> si la respota és correcta i <tt>false</tt> si és incorrecta.
+	 * @return Un boolean de <tt>true</tt> si la resposta és correcta i <tt>false</tt> si és incorrecta.
 	 */
 	@SuppressWarnings("unused")
 	public boolean ComprovarResposta(String intent)
@@ -75,8 +76,9 @@ public class Pregunta
 	}
 	
 	/**
-	 * Barreja el contingut de l'array {@link #respostes} perque apareguin en un ordre diferent.
+	 * Barreja el contingut de l'array {@link #respostes} perquè apareguin en un ordre diferent.
 	 */
+	@SuppressWarnings("unused")
 	public void BarrejarRespostes()
 	{
 		Collections.shuffle(Arrays.asList(respostes));
