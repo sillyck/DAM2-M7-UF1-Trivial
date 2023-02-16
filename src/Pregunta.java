@@ -4,7 +4,7 @@ public class Pregunta
 {
 	public String enunciat;
 	public String[] respostes;
-	public String respotaCorrecta;
+	public String respostaCorrecta;
 	
 	public Pregunta()
 	{
@@ -14,16 +14,16 @@ public class Pregunta
 	{
 		this.enunciat = enunciat;
 		this.respostes = respostes;
-		this.respotaCorrecta = respostes[0];
+		this.respostaCorrecta = respostes[0];
 		
 		ComprovarRespostaPossible();
 	}
 	
-	public Pregunta(String enunciat, String[] respostes, String respotaCorrecta)
+	public Pregunta(String enunciat, String[] respostes, String respostaCorrecta)
 	{
 		this.enunciat = enunciat;
 		this.respostes = respostes;
-		this.respotaCorrecta = respotaCorrecta;
+		this.respostaCorrecta = respostaCorrecta;
 		
 		ComprovarRespostaPossible();
 	}
@@ -31,7 +31,7 @@ public class Pregunta
 	@SuppressWarnings({ "ForLoopReplaceableByForEach", "StringOperationCanBeSimplified" })
 	private void ComprovarRespostaPossible()
 	{
-		for(int i=0; i<this.respostes.length; i++) if(this.respostes[i].toString().equals(this.respotaCorrecta)) return;
-		throw new InputMismatchException(this.respotaCorrecta);
+		for(int i=0; i<this.respostes.length; i++) if(this.respostes[i].toString().equals(this.respostaCorrecta)) return;
+		throw new InputMismatchException(this.respostaCorrecta);
 	}
 }
