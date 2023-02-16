@@ -15,12 +15,12 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
-public class inicial extends JFrame {
+public class pantallaInicial extends JFrame {
 
-	public inicial() {
+	public pantallaInicial() {
 
 		super("Trivial");
-		setSize(1500, 800);
+		setSize(1250, 720);
 
 		JPanel benvinguda = new JPanel();
 		JPanel j1panel = new JPanel();
