@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.InputMismatchException;
 
 /**
@@ -70,5 +72,14 @@ public class Pregunta
 	{
 		for(int i=0; i<this.respostes.length; i++) if(this.respostes[i].toString().equals(this.respostaCorrecta)) return;
 		throw new InputMismatchException(this.respostaCorrecta);
+	}
+	
+	/**
+	 * Barreja el contingut de l'array {@link #respostes} perque apareguin en un ordre diferent.
+	 */
+	public void BarrejarRespostes()
+	{
+		Collections.shuffle(Arrays.asList(respostes));
+		ComprovarRespostaPossible();
 	}
 }
