@@ -58,7 +58,7 @@ public class QuestionBank
 		preguntesDisponibles = new ArrayList<>();
 		
 		llegirFitxerTotal();
-		if(CARGAR_PREGUNTES_JA_FETES) llegirFitxerJaFet();
+		if(!CARGAR_PREGUNTES_JA_FETES) RecargarPreguntes();
 		
 		CalcularPreguntesDisponibles();
 	}
@@ -83,6 +83,7 @@ public class QuestionBank
 			if(preguntaDisponible) preguntesDisponibles.add(totesLesPreguntes.get(i));
 		}
 		System.out.println("Calcul de preguntes possibles acabat\n\tpreguntesDisponibles.size() = " + preguntesDisponibles.size());
+		if(!HiHanPreguntesDisponibles()) RecargarPreguntes();
 	}
 	
 	/**
@@ -95,13 +96,54 @@ public class QuestionBank
 	public static Pregunta ObtindrePregunta(boolean marcarComJaFeta)
 	{
 		if(preguntesDisponibles==null || preguntesDisponibles.size()==0) return null;
-		if(preguntesDisponibles.size()==1) return preguntesDisponibles.get(0);
+		if(preguntesDisponibles.size()==1)
+		{
+			Pregunta ultimaPregunta = preguntesDisponibles.get(0);
+			CalcularPreguntesDisponibles();
+			return ultimaPregunta;
+		}
 		else
 		{
 			int randomNumber = new Random().nextInt(preguntesDisponibles.size());
 			CalcularPreguntesDisponibles();
+			if(marcarComJaFeta) MarcarPreguntaComUtilitzada(randomNumber);
 			return preguntesDisponibles.get(randomNumber);
 		}
+	}
+	
+	public static void MarcarPreguntaComUtilitzada(int numPreguntaEscollida)
+	{
+	
+	}
+	
+	public static boolean HiHanPreguntesDisponibles()
+	{
+		if(preguntesDisponibles.size()==0)
+//		if(preguntesDisponibles.size()==0 && preguntesJaFetes.size()==totesLesPreguntes.size())
+		{
+			return false;
+		}
+		else return true;
+	}
+	
+	public static void RecargarPreguntes()
+	{
+		System.out.println("Recargant preguntes...");
+		File file = new File("preguntas-repe.xml");
+		if(file.exists())
+		{
+			file.delete();
+		}
+		if(!file.exists()) try
+		{
+			file.createNewFile();
+			System.out.println("Fitxer de preguntes repetides recargat correctament");
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		CalcularPreguntesDisponibles();
 	}
 	
 	/**
