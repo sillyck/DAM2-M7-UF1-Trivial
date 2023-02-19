@@ -38,7 +38,7 @@ public class Pregunta
 	{
 		this.enunciat = enunciat;
 		this.respostes = respostes;
-		this.respotaCorrecta = respostes[0];
+		this.respostaCorrecta = respostes[0];
 		
 		ComprovarRespostaPossible();
 	}
@@ -47,7 +47,7 @@ public class Pregunta
 	{
 		this.enunciat = enunciat;
 		this.respostes = respostes;
-		this.respotaCorrecta = respotaCorrecta;
+		this.respostaCorrecta = respotaCorrecta;
 		
 		ComprovarRespostaPossible();
 	}
@@ -56,7 +56,7 @@ public class Pregunta
 	 * Comprova si la resposta del jugador es correcta o no.
 	 *
 	 * @param intent La resposta que ha proposat el jugador.
-	 * @return Un boolean de <tt>true</tt> si la resposta és correcta i <tt>false</tt> si és incorrecta.
+	 * @return Un {@code boolean} de <tt>true</tt> si la resposta és correcta i <tt>false</tt> si és incorrecta.
 	 */
 	@SuppressWarnings("unused")
 	public boolean ComprovarResposta(String intent)
@@ -71,8 +71,8 @@ public class Pregunta
 	@SuppressWarnings({ "ForLoopReplaceableByForEach", "StringOperationCanBeSimplified" })
 	private void ComprovarRespostaPossible()
 	{
-		for(int i=0; i<this.respostes.length; i++) if(this.respostes[i].toString().equals(this.respotaCorrecta)) return;
-		throw new InputMismatchException(this.respotaCorrecta);
+		for(int i=0; i<this.respostes.length; i++) if(this.respostes[i].toString().equals(this.respostaCorrecta)) return;
+		throw new InputMismatchException(this.respostaCorrecta);
 	}
 	
 	/**
