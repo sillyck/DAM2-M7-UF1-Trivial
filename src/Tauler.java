@@ -44,8 +44,8 @@ public class Tauler extends JFrame implements ActionListener
 	
 	/**
 	 * <li>0 = Cap jugador pot guanyar inminentment</li>
-	 * <li>1 = el jugador 1 pot guanyar</li>
-	 * <li>2 = el jugador 2 pot guanyar</li>
+	 * <li>1 = el jugador 1 pot guanyar-li al jugador 2</li>
+	 * <li>2 = el jugador 2 pot guanyar-li al jugador 1</li>
 	 * <li>3 = jugador 1 ha gunyat</li>
 	 * <li>3 = jugador 2 ha gunyat</li>
 	 * <li>3 = empat</li>
@@ -103,6 +103,8 @@ public class Tauler extends JFrame implements ActionListener
 	 * aixo es perque {@link #updateTitle()} hi pugui accedir i es pugui canviar el text de dins mes facilment.
 	 */
 	private JLabel jlabelTitle;
+	
+	private JLabel jlabelStatus;
 	
 	@SuppressWarnings("unused")
 	public Tauler() throws IOException
@@ -241,10 +243,11 @@ public class Tauler extends JFrame implements ActionListener
 		JButton jadv = new JButton("DBG-ADV");
 		jadv.addActionListener(new TaulerDebugAdvance());
 		
-		JLabel ls = new JLabel("· Res");
+		jlabelStatus = new JLabel("· Res");
 		
 		if(debugMode)
 		{
+			bottomContainer.add(jreset);
 			bottomContainer.add(j0);
 			bottomContainer.add(j6);
 			bottomContainer.add(j7);
@@ -255,7 +258,7 @@ public class Tauler extends JFrame implements ActionListener
 			bottomContainer.add(jadv);
 		}
 		bottomContainer.add(jButton);
-		if(debugMode) bottomContainer.add(ls);
+		if(debugMode) bottomContainer.add(jlabelStatus);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 	}
 	
@@ -411,6 +414,8 @@ public class Tauler extends JFrame implements ActionListener
 		score[0] = posP1;
 		score[1] = posP2;
 		
+		System.out.println("Nova posició dels jugadors:\n\tJ1: "+score[0]+"\n\tJ2: "+score[1]);
+		
 		paintColoursTiles();
 		paintPlayerPositions();
 	}
@@ -512,6 +517,8 @@ public class Tauler extends JFrame implements ActionListener
 				toggleImage();
 				break;
 		}
+		
+		checkWinningConditions();
 	}
 	
 	/**
@@ -560,11 +567,75 @@ public class Tauler extends JFrame implements ActionListener
 	
 	private void checkWinningConditions()
 	{
-	
+		if(score[0]==7)
+		{
+			if(winningCondition==0)
+			{
+				if(score[1]==6)
+				{
+					winningCondition = 2;
+				}
+				if(score[1]==7)
+				{
+					winningCondition = 5;
+					raiseVictory();
+				}
+				else
+				{
+					winningCondition = 3;
+				}
+			}
+		}
+		if(score[1]==7)
+		{
+			if(winningCondition==0)
+			{
+				if(score[0]==6)
+				{
+					winningCondition = 1;
+				}
+				if(score[0]==7)
+				{
+					winningCondition = 5;
+					raiseVictory();
+				}
+				else
+				{
+					winningCondition = 4;
+				}
+			}
+		}
+		
+//		if(winningCondition==0 && (score[0]==7 && score[1]==15))
+//		{
+//			winningCondition = 5;
+//			raiseVictory();
+//		}
+		
+		
+		
+		switch(winningCondition)
+		{
+			case 0:	jlabelStatus.setText("· Joc en curs..."); break;
+			case 1:	jlabelStatus.setText("· El jugador 1 guanyará si encerta aquesta pregunta, si falla guanyará el jugador 2"); break;
+			case 2: jlabelStatus.setText("· El jugador 2 guanyará si encerta aquesta pregunta, si falla guanyará el jugador 1"); break;
+			case 3: jlabelStatus.setText("· Victoria per al jugador 1"); break;
+			case 4: jlabelStatus.setText("· Victoria per al jugador 2"); break;
+			case 5: jlabelStatus.setText("· Empat"); break;
+		}
 	}
 	
 	private void raiseVictory()
 	{
+		switch(winningCondition)
+		{
+			case 3: // Victoria per al jugador 1
+				break;
+			case 4: // Victoria per al jugador 2
+				break;
+			case 5: // Empat
+				break;
+		}
 	
 	}
 }
