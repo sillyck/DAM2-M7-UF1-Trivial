@@ -15,8 +15,9 @@ import java.util.Map;
 public class Tauler extends JFrame implements ActionListener
 {
 	/**
-	 * Si es true, fará visibles botons i labels que han estat utils per el desenvolupament d'aquesta aplicació.
+	 * Si és true, fará visibles botons i labels que han estat utils pel desenvolupament d'aquesta aplicació.
 	 */
+	@SuppressWarnings("FieldMayBeFinal")
 	private boolean debugMode;
 	
 	/**
@@ -67,9 +68,9 @@ public class Tauler extends JFrame implements ActionListener
 	public String playerName[] = new String[2];
 	
 	/**
-	 * Simple array de dos llocs d'ints que conte les puntuacions dels jugadors.
+	 * Simple array de dos llocs d'ints que conti les puntuacions dels jugadors.
 	 *
-	 * <p>"Puntuacions" num "posicions" son sinonims per referir-se a aquesta variable.
+	 * <p>"Puntuacions" núm "posicions" són sinònims per referir-se a aquesta variable.
 	 * <li><tt>score[0]</tt> es el jugador 1.</li>
 	 * <li><tt>score[1]</tt> es el jugador 2.</li>
 	 */
@@ -77,17 +78,17 @@ public class Tauler extends JFrame implements ActionListener
 	public int score[] = new int[2];
 	
 	/**
-	 * Array de JLabels (amb ImageIcons dins, que es lo que importa) que guarden les imatges que es mostraran en el
+	 * Array de JLabels (amb ImageIcons dins, que es el que importa) que guarden les imatges que es mostraran en el
 	 * GridLayout del tauler.
 	 *
-	 * <p>Els valors d'entre 0 num 7 son per la fila superior (jugador 1) num valors d'entre 8 num 15 son per la fila
+	 * <p>Els valors d'entre 0 núm 7 són per la fila superior (jugador 1) núm valors d'entre 8 núm 15 són per la fila
 	 * inferior (jugador 2).
 	 */
 	@SuppressWarnings("CStyleArrayDeclaration")
 	public JLabel images[] = new JLabel[16];
 	
 	/**
-	 * Una HasList que inclou imatges ja preparades num precuinades per a un rapid canvi
+	 * Una HashList que inclou imatges ja preparades num precuinades per a un rapid canvi
 	 */
 	@SuppressWarnings({ "FieldCanBeLocal", "DeprecatedIsStillUsed", "MismatchedQueryAndUpdateOfCollection" })
 	@Deprecated
@@ -99,8 +100,8 @@ public class Tauler extends JFrame implements ActionListener
 	private Map<String,String> pathCollection;
 	
 	/**
-	 * L'unic component de la interficie que esta declarat com una variable no local de {@link #ConstruirUI()},
-	 * aixo es perque {@link #updateTitle()} hi pugui accedir i es pugui canviar el text de dins mes facilment.
+	 * L'unic component de la interficie que està declarat com una variable no local de {@link #ConstruirUI()},
+	 * això és perquè {@link #updateTitle()} hi pugui accedir i es pugui canviar el text de dins mes facilment.
 	 */
 	private JLabel jlabelTitle;
 	
@@ -170,7 +171,7 @@ public class Tauler extends JFrame implements ActionListener
 	 * Posa els noms dels jugadors.
 	 *
 	 * @param player1 Nom per el primer jugador (fila de dalt)
-	 * @param player2 Nom per el jugador dos (fila de baix)
+	 * @param player2 Nom pel jugador dos (fila de baix)
 	 */
 	public void setPlayerNames(String player1, String player2)
 	{
@@ -178,7 +179,7 @@ public class Tauler extends JFrame implements ActionListener
 	}
 	
 	/**
-	 * Metode que s'encarra de construir el la majoria de la finestra de dialeg.
+	 * Metode que s'encarrega de construir el la majoria de la finestra de dialeg.
 	 */
 	@SuppressWarnings("ForLoopReplaceableByForEach")
 	public void ConstruirUI()
@@ -335,8 +336,6 @@ public class Tauler extends JFrame implements ActionListener
 	@SuppressWarnings("javadoc")
 	public void paintPlayerPositions() throws IOException
 	{
-//		System.out.println("score[0] = " + score[0]);
-//		System.out.println("score[1] = " + score[1]);
 		BufferedImage bufferedImage1;
 		bufferedImage1 = score[0] % 2==0
 				? ImageIO.read(new File(pathCollection.get("taulerClar-jugador95")))
@@ -568,6 +567,7 @@ public class Tauler extends JFrame implements ActionListener
 		// ====================================================
 	}
 	
+	@SuppressWarnings({ "UnusedAssignment", "ConstantValue", "CommentedOutCode" })
 	private void checkWinningConditions()
 	{
 		if(score[0]==7)
@@ -652,10 +652,6 @@ public class Tauler extends JFrame implements ActionListener
 		firstPaintTiles();
 		paintColoursTiles();
 		paintPlayerPositions();
-		
-//		ConstruirUI();
-//		pack();
-//		setLocationRelativeTo(null);
 		
 		advance();
 	}

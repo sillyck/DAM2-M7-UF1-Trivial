@@ -10,7 +10,6 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -120,6 +119,7 @@ public class QuestionBank
 	
 	public static boolean HiHanPreguntesDisponibles()
 	{
+		//noinspection RedundantIfStatement
 		if(preguntesDisponibles.size()==0)
 //		if(preguntesDisponibles.size()==0 && preguntesJaFetes.size()==totesLesPreguntes.size())
 		{
@@ -128,6 +128,7 @@ public class QuestionBank
 		else return true;
 	}
 	
+	@SuppressWarnings("ResultOfMethodCallIgnored")
 	public static void RecargarPreguntes()
 	{
 		System.out.println("Recargant preguntes...");
@@ -189,7 +190,7 @@ public class QuestionBank
 	 * @throws SAXException
 	 * @throws IOException
 	 */
-	@SuppressWarnings({ "ResultOfMethodCallIgnored", "javadoc" })
+	@SuppressWarnings({ "ResultOfMethodCallIgnored", "javadoc", "unused" })
 	private static void llegirFitxerJaFet() throws SAXException, IOException
 	{
 		File file = new File("preguntas-repe.xml");
@@ -244,6 +245,7 @@ public class QuestionBank
 		}
 	}
 	
+	@SuppressWarnings("RedundantCast")
 	private static void EsciureXmlPreguntesRepetides(Pregunta pregunta)
 	{
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
