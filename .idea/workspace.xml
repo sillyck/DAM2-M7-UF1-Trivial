@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pregunta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pregunta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preguntas-repe.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuestionBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuestionBank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pantallaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pantallaInicial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainTrivial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainTrivial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
       <recent name="TaulerDebug" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.mainTrivial">
+  <component name="RunManager" selected="Application.mainTesting">
     <configuration name="mainTesting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mainTesting" />
       <module name="DAM2-M7-UF1-Act1.10" />
@@ -81,8 +82,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.mainTrivial" />
         <item itemvalue="Application.mainTesting" />
+        <item itemvalue="Application.mainTrivial" />
       </list>
     </recent_temporary>
   </component>

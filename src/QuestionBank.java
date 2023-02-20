@@ -7,9 +7,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -64,7 +62,7 @@ public class QuestionBank
 		
 		llegirFitxerTotal();
 		if(!CARGAR_PREGUNTES_JA_FETES) RecargarPreguntes();
-		
+		LecturaXml();
 		CalcularPreguntesDisponibles();
 		System.out.println("Inicialitzant QuestionBank... OK en "+questionBankStart.until(ZonedDateTime.now(), ChronoUnit.MILLIS)+"ms");
 	}
@@ -99,9 +97,9 @@ public class QuestionBank
 	 * @return Un objecte de classe Pregunta amb tota la informació de la pregunta escollida.
 	 */
 	@SuppressWarnings("unused")
-	public static Pregunta ObtindrePregunta(boolean marcarComJaFeta)
+	public static Pregunta ObtindrePregunta(boolean marcarComJaFeta) throws IOException, ClassNotFoundException
 	{
-		if(preguntesDisponibles==null || preguntesDisponibles.size()==0) return null;
+//		if(preguntesDisponibles==null || preguntesDisponibles.size()==0) return null;
 		if(preguntesDisponibles.size()==1)
 		{
 			Pregunta ultimaPregunta = preguntesDisponibles.get(0);
@@ -113,14 +111,17 @@ public class QuestionBank
 			int randomNumber = new Random().nextInt(preguntesDisponibles.size());
 			CalcularPreguntesDisponibles();
 			if(marcarComJaFeta) MarcarPreguntaComUtilitzada(randomNumber);
+			LecturaXml();
+			
 			CalcularPreguntesDisponibles();
 			return preguntesDisponibles.get(randomNumber);
 		}
 	}
 	
-	public static void MarcarPreguntaComUtilitzada(int numPreguntaEscollida)
+	public static void MarcarPreguntaComUtilitzada(int numPreguntaEscollida) throws IOException, ClassNotFoundException
 	{
-		EsciureXmlPreguntesRepetides(preguntesDisponibles.get(numPreguntaEscollida));
+//		EsciureXmlPreguntesRepetides(preguntesDisponibles.get(numPreguntaEscollida));
+		WriteRandomJaFet(preguntesDisponibles.get(numPreguntaEscollida));
 	}
 	
 	public static boolean HiHanPreguntesDisponibles()
@@ -254,31 +255,55 @@ public class QuestionBank
 	@SuppressWarnings("RedundantCast")
 	private static void EsciureXmlPreguntesRepetides(Pregunta pregunta)
 	{
+		File file = new File("preguntas-repe.xml");
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		try
 		{
 			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 			DOMImplementation domImplementation = documentBuilder.getDOMImplementation();
-			Document document = (Document)domImplementation.createDocument(null, "preguntas", null);
+			
+			Document document;
+			
+			if(file.exists())
+			{
+				documentBuilder.parse(file);
+				document = documentBuilder.newDocument();
+			}
+			else
+			{
+				document = (Document)domImplementation.createDocument(null, "preguntas", null);
+			}
+			
 			document.setXmlVersion("1.0");
 			
 			Element arrel = document.createElement("pregunta");
 			document.getDocumentElement().appendChild(arrel);
 			
 			CrearElement("texto", pregunta.enunciat, arrel, document);
-			Element elementPregunta = document.createElement("respuestas");
 			
-			CrearElement("correcta", pregunta.respostaCorrecta, elementPregunta, document);
-			CrearElement("incorrecta", pregunta.respostes[1], elementPregunta, document);
-			CrearElement("incorrecta", pregunta.respostes[2], elementPregunta, document);
-			CrearElement("incorrecta", pregunta.respostes[3], elementPregunta, document);
+//			Element elementPregunta = document.createElement("respuestas");
+//			Element elementPregunta = arrel.appendChild("respuestas");
+			
+//			CrearElement("correcta", pregunta.respostaCorrecta, elementPregunta, document);
+//			CrearElement("incorrecta", pregunta.respostes[1], elementPregunta, document);
+//			CrearElement("incorrecta", pregunta.respostes[2], elementPregunta, document);
+//			CrearElement("incorrecta", pregunta.respostes[3], elementPregunta, document);
 			
 			Source source = new DOMSource(document);
 			Result result = new StreamResult(new File("preguntas-repe.xml"));
+//			Result result = ;
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			transformer.transform(source, result);
 		}
 		catch(ParserConfigurationException | TransformerException e)
+		{
+			e.printStackTrace();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		catch(SAXException e)
 		{
 			e.printStackTrace();
 		}
@@ -289,5 +314,54 @@ public class QuestionBank
 		Element element = document.createElement(dades);
 		arrel.appendChild(element);
 		element.appendChild(document.createTextNode(valor));
+	}
+	
+	public static void PrintStatsForNerds()
+	{
+		System.out.println("totesLesPreguntes.size()    = " + totesLesPreguntes.size());
+		System.out.println("preguntesDisponibles.size() = " + preguntesDisponibles.size());
+		System.out.println("preguntesJaFetes.size()     = " + preguntesJaFetes.size()+"\n");
+	}
+	
+	private static void WriteRandomJaFet(Pregunta preguntaJaFeta) throws IOException, ClassNotFoundException
+	{
+		if(!new File("preguntas-repe.dat").exists()) new File("preguntas-repe.dat").createNewFile();
+		File preguntasFile = new File("preguntas-repe.dat");
+		
+		FileInputStream fileInputStream = new FileInputStream(preguntasFile);
+		ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+		FileOutputStream fileOutputStream = new FileOutputStream(preguntasFile);
+		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+		
+		ArrayList<Pregunta> contingut;
+		try
+		{
+			contingut = (ArrayList<Pregunta>)objectInputStream.readObject();
+		}
+		catch(ClassNotFoundException e)
+		{
+			throw new RuntimeException(e);
+		}
+		contingut.add(preguntaJaFeta);
+		objectOutputStream.writeObject(contingut);
+	}
+	
+	private static void LecturaXml() throws IOException
+	{
+		if(!new File("preguntas-repe.dat").exists()) System.out.println("El fitxer no existeix. No puc fer res");
+		else
+		{
+			File preguntasRepeFile = new File("preguntas-repe.dat");
+			FileInputStream fileInputStream = new FileInputStream(preguntasRepeFile);
+			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+			try
+			{
+				preguntesJaFetes = (ArrayList<Pregunta>)objectInputStream.readObject();
+			}
+			catch(ClassNotFoundException e)
+			{
+				throw new RuntimeException(e);
+			}
+		}
 	}
 }

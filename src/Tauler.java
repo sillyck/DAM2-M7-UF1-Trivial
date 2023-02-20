@@ -250,6 +250,9 @@ public class Tauler extends JFrame implements ActionListener
 		JButton j7 = new JButton("DBG7");
 		j7.addActionListener(new TaulerDebugAllPos(7));
 		
+		JButton japm = new JButton("DBG-APM");
+		japm.addActionListener(new TaulerDebugAPM());
+		
 		JButton jadv = new JButton("DBG-ADV");
 		jadv.addActionListener(new TaulerDebugAdvance());
 		
@@ -265,6 +268,7 @@ public class Tauler extends JFrame implements ActionListener
 			bottomContainer.add(j1p);
 			bottomContainer.add(j2m);
 			bottomContainer.add(j2p);
+			bottomContainer.add(japm);
 			bottomContainer.add(jadv);
 		}
 		bottomContainer.add(jButton);

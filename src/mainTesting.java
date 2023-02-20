@@ -1,12 +1,16 @@
+import org.xml.sax.SAXException;
+
 import java.io.IOException;
 
 public class mainTesting
 {
 	public static Tauler tauler;
 	
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args) throws IOException, SAXException
 	{
-		tauler = new Tauler("Unnamed player 1","Unnamed player 2",true);
+		tauler = new Tauler("Unnamed testing player 1","Unnamed testing player 2",true);
 		tauler.setVisible(true);
+		
+		QuestionBank.Start();
 	}
 }
