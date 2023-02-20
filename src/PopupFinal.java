@@ -8,23 +8,18 @@ import java.awt.event.ActionListener;
 
 public class PopupFinal extends JFrame implements ActionListener
 {
-	private boolean debug = false;
-	
-	private String j1;
-	private String j2;
-	private FinalPopupAction finalPopupAction;
+	private final String j1;
+	private final String j2;
 	
 	private JLabel jlabelTitle;
 	
-	public PopupFinal(String j1, String j2, FinalPopupAction finalPopupAction, boolean debug)
+	public PopupFinal(String j1, String j2, FinalPopupAction finalPopupAction)
 	{
 		super();
 		setSize(1500, 800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.j1 = j1;
 		this.j2 = j2;
-		this.finalPopupAction = finalPopupAction;
-		this.debug = debug;
 		ConstruirUI();
 		switch(finalPopupAction)
 		{
@@ -90,6 +85,7 @@ public class PopupFinal extends JFrame implements ActionListener
 	 *
 	 * @param e
 	 */
+	@SuppressWarnings("javadoc")
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{

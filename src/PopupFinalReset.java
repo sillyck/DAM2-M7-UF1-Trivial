@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public class PopupFinalReset implements ActionListener
 {
-	private PopupFinal popupFinal;
-	private String j1;
-	private String j2;
+	private final PopupFinal popupFinal;
+	private final String j1;
+	private final String j2;
 	
 	public PopupFinalReset(PopupFinal popupFinal, String j1, String j2)
 	{
@@ -20,7 +20,7 @@ public class PopupFinalReset implements ActionListener
 	{
 		try
 		{
-			popupFinal.hide();
+			popupFinal.dispose();
 			mainTesting.tauler = new Tauler(j1,j2,true);
 			mainTesting.tauler.setVisible(true);
 		}

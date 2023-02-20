@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class TaulerDebugAllPos implements ActionListener
 {
-	private int num;
+	private final int num;
 	
 	public TaulerDebugAllPos(int num)
 	{

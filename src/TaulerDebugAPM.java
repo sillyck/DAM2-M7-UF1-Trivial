@@ -7,17 +7,12 @@ public class TaulerDebugAPM implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		QuestionBank.PrintStatsForNerds();
 		Pregunta pregunta = null;
 		try
 		{
 			pregunta = QuestionBank.ObtindrePregunta(true);
 		}
-		catch(IOException ex)
-		{
-			throw new RuntimeException(ex);
-		}
-		catch(ClassNotFoundException ex)
+		catch(IOException | ClassNotFoundException ex)
 		{
 			throw new RuntimeException(ex);
 		}
@@ -31,7 +26,5 @@ public class TaulerDebugAPM implements ActionListener
 		System.out.println("\t"+pregunta.respostes[3]);
 		System.out.println("\t -> "+pregunta.respostaCorrecta+" <-\n");
 		QuestionBank.PrintStatsForNerds();
-		
-//		mainTesting.tauler.ResetGame();
 	}
 }

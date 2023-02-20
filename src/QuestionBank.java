@@ -62,7 +62,7 @@ public class QuestionBank
 		
 		llegirFitxerTotal();
 		if(!CARGAR_PREGUNTES_JA_FETES) RecargarPreguntes();
-		LecturaXml();
+//		LecturaXml();
 		CalcularPreguntesDisponibles();
 		System.out.println("Inicialitzant QuestionBank... OK en "+questionBankStart.until(ZonedDateTime.now(), ChronoUnit.MILLIS)+"ms");
 	}
@@ -110,7 +110,7 @@ public class QuestionBank
 			int randomNumber = (new Random().nextInt(preguntesDisponibles.size()))+1;
 			CalcularPreguntesDisponibles();
 			if(marcarComJaFeta) MarcarPreguntaComUtilitzada(randomNumber);
-			LecturaXml();
+//			LecturaXml();
 			
 			CalcularPreguntesDisponibles();
 			return preguntesDisponibles.get(randomNumber);
@@ -242,46 +242,6 @@ public class QuestionBank
 				},
 				element.getElementsByTagName("correcta").item(0).getTextContent()
 			));
-		}
-	}
-	
-	@SuppressWarnings("RedundantCast")
-	private static void EsciureXmlPreguntesRepetides(Pregunta pregunta)
-	{
-		File file = new File("preguntas-repe.xml");
-		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-		try
-		{
-			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-			DOMImplementation domImplementation = documentBuilder.getDOMImplementation();
-			
-			Document document;
-			
-			if(file.exists())
-			{
-				documentBuilder.parse(file);
-				document = documentBuilder.newDocument();
-			}
-			else
-			{
-				document = (Document)domImplementation.createDocument(null, "preguntas", null);
-			}
-			
-			document.setXmlVersion("1.0");
-			
-			Element arrel = document.createElement("pregunta");
-			document.getDocumentElement().appendChild(arrel);
-			
-			CrearElement("texto", pregunta.enunciat, arrel, document);
-			
-			Source source = new DOMSource(document);
-			Result result = new StreamResult(new File("preguntas-repe.xml"));
-			Transformer transformer = TransformerFactory.newInstance().newTransformer();
-			transformer.transform(source, result);
-		}
-		catch(ParserConfigurationException | TransformerException | IOException | SAXException e)
-		{
-			e.printStackTrace();
 		}
 	}
 	

@@ -584,36 +584,18 @@ public class Tauler extends JFrame implements ActionListener
 		{
 			if(winningCondition==0)
 			{
-				if(score[1]==6)
-				{
-					winningCondition = 2;
-				}
-				if(score[1]==7)
-				{
-					winningCondition = 5;
-				}
-				else
-				{
-					winningCondition = 3;
-				}
+				if(score[1]==6) winningCondition = 2;
+				if(score[1]==7) winningCondition = 5;
+				else            winningCondition = 3;
 			}
 		}
 		if(score[1]==7)
 		{
 			if(winningCondition==0)
 			{
-				if(score[0]==6)
-				{
-					winningCondition = 1;
-				}
-				if(score[0]==7)
-				{
-					winningCondition = 5;
-				}
-				else
-				{
-					winningCondition = 4;
-				}
+				if(score[0]==6) winningCondition = 1;
+				if(score[0]==7) winningCondition = 5;
+				else            winningCondition = 4;
 			}
 		}
 		
@@ -631,25 +613,12 @@ public class Tauler extends JFrame implements ActionListener
 			PopupFinal popupFinal = null;
 			switch(winningCondition)
 			{
-				case 3: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.J1_WINS,debugMode); break;
-				case 4: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.J2_WINS,debugMode); break;
-				case 5: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.BOTH,debugMode); break;
+				case 3: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.J1_WINS); break;
+				case 4: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.J2_WINS); break;
+				case 5: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.BOTH); break;
 			}
 			popupFinal.setVisible(true);
 			hide();
-		}
-	}
-	
-	private void raiseVictory()
-	{
-		switch(winningCondition)
-		{
-			case 3: // Victoria per al jugador 1
-				break;
-			case 4: // Victoria per al jugador 2
-				break;
-			case 5: // Empat
-				break;
 		}
 	}
 	
