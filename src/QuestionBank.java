@@ -245,125 +245,8 @@ public class QuestionBank
 	
 	private static void EsciureXmlPreguntesRepetides(Pregunta pregunta)
 	{
-//		try
-//		{
-//			RandomAccessFile randomAccessFile = new RandomAccessFile("Treballadors.dat", "r");
-//			randomAccessFile.seek(randomAccessFile.length());
-//
-//			int id = 0, posicio = 0;        // 4 bits
-//			char[] dni = new char[9];       // 20 bits
-//			char[] nom = new char[10];      // 20 bits
-//			char[] cognom = new char[10];   // 20 bits
-//			int edats;                      // 4 bits
-//			double salaris;                 // 8 bits
-//
-//			String dnis, noms, cognoms;
-//			char charDni, charNom, charCognom;
-//
-//			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-//
-//			try
-//			{
-//				DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-//				DOMImplementation domImplementation = documentBuilder.getDOMImplementation();
-//				Document document = (Document)domImplementation.createDocument(null, "preguntas", null);
-//				document.setXmlVersion("1.0");
-//
-//				for(;;)
-//				{
-//					randomAccessFile.seek(posicio);
-//					id = randomAccessFile.readInt();
-//
-//					for(int i=0; i<dni.length; i++)
-//					{
-//						charDni = randomAccessFile.readChar();
-//						dni[i] = charDni;
-//					}
-//					dnis = new String(dni);
-//
-//					for(int i=0; i<nom.length; i++)
-//					{
-//						charNom = randomAccessFile.readChar();
-//						nom[i] = charNom;
-//					}
-//					noms = new String(nom);
-//
-//					for(int i=0; i<cognom.length;i++)
-//					{
-//						charCognom = randomAccessFile.readChar();
-//						cognom[i] = charCognom;
-//					}
-//					cognoms = new String(cognom);
-//
-//					edats = randomAccessFile.readInt();
-//					salaris = randomAccessFile.readDouble();
-//					if(id>0)
-//					{
-//						Element raiz = document.createElement("Persona");
-//						document.getDocumentElement().appendChild(raiz);
-//
-//						CrearElement("id", Integer.toString(id), raiz, document);
-//						CrearElement("DNI", dnis.trim(), raiz, document);
-//						CrearElement("nom", noms.trim(), raiz, document);
-//						CrearElement("cognom", cognoms.trim(), raiz, document);
-//						CrearElement("edat", Integer.toString(edats), raiz, document);
-//						CrearElement("salari", Double.toString(salaris), raiz, document);
-//					}
-//					posicio += 74;
-//
-//					if(randomAccessFile.getFilePointer()==randomAccessFile.length()) break;
-//				}
-//				Source source = new DOMSource(document);
-//				Result result = new StreamResult(new java.io.File("Treballadors.xml"));
-//				Transformer transformer = TransformerFactory.newInstance().newTransformer();
-//				transformer.transform(source, result);
-//			}
-//			catch(ParserConfigurationException e)
-//			{
-//				e.printStackTrace();
-//			}
-//			catch(IOException e)
-//			{
-//				e.printStackTrace();
-//			}
-//			catch(TransformerConfigurationException e)
-//			{
-//				e.printStackTrace();
-//			}
-//			catch(TransformerException e)
-//			{
-//				e.printStackTrace();
-//			}
-//			finally
-//			{
-//				try
-//				{
-//					randomAccessFile.close();
-//				}
-//				catch(IOException e)
-//				{
-//					e.printStackTrace();
-//				}
-//			}
-//		}
-//		catch(FileNotFoundException e)
-//		{
-//			e.printStackTrace();
-//		}
 		try
 		{
-//			RandomAccessFile randomAccessFile = new RandomAccessFile("Treballadors.dat", "r");
-//			randomAccessFile.seek(randomAccessFile.length());
-//
-//			int id = 0, posicio = 0;        // 4 bits
-//			char[] dni = new char[9];       // 20 bits
-//			char[] nom = new char[10];      // 20 bits
-//			char[] cognom = new char[10];   // 20 bits
-//			int edats;                      // 4 bits
-//			double salaris;                 // 8 bits
-//
-//			String dnis, noms, cognoms;
-//			char charDni, charNom, charCognom;
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			try
 			{
@@ -374,44 +257,6 @@ public class QuestionBank
 				
 				for(;;)
 				{
-//					randomAccessFile.seek(posicio);
-//					id = randomAccessFile.readInt();
-//
-//					for(int i=0; i<dni.length; i++)
-//					{
-//						charDni = randomAccessFile.readChar();
-//						dni[i] = charDni;
-//					}
-//					dnis = new String(dni);
-//
-//					for(int i=0; i<nom.length; i++)
-//					{
-//						charNom = randomAccessFile.readChar();
-//						nom[i] = charNom;
-//					}
-//					noms = new String(nom);
-//
-//					for(int i=0; i<cognom.length;i++)
-//					{
-//						charCognom = randomAccessFile.readChar();
-//						cognom[i] = charCognom;
-//					}
-//					cognoms = new String(cognom);
-//
-//					edats = randomAccessFile.readInt();
-//					salaris = randomAccessFile.readDouble();
-//					if(id>0)
-//					{
-//						Element raiz = document.createElement("pregunta");
-//						document.getDocumentElement().appendChild(raiz);
-//
-//						CrearElement("id", Integer.toString(id), raiz, document);
-//						CrearElement("DNI", dnis.trim(), raiz, document);
-//						CrearElement("nom", noms.trim(), raiz, document);
-//						CrearElement("cognom", cognoms.trim(), raiz, document);
-//						CrearElement("edat", Integer.toString(edats), raiz, document);
-//						CrearElement("salari", Double.toString(salaris), raiz, document);
-//					}
 					Element raiz = document.createElement("pregunta");
 					document.getDocumentElement().appendChild(raiz);
 					
@@ -422,9 +267,6 @@ public class QuestionBank
 					CrearElement("incorrecta", pregunta.respostes[1], elementPregunta, document);
 					CrearElement("incorrecta", pregunta.respostes[2], elementPregunta, document);
 					CrearElement("incorrecta", pregunta.respostes[3], elementPregunta, document);
-					
-//					posicio += 74;
-//					if(randomAccessFile.getFilePointer()==randomAccessFile.length()) break;
 				}
 				Source source = new DOMSource(document);
 				Result result = new StreamResult(new java.io.File("Treballadors.xml"));
@@ -447,7 +289,7 @@ public class QuestionBank
 			{
 				try
 				{
-//					randomAccessFile.close();
+					randomAccessFile.close();
 				}
 				catch(IOException e)
 				{
