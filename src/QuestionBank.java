@@ -10,6 +10,8 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -44,8 +46,8 @@ public class QuestionBank
 	private static List<Pregunta> preguntesJaFetes;
 	
 	/**
-	 *<b>Aquesta funció s'ha d'executar abans d'executar-ne qualsevol altra d'aquesta classe.</b>
-	 * Funciona com un "constructor". Initialitza les variables i ho prepara tot.
+	 * <b>Aquesta funció s'ha d'executar abans d'executar-ne qualsevol altra d'aquesta classe.</b>
+	 * <p>Funciona com un "constructor". Initialitza les variables i ho prepara tot.
 	 *
 	 * @throws IOException
 	 * @throws SAXException
@@ -53,6 +55,9 @@ public class QuestionBank
 	@SuppressWarnings({ "javadoc" })
 	public static void Start() throws IOException, SAXException
 	{
+		System.out.println("Inicialitzant QuestionBank...");
+		ZonedDateTime questionBankStart = ZonedDateTime.now();
+		
 		totesLesPreguntes = new ArrayList<>();
 		preguntesJaFetes = new ArrayList<>();
 		preguntesDisponibles = new ArrayList<>();
@@ -61,6 +66,7 @@ public class QuestionBank
 		if(!CARGAR_PREGUNTES_JA_FETES) RecargarPreguntes();
 		
 		CalcularPreguntesDisponibles();
+		System.out.println("Inicialitzant QuestionBank... OK en "+questionBankStart.until(ZonedDateTime.now(), ChronoUnit.MILLIS)+"ms");
 	}
 	
 	/**

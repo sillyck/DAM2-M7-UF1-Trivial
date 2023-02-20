@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -117,6 +119,9 @@ public class Tauler extends JFrame implements ActionListener
 	public Tauler(String player1, String player2, boolean debugMode) throws IOException
 	{
 		super("Trivial");
+		
+		System.out.println("Construïnt Tauler.java...");
+		ZonedDateTime now = ZonedDateTime.now();
 		this.debugMode = debugMode;
 		setSize(1500, 800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -165,6 +170,7 @@ public class Tauler extends JFrame implements ActionListener
 		setLocationRelativeTo(null);
 		
 		advance();
+		System.out.println("Construïnt Tauler.java... OK en "+now.until(ZonedDateTime.now(), ChronoUnit.MILLIS)+"ms");
 	}
 	
 	/**
@@ -262,7 +268,7 @@ public class Tauler extends JFrame implements ActionListener
 			bottomContainer.add(jadv);
 		}
 		bottomContainer.add(jButton);
-		if(debugMode) bottomContainer.add(jlabelStatus);
+		/*if(debugMode)*/ bottomContainer.add(jlabelStatus);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 	}
 	

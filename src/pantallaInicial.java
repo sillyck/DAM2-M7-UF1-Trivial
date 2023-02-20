@@ -5,6 +5,13 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,7 +22,10 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
-public class pantallaInicial extends JFrame {
+public class pantallaInicial extends JFrame implements ActionListener
+{
+	JTextField j1JTF;
+	JTextField j2JTF;
 
 	public pantallaInicial() {
 
@@ -42,8 +52,8 @@ public class pantallaInicial extends JFrame {
 		j1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		j2.setFont(new Font("Tahoma", Font.BOLD, 24));
 
-		JTextField j1JTF = new JTextField(10);
-		JTextField j2JTF = new JTextField(10);
+		j1JTF = new JTextField(10);
+		j2JTF = new JTextField(10);
 
 		Container cp = getContentPane();
 
@@ -100,6 +110,7 @@ public class pantallaInicial extends JFrame {
 		Border jButtonBorder = botoContinuar.getBorder();
 		Border jButtonMargin = new EmptyBorder(10, 10, 10, 10);
 		botoContinuar.setBorder(new CompoundBorder(jButtonBorder, jButtonMargin));
+		botoContinuar.addActionListener(this);
 
 		//Assignar els colors del fons
 		benvinguda.setBackground(Color.decode("#F9F5E7"));
@@ -120,5 +131,40 @@ public class pantallaInicial extends JFrame {
 		cp.add(botoContinuar, gridBoto);
 
 	}
-
+	
+	/**
+	 * Invoked when an action occurs.
+	 *
+	 * @param e
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		System.out.println("Preparant Tauler.java...");
+		ZonedDateTime now = ZonedDateTime.now();
+//		try
+//		{
+//			Thread.sleep(10);
+//		}
+//		catch(InterruptedException ex)
+//		{
+//			throw new RuntimeException(ex);
+//		}
+		this.hide();
+		
+		if(j1JTF.getText().toString().isEmpty()) j1JTF.setText("J1");
+		if(j2JTF.getText().toString().isEmpty()) j2JTF.setText("J2");
+		
+		Tauler tauler;
+		try
+		{
+			System.out.println("Preparant Tauler.java... OK en "+now.until(ZonedDateTime.now(),ChronoUnit.MILLIS)+"ms");
+			tauler = new Tauler(j1JTF.getText(), j2JTF.getText(), false);
+		}
+		catch(IOException ex)
+		{
+			throw new RuntimeException(ex);
+		}
+		tauler.setVisible(true);
+	}
 }

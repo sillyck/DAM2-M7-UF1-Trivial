@@ -43,11 +43,11 @@ public class Pregunta
 		ComprovarRespostaPossible();
 	}
 	
-	public Pregunta(String enunciat, String[] respostes, String respotaCorrecta)
+	public Pregunta(String enunciat, String[] respostes, String respostaCorrecta)
 	{
 		this.enunciat = enunciat;
 		this.respostes = respostes;
-		this.respostaCorrecta = respotaCorrecta;
+		this.respostaCorrecta = respostaCorrecta;
 		
 		ComprovarRespostaPossible();
 	}
