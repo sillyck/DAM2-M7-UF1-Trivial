@@ -108,13 +108,14 @@ public class QuestionBank
 			int randomNumber = new Random().nextInt(preguntesDisponibles.size());
 			CalcularPreguntesDisponibles();
 			if(marcarComJaFeta) MarcarPreguntaComUtilitzada(randomNumber);
+			CalcularPreguntesDisponibles();
 			return preguntesDisponibles.get(randomNumber);
 		}
 	}
 	
 	public static void MarcarPreguntaComUtilitzada(int numPreguntaEscollida)
 	{
-	
+		EsciureXmlPreguntesRepetides(preguntesDisponibles.get(numPreguntaEscollida));
 	}
 	
 	public static boolean HiHanPreguntesDisponibles()
