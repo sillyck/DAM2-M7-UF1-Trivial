@@ -625,8 +625,6 @@ public class Tauler extends JFrame implements ActionListener
 //			raiseVictory();
 //		}
 		
-		
-		
 		switch(winningCondition)
 		{
 			case 0:	jlabelStatus.setText("· Joc en curs..."); break;
@@ -635,6 +633,18 @@ public class Tauler extends JFrame implements ActionListener
 			case 3: jlabelStatus.setText("· Victoria per al jugador 1"); break;
 			case 4: jlabelStatus.setText("· Victoria per al jugador 2"); break;
 			case 5: jlabelStatus.setText("· Empat"); break;
+		}
+		if(winningCondition==3 || winningCondition==4 || winningCondition==5)
+		{
+			PopupFinal popupFinal = null;
+			switch(winningCondition)
+			{
+				case 3: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.J1_WINS,debugMode); break;
+				case 4: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.J2_WINS,debugMode); break;
+				case 5: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.BOTH,debugMode); break;
+			}
+			popupFinal.setVisible(true);
+			hide();
 		}
 	}
 	

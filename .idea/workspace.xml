@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preguntas-repe.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuestionBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuestionBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaulerDebugAPM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaulerDebugAPM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +16,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -109,7 +107,7 @@
       <workItem from="1676571672312" duration="196000" />
       <workItem from="1676646729013" duration="1747000" />
       <workItem from="1676846394772" duration="6441000" />
-      <workItem from="1676913949451" duration="3399000" />
+      <workItem from="1676913949451" duration="7452000" />
     </task>
     <servers />
   </component>
