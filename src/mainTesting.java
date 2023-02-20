@@ -8,9 +8,8 @@ public class mainTesting
 	
 	public static void main(String[] args) throws IOException, SAXException
 	{
+		QuestionBank.Start();
 		tauler = new Tauler("Unnamed testing player 1","Unnamed testing player 2",true);
 		tauler.setVisible(true);
-		
-		QuestionBank.Start();
 	}
 }

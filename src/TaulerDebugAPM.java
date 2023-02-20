@@ -12,10 +12,12 @@ public class TaulerDebugAPM implements ActionListener
 		try
 		{
 			pregunta = QuestionBank.ObtindrePregunta(true);
-		}catch(IOException ex)
+		}
+		catch(IOException ex)
 		{
 			throw new RuntimeException(ex);
-		}catch(ClassNotFoundException ex)
+		}
+		catch(ClassNotFoundException ex)
 		{
 			throw new RuntimeException(ex);
 		}

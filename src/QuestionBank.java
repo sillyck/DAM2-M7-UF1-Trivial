@@ -100,7 +100,7 @@ public class QuestionBank
 	public static Pregunta ObtindrePregunta(boolean marcarComJaFeta) throws IOException, ClassNotFoundException
 	{
 //		if(preguntesDisponibles==null || preguntesDisponibles.size()==0) return null;
-		if(preguntesDisponibles.size()==1)
+		if(preguntesDisponibles.size()==1 || preguntesDisponibles.isEmpty())
 		{
 			Pregunta ultimaPregunta = preguntesDisponibles.get(0);
 			CalcularPreguntesDisponibles();
@@ -108,7 +108,7 @@ public class QuestionBank
 		}
 		else
 		{
-			int randomNumber = new Random().nextInt(preguntesDisponibles.size());
+			int randomNumber = (new Random().nextInt(preguntesDisponibles.size()))+1;
 			CalcularPreguntesDisponibles();
 			if(marcarComJaFeta) MarcarPreguntaComUtilitzada(randomNumber);
 			LecturaXml();
@@ -326,42 +326,72 @@ public class QuestionBank
 	private static void WriteRandomJaFet(Pregunta preguntaJaFeta) throws IOException, ClassNotFoundException
 	{
 		if(!new File("preguntas-repe.dat").exists()) new File("preguntas-repe.dat").createNewFile();
-		File preguntasFile = new File("preguntas-repe.dat");
+		/*File preguntasFile = new File("preguntas-repe.dat");
 		
-		FileInputStream fileInputStream = new FileInputStream(preguntasFile);
-		ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+//		FileInputStream fileInputStream = new FileInputStream(preguntasFile);
+//		ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 		FileOutputStream fileOutputStream = new FileOutputStream(preguntasFile);
 		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+//		FileOutputStream fileout = new FileOutputStream(preguntasFile);*/
 		
-		ArrayList<Pregunta> contingut;
+		preguntesJaFetes.add(preguntaJaFeta);
+		ArrayList<Pregunta> contingut = (ArrayList<Pregunta>)preguntesJaFetes;/*
+//		try
+//		{
+//			contingut = objectOutputStream.writeObject(contingut);
+//		}
+//		catch(ClassNotFoundException e)
+//		{
+//			throw new RuntimeException(e);
+//		}
+//		contingut.add(preguntaJaFeta);
+		objectOutputStream.writeObject(contingut);
+		objectOutputStream.close();*/
 		try
 		{
-			contingut = (ArrayList<Pregunta>)objectInputStream.readObject();
+			FileOutputStream fileOut = new FileOutputStream("preguntas-repe.dat");
+			ObjectOutputStream out = new ObjectOutputStream(fileOut);
+			out.writeObject(contingut);
+			out.close();
+			fileOut.close();
+			System.out.println("Serialized data is saved in preguntas-repe.dat");
 		}
-		catch(ClassNotFoundException e)
+		catch(Exception e)
 		{
-			throw new RuntimeException(e);
+			e.printStackTrace();
 		}
-		contingut.add(preguntaJaFeta);
-		objectOutputStream.writeObject(contingut);
 	}
 	
 	private static void LecturaXml() throws IOException
 	{
 		if(!new File("preguntas-repe.dat").exists()) System.out.println("El fitxer no existeix. No puc fer res");
-		else
+//		else
+//		{
+//			File preguntasRepeFile = new File("preguntas-repe.dat");
+//			FileInputStream fileInputStream = new FileInputStream(preguntasRepeFile);
+//			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+//			try
+//			{
+//				preguntesJaFetes = (ArrayList<Pregunta>)objectInputStream.readObject();
+//			}
+//			catch(ClassNotFoundException e)
+//			{
+//				throw new RuntimeException(e);
+//			}
+//		}
+		try
 		{
-			File preguntasRepeFile = new File("preguntas-repe.dat");
-			FileInputStream fileInputStream = new FileInputStream(preguntasRepeFile);
-			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-			try
-			{
-				preguntesJaFetes = (ArrayList<Pregunta>)objectInputStream.readObject();
-			}
-			catch(ClassNotFoundException e)
-			{
-				throw new RuntimeException(e);
-			}
+			FileInputStream fileIn = new FileInputStream("preguntas-repe.dat");
+			ObjectInputStream in = new ObjectInputStream(fileIn);
+//			ArrayList<Object> myList = (ArrayList<Object>) in.readObject();
+			preguntesJaFetes = (List<Pregunta>) in.readObject();
+			in.close();
+			fileIn.close();
+			System.out.println("Deserialized data: " + preguntesJaFetes.size());
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
 		}
 	}
 }
