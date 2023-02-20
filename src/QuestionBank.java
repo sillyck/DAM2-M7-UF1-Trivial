@@ -245,59 +245,31 @@ public class QuestionBank
 	
 	private static void EsciureXmlPreguntesRepetides(Pregunta pregunta)
 	{
+		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		try
 		{
-			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-			try
-			{
-				DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-				DOMImplementation domImplementation = documentBuilder.getDOMImplementation();
-				Document document = (Document)domImplementation.createDocument(null, "preguntas", null);
-				document.setXmlVersion("1.0");
-				
-				for(;;)
-				{
-					Element raiz = document.createElement("pregunta");
-					document.getDocumentElement().appendChild(raiz);
-					
-					CrearElement("texto", pregunta.enunciat, raiz, document);
-					Element elementPregunta = document.createElement("respuestas");
-					
-					CrearElement("correcta", pregunta.respostaCorrecta, elementPregunta, document);
-					CrearElement("incorrecta", pregunta.respostes[1], elementPregunta, document);
-					CrearElement("incorrecta", pregunta.respostes[2], elementPregunta, document);
-					CrearElement("incorrecta", pregunta.respostes[3], elementPregunta, document);
-				}
-				Source source = new DOMSource(document);
-				Result result = new StreamResult(new java.io.File("Treballadors.xml"));
-				Transformer transformer = TransformerFactory.newInstance().newTransformer();
-				transformer.transform(source, result);
-			}
-			catch(ParserConfigurationException e)
-			{
-				e.printStackTrace();
-			}
-			catch(IOException e)
-			{
-				e.printStackTrace();
-			}
-			catch(TransformerException e)
-			{
-				e.printStackTrace();
-			}
-			finally
-			{
-				try
-				{
-					randomAccessFile.close();
-				}
-				catch(IOException e)
-				{
-					e.printStackTrace();
-				}
-			}
+			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+			DOMImplementation domImplementation = documentBuilder.getDOMImplementation();
+			Document document = (Document)domImplementation.createDocument(null, "preguntas", null);
+			document.setXmlVersion("1.0");
+			
+			Element arrel = document.createElement("pregunta");
+			document.getDocumentElement().appendChild(arrel);
+			
+			CrearElement("texto", pregunta.enunciat, arrel, document);
+			Element elementPregunta = document.createElement("respuestas");
+			
+			CrearElement("correcta", pregunta.respostaCorrecta, elementPregunta, document);
+			CrearElement("incorrecta", pregunta.respostes[1], elementPregunta, document);
+			CrearElement("incorrecta", pregunta.respostes[2], elementPregunta, document);
+			CrearElement("incorrecta", pregunta.respostes[3], elementPregunta, document);
+			
+			Source source = new DOMSource(document);
+			Result result = new StreamResult(new File("preguntas-repe.xml"));
+			Transformer transformer = TransformerFactory.newInstance().newTransformer();
+			transformer.transform(source, result);
 		}
-		catch(FileNotFoundException e)
+		catch(ParserConfigurationException | TransformerException e)
 		{
 			e.printStackTrace();
 		}
@@ -306,8 +278,7 @@ public class QuestionBank
 	private static void CrearElement(String dades, String valor, Element arrel, Document document)
 	{
 		Element element = document.createElement(dades);
-		Text text = document.createTextNode(valor);
 		arrel.appendChild(element);
-		element.appendChild(text);
+		element.appendChild(document.createTextNode(valor));
 	}
 }
