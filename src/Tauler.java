@@ -591,7 +591,6 @@ public class Tauler extends JFrame implements ActionListener
 				if(score[1]==7)
 				{
 					winningCondition = 5;
-					raiseVictory();
 				}
 				else
 				{
@@ -610,7 +609,6 @@ public class Tauler extends JFrame implements ActionListener
 				if(score[0]==7)
 				{
 					winningCondition = 5;
-					raiseVictory();
 				}
 				else
 				{
@@ -618,12 +616,6 @@ public class Tauler extends JFrame implements ActionListener
 				}
 			}
 		}
-		
-//		if(winningCondition==0 && (score[0]==7 && score[1]==15))
-//		{
-//			winningCondition = 5;
-//			raiseVictory();
-//		}
 		
 		switch(winningCondition)
 		{

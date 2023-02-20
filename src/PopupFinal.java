@@ -80,7 +80,7 @@ public class PopupFinal extends JFrame implements ActionListener
 		jreset.setBorder(new CompoundBorder(jButtonBorder2, jButtonMargin2));
 		jreset.addActionListener(new PopupFinalReset(this,j1,j2));
 		
-		/*if(debug)*/ bottomContainer.add(jreset);
+		bottomContainer.add(jreset);
 		bottomContainer.add(jButton);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 	}

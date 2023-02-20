@@ -99,7 +99,6 @@ public class QuestionBank
 	@SuppressWarnings("unused")
 	public static Pregunta ObtindrePregunta(boolean marcarComJaFeta) throws IOException, ClassNotFoundException
 	{
-//		if(preguntesDisponibles==null || preguntesDisponibles.size()==0) return null;
 		if(preguntesDisponibles.size()==1 || preguntesDisponibles.isEmpty())
 		{
 			Pregunta ultimaPregunta = preguntesDisponibles.get(0);
@@ -120,18 +119,12 @@ public class QuestionBank
 	
 	public static void MarcarPreguntaComUtilitzada(int numPreguntaEscollida) throws IOException, ClassNotFoundException
 	{
-//		EsciureXmlPreguntesRepetides(preguntesDisponibles.get(numPreguntaEscollida));
 		WriteRandomJaFet(preguntesDisponibles.get(numPreguntaEscollida));
 	}
 	
 	public static boolean HiHanPreguntesDisponibles()
 	{
-		//noinspection RedundantIfStatement
-		if(preguntesDisponibles.size()==0)
-//		if(preguntesDisponibles.size()==0 && preguntesJaFetes.size()==totesLesPreguntes.size())
-		{
-			return false;
-		}
+		if(preguntesDisponibles.size()==0) return false;
 		else return true;
 	}
 	
@@ -281,29 +274,12 @@ public class QuestionBank
 			
 			CrearElement("texto", pregunta.enunciat, arrel, document);
 			
-//			Element elementPregunta = document.createElement("respuestas");
-//			Element elementPregunta = arrel.appendChild("respuestas");
-			
-//			CrearElement("correcta", pregunta.respostaCorrecta, elementPregunta, document);
-//			CrearElement("incorrecta", pregunta.respostes[1], elementPregunta, document);
-//			CrearElement("incorrecta", pregunta.respostes[2], elementPregunta, document);
-//			CrearElement("incorrecta", pregunta.respostes[3], elementPregunta, document);
-			
 			Source source = new DOMSource(document);
 			Result result = new StreamResult(new File("preguntas-repe.xml"));
-//			Result result = ;
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			transformer.transform(source, result);
 		}
-		catch(ParserConfigurationException | TransformerException e)
-		{
-			e.printStackTrace();
-		}
-		catch(IOException e)
-		{
-			e.printStackTrace();
-		}
-		catch(SAXException e)
+		catch(ParserConfigurationException | TransformerException | IOException | SAXException e)
 		{
 			e.printStackTrace();
 		}
@@ -326,27 +302,8 @@ public class QuestionBank
 	private static void WriteRandomJaFet(Pregunta preguntaJaFeta) throws IOException, ClassNotFoundException
 	{
 		if(!new File("preguntas-repe.dat").exists()) new File("preguntas-repe.dat").createNewFile();
-		/*File preguntasFile = new File("preguntas-repe.dat");
-		
-//		FileInputStream fileInputStream = new FileInputStream(preguntasFile);
-//		ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-		FileOutputStream fileOutputStream = new FileOutputStream(preguntasFile);
-		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-//		FileOutputStream fileout = new FileOutputStream(preguntasFile);*/
-		
 		preguntesJaFetes.add(preguntaJaFeta);
-		ArrayList<Pregunta> contingut = (ArrayList<Pregunta>)preguntesJaFetes;/*
-//		try
-//		{
-//			contingut = objectOutputStream.writeObject(contingut);
-//		}
-//		catch(ClassNotFoundException e)
-//		{
-//			throw new RuntimeException(e);
-//		}
-//		contingut.add(preguntaJaFeta);
-		objectOutputStream.writeObject(contingut);
-		objectOutputStream.close();*/
+		ArrayList<Pregunta> contingut = (ArrayList<Pregunta>)preguntesJaFetes;
 		try
 		{
 			FileOutputStream fileOut = new FileOutputStream("preguntas-repe.dat");
@@ -362,28 +319,14 @@ public class QuestionBank
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	private static void LecturaXml() throws IOException
 	{
-		if(!new File("preguntas-repe.dat").exists()) System.out.println("El fitxer no existeix. No puc fer res");
-//		else
-//		{
-//			File preguntasRepeFile = new File("preguntas-repe.dat");
-//			FileInputStream fileInputStream = new FileInputStream(preguntasRepeFile);
-//			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-//			try
-//			{
-//				preguntesJaFetes = (ArrayList<Pregunta>)objectInputStream.readObject();
-//			}
-//			catch(ClassNotFoundException e)
-//			{
-//				throw new RuntimeException(e);
-//			}
-//		}
+		if(!new File("preguntas-repe.dat").exists()) System.out.println("El fitxer no existeix. No puc fer res...");
 		try
 		{
 			FileInputStream fileIn = new FileInputStream("preguntas-repe.dat");
 			ObjectInputStream in = new ObjectInputStream(fileIn);
-//			ArrayList<Object> myList = (ArrayList<Object>) in.readObject();
 			preguntesJaFetes = (List<Pregunta>) in.readObject();
 			in.close();
 			fileIn.close();
