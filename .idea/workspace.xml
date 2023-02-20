@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PopupFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PopupFinal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PopupFinalDebugResetGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PopupFinalReset.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2LQ1SljiaN9zecAtXgoL8Dkgteo" />
   <component name="ProjectLevelVcsManager">
@@ -107,7 +111,7 @@
       <workItem from="1676571672312" duration="196000" />
       <workItem from="1676646729013" duration="1747000" />
       <workItem from="1676846394772" duration="6441000" />
-      <workItem from="1676913949451" duration="7452000" />
+      <workItem from="1676913949451" duration="7973000" />
     </task>
     <servers />
   </component>

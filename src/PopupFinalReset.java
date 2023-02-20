@@ -2,13 +2,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class PopupFinalDebugResetGame implements ActionListener
+public class PopupFinalReset implements ActionListener
 {
 	private PopupFinal popupFinal;
 	private String j1;
 	private String j2;
 	
-	public PopupFinalDebugResetGame(PopupFinal popupFinal, String j1, String j2)
+	public PopupFinalReset(PopupFinal popupFinal, String j1, String j2)
 	{
 		this.popupFinal = popupFinal;
 		this.j1 = j1;
