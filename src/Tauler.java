@@ -226,9 +226,6 @@ public class Tauler extends JFrame implements ActionListener
 		jButton.setBorder(new CompoundBorder(jButtonBorder, jButtonMargin));
 		jButton.addActionListener(this);
 		
-		JButton jreset = new JButton("DBG-RESET");
-		jreset.addActionListener(new TaulerDebugResetGame());
-		
 		JButton j1m = new JButton("DBG1-");
 		j1m.addActionListener(new TaulerDebugP1minus());
 		
@@ -260,7 +257,6 @@ public class Tauler extends JFrame implements ActionListener
 		
 		if(debugMode)
 		{
-			bottomContainer.add(jreset);
 			bottomContainer.add(j0);
 			bottomContainer.add(j6);
 			bottomContainer.add(j7);
@@ -620,20 +616,5 @@ public class Tauler extends JFrame implements ActionListener
 			popupFinal.setVisible(true);
 			hide();
 		}
-	}
-	
-	public void ResetGame() throws IOException
-	{
-		score[0] = 0;
-		score[1] = 0;
-		winningCondition = 0;
-		currentTurn = 0;
-		activePlayerCell = 0;
-		round = 0;
-		firstPaintTiles();
-		paintColoursTiles();
-		paintPlayerPositions();
-		
-		advance();
 	}
 }

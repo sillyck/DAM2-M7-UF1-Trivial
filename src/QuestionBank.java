@@ -39,7 +39,7 @@ public class QuestionBank
 	private static List<Pregunta> preguntesDisponibles;
 	
 	/**
-	 * Un ArrayList amb les preguntes del fitxer <tt>preguntas-repe.xml</tt>.
+	 * Un ArrayList amb les preguntes del fitxer <tt>preguntas-repe.dat</tt>.
 	 */
 	private static List<Pregunta> preguntesJaFetes;
 	
@@ -245,13 +245,6 @@ public class QuestionBank
 		}
 	}
 	
-	private static void CrearElement(String dades, String valor, Element arrel, Document document)
-	{
-		Element element = document.createElement(dades);
-		arrel.appendChild(element);
-		element.appendChild(document.createTextNode(valor));
-	}
-	
 	public static void PrintStatsForNerds()
 	{
 		System.out.println("totesLesPreguntes.size()    = " + totesLesPreguntes.size());
@@ -271,7 +264,6 @@ public class QuestionBank
 			out.writeObject(contingut);
 			out.close();
 			fileOut.close();
-			System.out.println("Serialized data is saved in preguntas-repe.dat");
 		}
 		catch(Exception e)
 		{
@@ -279,7 +271,7 @@ public class QuestionBank
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "unused" })
 	private static void LecturaXml() throws IOException
 	{
 		if(!new File("preguntas-repe.dat").exists()) System.out.println("El fitxer no existeix. No puc fer res...");
@@ -290,7 +282,6 @@ public class QuestionBank
 			preguntesJaFetes = (List<Pregunta>) in.readObject();
 			in.close();
 			fileIn.close();
-			System.out.println("Deserialized data: " + preguntesJaFetes.size());
 		}
 		catch(Exception e)
 		{
