@@ -18,15 +18,16 @@ public class PopupFinalReset implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		try
+		popupFinal.dispose();
+		if(MetaController.isThisDebugMode)
 		{
-			popupFinal.dispose();
-			mainTesting.tauler = new Tauler(j1,j2,true);
-			mainTesting.tauler.setVisible(true);
+			mainTesting.pantallaInicial = new pantallaInicial();
+			mainTesting.pantallaInicial.setVisible(true);
 		}
-		catch(IOException ex)
+		else
 		{
-			throw new RuntimeException(ex);
+			mainTrivial.pantallaInicial = new pantallaInicial();
+			mainTrivial.pantallaInicial.setVisible(true);
 		}
 	}
 }

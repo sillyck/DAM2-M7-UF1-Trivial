@@ -27,8 +27,8 @@ public class pantallaInicial extends JFrame implements ActionListener
 	JTextField j1JTF;
 	JTextField j2JTF;
 
-	public pantallaInicial() {
-
+	public pantallaInicial()
+	{
 		super("Trivial");
 		setSize(1250, 720);
 
@@ -129,7 +129,6 @@ public class pantallaInicial extends JFrame implements ActionListener
 		cp.add(j2panelResposta, espaiJ2Resposta);
 		
 		cp.add(botoContinuar, gridBoto);
-
 	}
 	
 	/**
@@ -142,29 +141,29 @@ public class pantallaInicial extends JFrame implements ActionListener
 	{
 		System.out.println("Preparant Tauler.java...");
 		ZonedDateTime now = ZonedDateTime.now();
-//		try
-//		{
-//			Thread.sleep(10);
-//		}
-//		catch(InterruptedException ex)
-//		{
-//			throw new RuntimeException(ex);
-//		}
-		this.hide();
+
+		this.dispose();
 		
 		if(j1JTF.getText().toString().isEmpty()) j1JTF.setText("J1");
 		if(j2JTF.getText().toString().isEmpty()) j2JTF.setText("J2");
 		
-		Tauler tauler;
 		try
 		{
 			System.out.println("Preparant Tauler.java... OK en "+now.until(ZonedDateTime.now(),ChronoUnit.MILLIS)+"ms");
-			tauler = new Tauler(j1JTF.getText(), j2JTF.getText(), false);
+			if(MetaController.isThisDebugMode)
+			{
+				mainTesting.tauler = new Tauler(j1JTF.getText(), j2JTF.getText(), true);
+				mainTesting.tauler.setVisible(true);
+			}
+			else
+			{
+				mainTrivial.tauler = new Tauler(j1JTF.getText(), j2JTF.getText(), false);
+				mainTrivial.tauler.setVisible(true);
+			}
 		}
 		catch(IOException ex)
 		{
 			throw new RuntimeException(ex);
 		}
-		tauler.setVisible(true);
 	}
 }

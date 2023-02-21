@@ -268,7 +268,7 @@ public class Tauler extends JFrame implements ActionListener
 			bottomContainer.add(jadv);
 		}
 		bottomContainer.add(jButton);
-		/*if(debugMode)*/ bottomContainer.add(jlabelStatus);
+		bottomContainer.add(jlabelStatus);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 	}
 	
@@ -525,7 +525,6 @@ public class Tauler extends JFrame implements ActionListener
 				toggleImage();
 				break;
 		}
-		
 		checkWinningConditions();
 	}
 	
@@ -546,6 +545,7 @@ public class Tauler extends JFrame implements ActionListener
 		//  El boolean correct es true si la pregunta s'ha
 		//  encertat i fals si s'ha fallat
 		// ====================================================
+		inQuestion = false;
 		if(correct && (currentTurn==1 || currentTurn==2)) score[currentTurn-1]++;
 		advance();
 	}
@@ -567,10 +567,16 @@ public class Tauler extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		inQuestion = true;
-		// ====================================================
-		//       POSAR AQUI LA CRIDA CAP A LES PREGUNTES
-		// ====================================================
+		if(!inQuestion)
+		{
+			inQuestion = true;
+			// ====================================================
+			//       POSAR AQUI LA CRIDA CAP A LES PREGUNTES
+			// ====================================================
+			
+			
+			
+		}
 	}
 	
 	@SuppressWarnings({ "UnusedAssignment", "ConstantValue", "CommentedOutCode" })
@@ -614,7 +620,7 @@ public class Tauler extends JFrame implements ActionListener
 				case 5: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.BOTH); break;
 			}
 			popupFinal.setVisible(true);
-			hide();
+			dispose();
 		}
 	}
 }
