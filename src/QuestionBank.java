@@ -263,7 +263,7 @@ public class QuestionBank
 	{
 		if(!new File("preguntas-repe.dat").exists()) new File("preguntas-repe.dat").createNewFile();
 		preguntesJaFetes.add(preguntaJaFeta);
-		ArrayList<Pregunta> contingut = (ArrayList<Pregunta>)preguntesJaFetes;
+		List<Pregunta> contingut = preguntesJaFetes;
 		try
 		{
 			FileOutputStream fileOut = new FileOutputStream("preguntas-repe.dat");
