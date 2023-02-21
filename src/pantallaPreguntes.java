@@ -74,23 +74,58 @@ public class pantallaPreguntes extends JFrame{
 		r4.setForeground(new Color(6, 7, 14));
 		
 		GridBagConstraints preguntaGrid = new GridBagConstraints();
-		preguntaGrid.insets = new Insets(0, 0, 500, 0);
+//		preguntaGrid.insets = new Insets(0, 0, 500, 0);
+		setMyConstraints(preguntaGrid,0, 500, GridBagConstraints.SOUTH);
 		
 		GridBagConstraints botonsGridr1r2 = new GridBagConstraints();
-		botonsGridr1r2.insets = new Insets(0, 0, 0, 0);
+//		botonsGridr1r2.insets = new Insets(0, 0, 0, 0);
+		setMyConstraints(botonsGridr1r2,0, 0, GridBagConstraints.CENTER);
 		
 		GridBagConstraints botonsGridr3r4 = new GridBagConstraints();
-		botonsGridr3r4.insets = new Insets(0, 0, 0, 0);
+//		botonsGridr3r4.insets = new Insets(0, 0, 0, 0);
+		setMyConstraints(botonsGridr3r4,0, 0, GridBagConstraints.CENTER);
 		
 		//Colors
 		cp.setBackground(Color.decode("#F9F5E7"));
 		preguntaPanell.setBackground(Color.decode("#F9F5E7"));
 		
+//		JPanel p1 = new JPanel();
+//		p1.add(r1);
+//		JPanel p2 = new JPanel();
+//		p1.add(r2);
+//		JPanel p3 = new JPanel();
+//		p1.add(r3);
+//		JPanel p4 = new JPanel();
+//		p1.add(r4);
+		
+//		setMyConstraints(preguntaPanell,0,100,GridBagConstraints.SOUTH);
+//		setMyConstraints(p1,0,0,GridBagConstraints.NORTH);
+		
 		//Afegir-ho tot al container
 		cp.add(preguntaPanell, preguntaGrid);
-		cp.add(r1, botonsPanellr1r2);
-		cp.add(r2, botonsPanellr1r2);
-		cp.add(r3, botonsPanellr3r4);
-		cp.add(r4, botonsPanellr3r4);
+//		cp.add(preguntaPanell);
+//		cp.add(p1, botonsPanellr1r2);
+//		cp.add(r1, botonsPanellr1r2);
+		cp.add(r1, botonsGridr1r2);
+//		cp.add(p1);
+//		cp.add(p2, botonsPanellr1r2);
+//		cp.add(r2, botonsPanellr1r2);
+		cp.add(r2, botonsGridr1r2);
+//		cp.add(p2);
+//		cp.add(p3, botonsPanellr3r4);
+//		cp.add(r3, botonsPanellr3r4);
+		cp.add(r3, botonsGridr3r4);
+//		cp.add(p3);
+//		cp.add(p4, botonsPanellr3r4);
+//		cp.add(r4, botonsPanellr3r4);
+		cp.add(r4, botonsGridr3r4);
+//		cp.add(p4);
+	}
+	
+	private static void setMyConstraints(GridBagConstraints c, int gridx, int gridy, int anchor)
+	{
+		c.gridx = gridx;
+		c.gridy = gridy;
+		c.anchor = anchor;
 	}
 }
