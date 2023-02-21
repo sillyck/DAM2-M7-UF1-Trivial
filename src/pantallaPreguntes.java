@@ -74,16 +74,16 @@ public class pantallaPreguntes extends JFrame{
 		r4.setForeground(new Color(6, 7, 14));
 		
 		GridBagConstraints preguntaGrid = new GridBagConstraints();
-//		preguntaGrid.insets = new Insets(0, 0, 500, 0);
-		setMyConstraints(preguntaGrid,0, 500, GridBagConstraints.SOUTH);
+		preguntaGrid.insets = new Insets(0, 0, 500, 0);
+//		setMyConstraints(preguntaGrid,0, 500, GridBagConstraints.SOUTH);
 		
 		GridBagConstraints botonsGridr1r2 = new GridBagConstraints();
-//		botonsGridr1r2.insets = new Insets(0, 0, 0, 0);
-		setMyConstraints(botonsGridr1r2,0, 0, GridBagConstraints.CENTER);
+		botonsGridr1r2.insets = new Insets(0, 0, 0, 0);
+//		setMyConstraints(botonsGridr1r2,0, 0, GridBagConstraints.CENTER);
 		
 		GridBagConstraints botonsGridr3r4 = new GridBagConstraints();
-//		botonsGridr3r4.insets = new Insets(0, 0, 0, 0);
-		setMyConstraints(botonsGridr3r4,0, 0, GridBagConstraints.CENTER);
+		botonsGridr3r4.insets = new Insets(0, 0, 0, 0);
+//		setMyConstraints(botonsGridr3r4,0, 0, GridBagConstraints.CENTER);
 		
 		//Colors
 		cp.setBackground(Color.decode("#F9F5E7"));
