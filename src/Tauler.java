@@ -34,8 +34,9 @@ public class Tauler extends JFrame implements ActionListener
 	 * <li>2 = torn del jugador 2</li>
 	 * <li>3 = final de ronda, preparatius per començar una nova ronda</li>
 	 *
-	 * <p>Teoricament, aquesta variable hauría de passar ben poca estona en valors 0 o 3; hauría d'estar gairabé tot el rato a 1 o 2.
+	 * <p>Teòricament, aquesta variable hauría de passar ben poca estona en valors 0 o 3; hauría d'estar gairebé tot el rato a 1 o 2.
 	 */
+	@SuppressWarnings("GrazieInspection")
 	public int currentTurn = 0;
 	
 	/**
@@ -72,7 +73,7 @@ public class Tauler extends JFrame implements ActionListener
 	/**
 	 * Simple array de dos llocs d'ints que conti les puntuacions dels jugadors.
 	 *
-	 * <p>"Puntuacions" núm "posicions" són sinònims per referir-se a aquesta variable.
+	 * <p>"Puntuacions" i "posicions" són sinònims per referir-se a aquesta variable.
 	 * <li><tt>score[0]</tt> es el jugador 1.</li>
 	 * <li><tt>score[1]</tt> es el jugador 2.</li>
 	 */
@@ -80,17 +81,17 @@ public class Tauler extends JFrame implements ActionListener
 	public int score[] = new int[2];
 	
 	/**
-	 * Array de JLabels (amb ImageIcons dins, que es el que importa) que guarden les imatges que es mostraran en el
+	 * Array de JLabels (amb ImageIcons dins, que és el que importa) que guarden les imatges que es mostraran en el
 	 * GridLayout del tauler.
 	 *
-	 * <p>Els valors d'entre 0 núm 7 són per la fila superior (jugador 1) núm valors d'entre 8 núm 15 són per la fila
+	 * <p>Els valors són d'entre 0 i 7 són per la fila superior (jugador 1) i valors d'entre 8 i 15 són per la fila
 	 * inferior (jugador 2).
 	 */
 	@SuppressWarnings("CStyleArrayDeclaration")
 	public JLabel images[] = new JLabel[16];
 	
 	/**
-	 * Una HashList que inclou imatges ja preparades num precuinades per a un rapid canvi
+	 * Una HashList que inclou imatges ja preparades i precuinades per a un rapid canvi
 	 */
 	@SuppressWarnings({ "FieldCanBeLocal", "DeprecatedIsStillUsed", "MismatchedQueryAndUpdateOfCollection" })
 	@Deprecated
@@ -176,7 +177,7 @@ public class Tauler extends JFrame implements ActionListener
 	/**
 	 * Posa els noms dels jugadors.
 	 *
-	 * @param player1 Nom per el primer jugador (fila de dalt)
+	 * @param player1 Nom pel primer jugador (fila de dalt)
 	 * @param player2 Nom pel jugador dos (fila de baix)
 	 */
 	public void setPlayerNames(String player1, String player2)
@@ -185,9 +186,9 @@ public class Tauler extends JFrame implements ActionListener
 	}
 	
 	/**
-	 * Metode que s'encarrega de construir el la majoria de la finestra de dialeg.
+	 * Metode que s'encarrega de construir en la majoria de la finestra de dialeg.
 	 */
-	@SuppressWarnings("ForLoopReplaceableByForEach")
+	@SuppressWarnings({ "ForLoopReplaceableByForEach", "DuplicatedCode" })
 	public void ConstruirUI()
 	{
 		Container c = getContentPane();
@@ -268,7 +269,7 @@ public class Tauler extends JFrame implements ActionListener
 			bottomContainer.add(jadv);
 		}
 		bottomContainer.add(jButton);
-		bottomContainer.add(jlabelStatus);
+		if(debugMode) bottomContainer.add(jlabelStatus);
 		c.add(bottomContainer, BorderLayout.SOUTH);
 	}
 	
@@ -276,7 +277,7 @@ public class Tauler extends JFrame implements ActionListener
 	 * Pinta tot el tauler per primera vegada.
 	 *
 	 * <p>Es important que aquest metode s'executi abans de la primera crida a {@link #paintColoursTiles()}.
-	 * Perque el que fa {@link #paintColoursTiles()} es actualitzar la imatge d'ImageIcon(s) ja existents;
+	 * Perquè el que fa {@link #paintColoursTiles()} és actualitzar la imatge d'ImageIcon(s) ja existents;
 	 * aquest metode els crea per primera vegada.
 	 *
 	 * @throws IOException
@@ -295,17 +296,17 @@ public class Tauler extends JFrame implements ActionListener
 	}
 	
 	/**
-	 * Pinta els colors clars num foscos del tauler num les banderes a les ultimes caselles.
+	 * Pinta els colors clars i foscos del tauler i les banderes a les últimes caselles.
 	 *
-	 * <p>Aqui no es pinten els jugadores, aixo ho fa el metode {@link #paintPlayerPositions()}.
+	 * <p>Aquí no es pinten els jugadors, això ho fa el metode {@link #paintPlayerPositions()}.
 	 *
-	 * <p>El que fem aqui, es passar casella a casella del array {@link #images}; en les caselles 7 num 15 (les ultimes
-	 * columnes de cada fila), pintem una bandera fosca directament. Per les altres caselles, mirem si el numero es
-	 * parell o senar num pintem de color clar o fosc, segons correspongui.
+	 * <p>El que fem aquí, és passar casella a casella del array {@link #images}; en les caselles 7 i 15 (les últimes
+	 * columnes de cada fila), pintem una bandera fosca directament. Per les altres caselles, mirem si el número és
+	 * parell o senar i pintem de color clar o fosc, segons correspongui.
 	 *
-	 * <p>Es important concretar de que l'array ha d'estar initialitzat en aquest punt (no ha d'estar null).
-	 * Per aixo, en el constructor de la classe, s'executa el metode {@link #firstPaintTiles()} que es similar a aquest
-	 * metode, pero creant nous objectes JLabel num ImageIcons enlloc de reutilitzar els ja existeints.
+	 * <p>Es important concretar que l'array ha d'estar initialitzat en aquest punt (no ha d'estar null).
+	 * Per això, en el constructor de la classe, s'executa el metode {@link #firstPaintTiles()} que és similar a aquest
+	 * metode, però creant nous objectes JLabel i ImageIcons en lloc de reutilitzar els ja existents.
 	 *
 	 * @throws IOException
 	 */
@@ -331,10 +332,10 @@ public class Tauler extends JFrame implements ActionListener
 	}
 	
 	/**
-	 * Aquest metode dibuixa als jugadors a allá on els hi toqui. Basicament canvia la imatge ja existent per la del
+	 * Aquest metode dibuixa als jugadors a allá on els toqui. Basicament canvia la imatge ja existent per la del
 	 * jugador.
 	 *
-	 * <p>El <tt>bufferedImage1</tt> es refereix al primer jugador (el de la fila de dalt), num el <tt>bufferedImage2</tt>
+	 * <p>El <tt>bufferedImage1</tt> es refereix al primer jugador (el de la fila de dalt), i el <tt>bufferedImage2</tt>
 	 * al segon jugador (fila de baix).
 	 *
 	 * @throws IOException
@@ -387,10 +388,10 @@ public class Tauler extends JFrame implements ActionListener
 	/**
 	 * Actualitza la posició dels jugadors (redibuixa el tauler amb els jugadors amb les posicions actuals).
 	 *
-	 * <p>En executar aquest metode, s'intueix que la nova posició dels jugadors (si es que ha canviat), ja s'ha
+	 * <p>En executar aquest metode, s'intueix que la nova posició dels jugadors (si és que ha canviat), ja s'ha
 	 * modificat abans d'executar aquest metode.
 	 *
-	 * <p>De lo contrarí, si es que cal especificar una nova posició, cal utilitzar {@link #updatePlayerPosition(int, int)}
+	 * <p>De lo contrarí, si és que cal especificar una nova posició, cal utilitzar {@link #updatePlayerPosition(int, int)}
 	 * per canvis de posicions absoluts o {@link #updatePlayerScore(int, int)} per a canvis relatius.
 	 *
 	 * @throws IOException
@@ -404,13 +405,13 @@ public class Tauler extends JFrame implements ActionListener
 	/**
 	 * Actualitza la posició dels jugadors (redibuixa el tauler amb els jugadors amb les posicions actuals).
 	 *
-	 * <p>Amb aquesta crida, es passen per parametres les noves posicions absolutes dels jugadors.
+	 * <p>Amb aquesta crida, passen per parametres les noves posicions absolutes dels jugadors.
 	 * Aquestes noves posicions reemplaçaran les posicions actuals.
 	 *
-	 * <p>Després de posar les variables; aquest metode executa els metodes {@link #paintColoursTiles()} num
-	 * {@link #paintPlayerPositions()}, per tal de redibuixar el tauler amb els jugadores en les noves posicions.
+	 * <p>Després de posar les variables; aquest metode executa els metodes {@link #paintColoursTiles()} i
+	 * {@link #paintPlayerPositions()}, per tal de redibuixar el tauler amb els jugadors en les noves posicions.
 	 *
-	 * <p>Els metodes {@link #updatePlayerScore(int, int)} num {@link #updatePlayerPosition()} també criden internament a aqui.
+	 * <p>Els metodes {@link #updatePlayerScore(int, int)} i {@link #updatePlayerPosition()} també criden internament a aqui.
 	 *
 	 * @param posP1 La nova posició absoluta del jugador 1
 	 * @param posP2 La nova posició absoluta del jugador 2
@@ -429,7 +430,7 @@ public class Tauler extends JFrame implements ActionListener
 	}
 	
 	/**
-	 * Aquesta es la funció que "borra el contingut" d'una casella. En veritat el que fa es posar com a imatge de la
+	 * Aquesta és la funció que "borra el contingut" d'una casella. En veritat el que fa és posar com a imatge de la
 	 * cel·la una imatge buida, sense jugador ni bandera.
 	 *
 	 * @param cellPos Posició del array {@link #images} a on es "borrará" la casella. Valors d'entre 0-7 per la fila
@@ -447,23 +448,23 @@ public class Tauler extends JFrame implements ActionListener
 	}
 	
 	/**
-	 * Un metode que s'encarga de crear i executar un SwingWorker que fa que la imatge del jugador actual aparegui i desaparegui.
+	 * Un metode que s'encarrega de crear i executar un SwingWorker que fa que la imatge del jugador actual aparegui i desaparegui.
 	 */
 	private void toggleImage()
 	{
 		SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>()
 		{
 			/**
-			 * Guarda quina es la posició del jugador actiu en el moment de començar l'aniamció actual de mostrar/amagar.
-			 * <p>En el loop del SwingWorker ({@link #doInBackground()}), es comprovará si el valor acutal de
-			 * activePlayerCell coincideix amb aquest integer. Si difereixen, es que el jugador actual ha canviat i/o
-			 * s'ha mogut i es parará l'animacio.
+			 * Guarda quina és la posició del jugador actiu en el moment de començar l'animació actual de mostrar/amagar.
+			 * <p>En el loop del SwingWorker ({@link #doInBackground()}), és comprobará si el valor actual de
+			 * activePlayerCell coincideix amb aquest integer. Si difereixen, és que el jugador actual ha canviat i/o
+			 * s'ha mogut i és parará l'animació.
 			 */
 			final int startPlayerCell = activePlayerCell;
 			
 			/**
 			 * El "main loop" del SwingWorker. Activa i desactiva la imatge del jugador actual utilitzant
-			 * uns timers un poc imprecicos.
+			 * uns timers un poc imprecisos.
 			 *
 			 * @return
 			 * @throws Exception
@@ -563,7 +564,7 @@ public class Tauler extends JFrame implements ActionListener
 	 *
 	 * @param e
 	 */
-	@SuppressWarnings("javadoc")
+	@SuppressWarnings({ "javadoc", "SpellCheckingInspection" })
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
@@ -579,7 +580,7 @@ public class Tauler extends JFrame implements ActionListener
 		}
 	}
 	
-	@SuppressWarnings({ "UnusedAssignment", "ConstantValue", "CommentedOutCode" })
+	@SuppressWarnings({ "UnusedAssignment", "ConstantValue" })
 	private void checkWinningConditions()
 	{
 		if(score[0]==7)

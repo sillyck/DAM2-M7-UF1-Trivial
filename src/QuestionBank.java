@@ -1,12 +1,8 @@
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
@@ -117,15 +113,18 @@ public class QuestionBank
 		}
 	}
 	
-	public static void MarcarPreguntaComUtilitzada(int numPreguntaEscollida) throws IOException, ClassNotFoundException
+	public static void MarcarPreguntaComUtilitzada(int numPreguntaEscollida) throws IOException
 	{
 		WriteRandomJaFet(preguntesDisponibles.get(numPreguntaEscollida));
 	}
 	
+	/**
+	 * Retorna un boolean true o false segons si encara queden preguntes disponibles
+	 * @return true si encara queden preguntes; false si no.
+	 */
 	public static boolean HiHanPreguntesDisponibles()
 	{
-		if(preguntesDisponibles.size()==0) return false;
-		else return true;
+		return preguntesDisponibles.size()!=0;
 	}
 	
 	@SuppressWarnings("ResultOfMethodCallIgnored")
@@ -200,7 +199,7 @@ public class QuestionBank
 		}
 		catch(IOException e)
 		{
-			e.printStackTrace();
+			System.out.println("Error!\n\t------\nEl fitxer preguntas-repe.xml no existeix, pero no l'he pogut crear");
 		}
 		System.out.println("Començant lectura del XML de preguntes fetes");
 		if(file.length()!=0) try
@@ -247,12 +246,14 @@ public class QuestionBank
 	
 	public static void PrintStatsForNerds()
 	{
-		System.out.println("totesLesPreguntes.size()    = " + totesLesPreguntes.size());
-		System.out.println("preguntesDisponibles.size() = " + preguntesDisponibles.size());
-		System.out.println("preguntesJaFetes.size()     = " + preguntesJaFetes.size()+"\n");
+		System.out.println("Stats desde QuestionBank:");
+		System.out.println("\ttotesLesPreguntes.size()    = " + totesLesPreguntes.size());
+		System.out.println("\tpreguntesDisponibles.size() = " + preguntesDisponibles.size());
+		System.out.println("\tpreguntesJaFetes.size()     = " + preguntesJaFetes.size()+"\n");
 	}
 	
-	private static void WriteRandomJaFet(Pregunta preguntaJaFeta) throws IOException, ClassNotFoundException
+	@SuppressWarnings("ResultOfMethodCallIgnored")
+	private static void WriteRandomJaFet(Pregunta preguntaJaFeta) throws IOException
 	{
 		if(!new File("preguntas-repe.dat").exists()) new File("preguntas-repe.dat").createNewFile();
 		preguntesJaFetes.add(preguntaJaFeta);
@@ -267,25 +268,8 @@ public class QuestionBank
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
-		}
-	}
-	
-	@SuppressWarnings({ "unchecked", "unused" })
-	private static void LecturaXml() throws IOException
-	{
-		if(!new File("preguntas-repe.dat").exists()) System.out.println("El fitxer no existeix. No puc fer res...");
-		try
-		{
-			FileInputStream fileIn = new FileInputStream("preguntas-repe.dat");
-			ObjectInputStream in = new ObjectInputStream(fileIn);
-			preguntesJaFetes = (List<Pregunta>) in.readObject();
-			in.close();
-			fileIn.close();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
+			System.out.println("Error!\n------\n\tNo s'ha pogut escriure la pregunta actual al fitxer de preguntes repetides.");
+			System.out.println("\tLa pregunta repetida es guardará sols per l'instancia actual, pero no per a les següents");
 		}
 	}
 }

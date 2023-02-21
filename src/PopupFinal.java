@@ -11,11 +11,12 @@ public class PopupFinal extends JFrame implements ActionListener
 	private final String j1;
 	private final String j2;
 	
+	@SuppressWarnings("SpellCheckingInspection")
 	private JLabel jlabelTitle;
 	
 	public PopupFinal(String j1, String j2, FinalPopupAction finalPopupAction)
 	{
-		super();
+		super("Final de la partida");
 		setSize(1500, 800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.j1 = j1;
@@ -33,6 +34,7 @@ public class PopupFinal extends JFrame implements ActionListener
 		setLocationRelativeTo(null);
 	}
 	
+	@SuppressWarnings({ "DuplicatedCode", "SpellCheckingInspection" })
 	private void ConstruirUI()
 	{
 		Container c = getContentPane();

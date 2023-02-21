@@ -12,7 +12,7 @@ public class mainTrivial
 	{
 		MetaController.isThisDebugMode = false;
 		QuestionBank.Start();
-		pantallaInicial = new pantallaInicial();
+		pantallaInicial = new pantallaInicial("","");
 		pantallaInicial.setVisible(true);
 	}
 

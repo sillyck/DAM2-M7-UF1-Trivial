@@ -7,7 +7,7 @@ public class TaulerDebugAPM implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		Pregunta pregunta = null;
+		Pregunta pregunta;
 		try
 		{
 			pregunta = QuestionBank.ObtindrePregunta(true);

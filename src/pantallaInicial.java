@@ -8,11 +8,8 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.time.Duration;
-import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -27,7 +24,7 @@ public class pantallaInicial extends JFrame implements ActionListener
 	JTextField j1JTF;
 	JTextField j2JTF;
 
-	public pantallaInicial()
+	public pantallaInicial(String nomJ1, String nomJ2)
 	{
 		super("Trivial");
 		setSize(1250, 720);
@@ -54,6 +51,8 @@ public class pantallaInicial extends JFrame implements ActionListener
 
 		j1JTF = new JTextField(10);
 		j2JTF = new JTextField(10);
+		if(!nomJ1.isEmpty()) j1JTF.setText(nomJ1);
+		if(!nomJ2.isEmpty()) j2JTF.setText(nomJ2);
 
 		Container cp = getContentPane();
 
@@ -136,6 +135,7 @@ public class pantallaInicial extends JFrame implements ActionListener
 	 *
 	 * @param e
 	 */
+	@SuppressWarnings("javadoc")
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
@@ -144,8 +144,8 @@ public class pantallaInicial extends JFrame implements ActionListener
 
 		this.dispose();
 		
-		if(j1JTF.getText().toString().isEmpty()) j1JTF.setText("J1");
-		if(j2JTF.getText().toString().isEmpty()) j2JTF.setText("J2");
+		if(j1JTF.getText().isEmpty()) j1JTF.setText("J1");
+		if(j2JTF.getText().isEmpty()) j2JTF.setText("J2");
 		
 		try
 		{

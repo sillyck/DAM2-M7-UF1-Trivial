@@ -1,6 +1,5 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class PopupFinalReset implements ActionListener
 {
@@ -21,12 +20,12 @@ public class PopupFinalReset implements ActionListener
 		popupFinal.dispose();
 		if(MetaController.isThisDebugMode)
 		{
-			mainTesting.pantallaInicial = new pantallaInicial();
+			mainTesting.pantallaInicial = new pantallaInicial(j1,j2);
 			mainTesting.pantallaInicial.setVisible(true);
 		}
 		else
 		{
-			mainTrivial.pantallaInicial = new pantallaInicial();
+			mainTrivial.pantallaInicial = new pantallaInicial(j1,j2);
 			mainTrivial.pantallaInicial.setVisible(true);
 		}
 	}
