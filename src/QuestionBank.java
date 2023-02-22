@@ -103,14 +103,11 @@ public class QuestionBank
 		}
 		else
 		{
-//			int randomNumber = (new Random().nextInt(preguntesDisponibles.size()))+1;
 			int randomNumber = (new Random().nextInt(preguntesDisponibles.size()));
-			if(randomNumber==preguntesDisponibles.size()) randomNumber--;
-			if(randomNumber==(preguntesDisponibles.size()+1)) randomNumber--;
+			if(randomNumber==preguntesDisponibles.size() || randomNumber==(preguntesDisponibles.size()+1)) randomNumber--;
 			System.out.println("He triat la pregunta aleatoria número "+randomNumber);
 			CalcularPreguntesDisponibles();
 			if(marcarComJaFeta) MarcarPreguntaComUtilitzada(randomNumber);
-//			LecturaXml();
 			
 			CalcularPreguntesDisponibles();
 			return preguntesDisponibles.get(randomNumber);

@@ -43,13 +43,11 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 	{
 		super("Preguntes");
 		setSize(1250, 720);
-//		setSize(1400, 720);
 		setLocationRelativeTo(null);
 		this.tauler = tauler;
 		
 		JPanel preguntaPanell = new JPanel();
 		JLabel preguntaText = new JLabel("¿Quién descubrió América?");
-//		JLabel preguntaText = new JLabel("<html><body style='width: 1000px'>"+"¿Quién descubrió América?"+"</body></html>");
 		preguntaText.setFont(new Font("Tahoma", Font.BOLD, 24));
 		preguntaPanell.setBackground(Color.decode("#F9F5E7"));
 		preguntaPanell.add(preguntaText);
@@ -63,29 +61,15 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		
 		preguntaActual = QuestionBank.ObtindrePregunta(true);
 		preguntaActual.BarrejarRespostes();
-//		preguntaText.setText("<html><body style='width: 1000px'>"+preguntaActual.enunciat+"</body></html>");
-//		preguntaText.setText(preguntaActual.enunciat);
 		preguntaText.setText("<html>"+preguntaActual.enunciat.replaceAll("(?<=\\G.{1000})\\s", "<br>")+"</html>");
 		
-//		r1.setText(preguntaActual.respostes[0]);
 		r1 = new ButtonPregunta(preguntaActual.respostes[0]);
-//		r1.setText("<html>"+preguntaActual.respostes[0].replaceAll("(.{50})", "$1<br>")+"</html>");
-//		r1.setText("<html>"+preguntaActual.respostes[0].replaceAll("(?<=\\G.{800})\\s", "<br>")+"</html>");
 		r1.addActionListener(new BotoDePregunta(this,1,preguntaActual.respostes[0]));
 		r2 = new ButtonPregunta(preguntaActual.respostes[1]);
-//		r2.setText(preguntaActual.respostes[1]);
-//		r2.setText("<html>"+preguntaActual.respostes[1].replaceAll("(.{50})", "$1<br>")+"</html>");
-//		r2.setText("<html>"+preguntaActual.respostes[1].replaceAll("(?<=\\G.{800})\\s", "<br>")+"</html>");
 		r2.addActionListener(new BotoDePregunta(this,2,preguntaActual.respostes[1]));
 		r3 = new ButtonPregunta(preguntaActual.respostes[2]);
-//		r3.setText(preguntaActual.respostes[2]);
-//		r3.setText("<html>"+preguntaActual.respostes[2].replaceAll("(.{50})", "$1<br>")+"</html>");
-//		r3.setText("<html>"+preguntaActual.respostes[2].replaceAll("(?<=\\G.{800})\\s", "<br>")+"</html>");
 		r3.addActionListener(new BotoDePregunta(this,3,preguntaActual.respostes[2]));
 		r4 = new ButtonPregunta(preguntaActual.respostes[3]);
-//		r4.setText(preguntaActual.respostes[3]);
-//		r4.setText("<html>"+preguntaActual.respostes[3].replaceAll("(.{50})", "$1<br>")+"</html>");
-//		r4.setText("<html>"+preguntaActual.respostes[3].replaceAll("(?<=\\G.{800})\\s", "<br>")+"</html>");
 		r4.addActionListener(new BotoDePregunta(this,4,preguntaActual.respostes[3]));
 		
 		r1.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -93,7 +77,6 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		r3.setFont(new Font("Tahoma", Font.BOLD, 16));
 		r4.setFont(new Font("Tahoma", Font.BOLD, 16));
 		
-//		botonsPanellr1r2.setBackground(Color.decode("#22222"));
 		botonsPanellr1r2.setBackground(Color.decode("#F9F5E7"));
 		File musica = new File("res/musica.mp3");
 		musicaPlayer = new MP3Player(musica);
@@ -101,7 +84,6 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		
 		botonsPanellr3r4.add(r3);
 		botonsPanellr3r4.add(r4);
-//		botonsPanellr3r4.setBackground(Color.decode("#BBBBB"));
 		botonsPanellr3r4.setBackground(Color.decode("#F9F5E7"));
 		
 		Container cp = getContentPane();
@@ -162,19 +144,10 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		botonsGridr4.insets = new Insets(0, 150, 0, 0);
 		
 		//Colors
-//		cp.setBackground(Color.decode("#F9F5E7"));
-//		preguntaPanell.setBackground(Color.decode("#F9F5E7"));
-//		preguntaPanell.setBackground(Color.decode("#BBBBBB"));
 		preguntaPanell.setPreferredSize(new Dimension(1000, 300));
 		
 		preguntaText.setPreferredSize(new Dimension(1000, (preguntaText.getPreferredSize().height*3))); // set the preferred width to 1000 pixels
-//		preguntaText.setHorizontalAlignment(JLabel.LEFT);
 		preguntaText.setHorizontalAlignment(JLabel.CENTER);
-		
-//		botonsGridr1.setPreferredSize(new Dimension(300, 300));
-//		botonsGridr1.setPreferredSize(new Dimension(300, 300));
-//		botonsGridr1.setPreferredSize(new Dimension(300, 300));
-//		botonsGridr1.setPreferredSize(new Dimension(300, 300));
 		
 		//Afegir-ho tot al container
 		cp.add(preguntaPanell, preguntaGrid);
@@ -218,18 +191,10 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 			respostaCorrecta = true;
 			switch(num_boto)
 			{
-				case 1:
-					r1.setBackground(new Color(162,240,163));
-					break;
-				case 2:
-					r2.setBackground(new Color(162,240,163));
-					break;
-				case 3:
-					r3.setBackground(new Color(162,240,163));
-					break;
-				case 4:
-					r4.setBackground(new Color(162,240,163));
-					break;
+				case 1: r1.setBackground(new Color(162,240,163)); break;
+				case 2: r2.setBackground(new Color(162,240,163)); break;
+				case 3: r3.setBackground(new Color(162,240,163)); break;
+				case 4: r4.setBackground(new Color(162,240,163)); break;
 			}
 		}
 		else
@@ -237,47 +202,27 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 			respostaCorrecta = false;
 			switch(num_boto)
 			{
-				case 1:
-					r1.setBackground(new Color(225,123,123));
-					break;
-				case 2:
-					r2.setBackground(new Color(225,123,123));
-					break;
-				case 3:
-					r3.setBackground(new Color(225,123,123));
-					break;
-				case 4:
-					r4.setBackground(new Color(225,123,123));
-					break;
+				case 1: r1.setBackground(new Color(225,123,123)); break;
+				case 2: r2.setBackground(new Color(225,123,123)); break;
+				case 3: r3.setBackground(new Color(225,123,123)); break;
+				case 4: r4.setBackground(new Color(225,123,123)); break;
 			}
 			
 			int respostaCorrecta = -1;
 			
-			for(int i=0; i<preguntaActual.respostes.length; i++)
+			for(int i=0; i<preguntaActual.respostes.length; i++) if(preguntaActual.ComprovarResposta(preguntaActual.respostes[i]))
 			{
-				if(preguntaActual.ComprovarResposta(preguntaActual.respostes[i]))
-				{
-					respostaCorrecta = i;
-					break;
-				}
+				respostaCorrecta = i;
+				break;
 			}
 			
 			switch(respostaCorrecta+1)
 			{
-				case 1:
-					r1.setBackground(new Color(162,240,163));
-					break;
-				case 2:
-					r2.setBackground(new Color(162,240,163));
-					break;
-				case 3:
-					r3.setBackground(new Color(162,240,163));
-					break;
-				case 4:
-					r4.setBackground(new Color(162,240,163));
-					break;
-				default:
-					throw new IllegalStateException("Unexpected value: " + respostaCorrecta);
+				case 1: r1.setBackground(new Color(162,240,163)); break;
+				case 2: r2.setBackground(new Color(162,240,163)); break;
+				case 3: r3.setBackground(new Color(162,240,163)); break;
+				case 4: r4.setBackground(new Color(162,240,163)); break;
+				default: throw new IllegalStateException("Unexpected value: " + respostaCorrecta);
 			}
 		}
 	}
