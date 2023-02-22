@@ -123,7 +123,7 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		GridBagConstraints preguntaGrid = new GridBagConstraints();
 		preguntaGrid.gridx = 0;
 		preguntaGrid.gridy = 0;
-		preguntaGrid.insets = new Insets(-350, 0, 0, -300);
+		preguntaGrid.insets = new Insets(-350, 0, 0, -500);
 		
 		GridBagConstraints botonsGridr1 = new GridBagConstraints();
 		botonsGridr1.gridx = 0;
@@ -169,8 +169,8 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		
 		
 		
-//		if(MetaController.isThisDebugMode)
-//		{
+		if(MetaController.isThisDebugMode)
+		{
 			System.out.println("S'ha obtingut una pregunta");
 			System.out.println("==========================");
 			System.out.println(preguntaActual.enunciat);
@@ -180,7 +180,7 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 			System.out.println("\t"+preguntaActual.respostes[3]);
 			System.out.println("\t -> "+preguntaActual.respostaCorrecta+" <-\n");
 			QuestionBank.PrintStatsForNerds();
-//		}
+		}
 	}
 	
 	/**

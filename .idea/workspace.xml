@@ -7,10 +7,6 @@
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preguntas-repe.dat" beforeDir="false" afterPath="$PROJECT_DIR$/preguntas-repe.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preguntas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/preguntas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ButtonPregunta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ButtonPregunta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuestionBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuestionBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pantallaPreguntes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pantallaPreguntes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +100,7 @@
       <workItem from="1676311911935" duration="3617000" />
       <workItem from="1676325744550" duration="7571000" />
       <workItem from="1676556554604" duration="21000" />
-      <workItem from="1677082041841" duration="9781000" />
+      <workItem from="1677082041841" duration="10475000" />
     </task>
     <servers />
   </component>
