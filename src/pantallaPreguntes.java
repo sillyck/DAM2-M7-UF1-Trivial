@@ -33,11 +33,13 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 	{
 		super("Preguntes");
 		setSize(1250, 720);
+//		setSize(1400, 720);
 		setLocationRelativeTo(null);
 		this.tauler = tauler;
 		
 		JPanel preguntaPanell = new JPanel();
-		JLabel preguntaText = new JLabel("¿Quién descubrió América?");
+//		JLabel preguntaText = new JLabel("¿Quién descubrió América?");
+		JLabel preguntaText = new JLabel("<html><body style='width: 1000px'>"+"¿Quién descubrió América?"+"</body></html>");
 		preguntaText.setFont(new Font("Tahoma", Font.BOLD, 24));
 		
 		preguntaPanell.add(preguntaText);
@@ -120,7 +122,10 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		cp.setBackground(Color.decode("#F9F5E7"));
 //		preguntaPanell.setBackground(Color.decode("#F9F5E7"));
 		preguntaPanell.setBackground(Color.decode("#BBBBBB"));
-		preguntaPanell.setPreferredSize(new Dimension(1000, 300));
+//		preguntaPanell.setPreferredSize(new Dimension(1000, 300));
+		
+		preguntaText.setPreferredSize(new Dimension(1000, preguntaText.getPreferredSize().height)); // set the preferred width to 1000 pixels
+		preguntaText.setHorizontalAlignment(JLabel.LEFT);
 		
 		//Afegir-ho tot al container
 		cp.add(preguntaPanell, preguntaGrid);
@@ -131,7 +136,8 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		
 		preguntaActual = QuestionBank.ObtindrePregunta(true);
 		preguntaActual.BarrejarRespostes();
-		preguntaText.setText(preguntaActual.enunciat);
+		preguntaText.setText("<html><body style='width: 1000px'>"+preguntaActual.enunciat+"</body></html>");
+		
 		r1.setText(preguntaActual.respostes[0]);
 		r1.addActionListener(new BotoDePregunta(this,1,preguntaActual.respostes[0]));
 		r2.setText(preguntaActual.respostes[1]);
