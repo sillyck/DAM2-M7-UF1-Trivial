@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preguntas-repe.dat" beforeDir="false" afterPath="$PROJECT_DIR$/preguntas-repe.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PopupFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PopupFinal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +80,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.mainTrivial" />
         <item itemvalue="Application.mainTesting" />
+        <item itemvalue="Application.mainTrivial" />
       </list>
     </recent_temporary>
   </component>
@@ -104,7 +104,7 @@
       <workItem from="1676311911935" duration="3617000" />
       <workItem from="1676325744550" duration="7571000" />
       <workItem from="1676556554604" duration="21000" />
-      <workItem from="1677082041841" duration="11335000" />
+      <workItem from="1677082041841" duration="12792000" />
     </task>
     <servers />
   </component>
