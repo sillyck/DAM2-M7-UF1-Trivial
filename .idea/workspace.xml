@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc57aad1-3c9f-4e35-8f2f-1e63b4f4c000" name="Changes" comment="">
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preguntas-repe.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MetaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MetaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PopupFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PopupFinal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PopupFinalReset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PopupFinalReset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuestionBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuestionBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preguntas-repe.dat" beforeDir="false" afterPath="$PROJECT_DIR$/preguntas-repe.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tauler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaulerDebugAPM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaulerDebugAPM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainTrivial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainTrivial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pantallaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pantallaInicial.java" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/src/pantallaPreguntes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pantallaPreguntes.java" afterDir="false" />
->>>>>>> pantallaPreguntes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +18,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -43,9 +31,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectId" id="2LQ1SljiaN9zecAtXgoL8Dkgteo" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -55,44 +40,24 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "OverrideImplement.generate.javadoc": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
->>>>>>> pantallaPreguntes
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="TaulerDebug" />
     </key>
   </component>
   <component name="RunManager" selected="Application.mainTrivial">
@@ -136,10 +101,6 @@
       <workItem from="1676311911935" duration="3617000" />
       <workItem from="1676325744550" duration="7571000" />
       <workItem from="1676556554604" duration="21000" />
-      <workItem from="1676571672312" duration="196000" />
-      <workItem from="1676646729013" duration="1747000" />
-      <workItem from="1676846394772" duration="6441000" />
-      <workItem from="1676913949451" duration="17063000" />
     </task>
     <servers />
   </component>

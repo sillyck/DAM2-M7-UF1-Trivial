@@ -547,7 +547,11 @@ public class Tauler extends JFrame implements ActionListener
 		//  encertat i fals si s'ha fallat
 		// ====================================================
 		inQuestion = false;
-		if(correct && (currentTurn==1 || currentTurn==2)) score[currentTurn-1]++;
+		if(correct && (currentTurn==1 || currentTurn==2))
+		{
+			System.out.println("Sumo un punt al jugador "+(currentTurn-1)+"; que ara en te"+(score[currentTurn-1]+1));
+			score[currentTurn-1]++;
+		}
 		advance();
 	}
 	
@@ -575,8 +579,21 @@ public class Tauler extends JFrame implements ActionListener
 			//       POSAR AQUI LA CRIDA CAP A LES PREGUNTES
 			// ====================================================
 			
-			
-			
+			pantallaPreguntes pantallaPreguntes = null;
+			try
+			{
+				pantallaPreguntes = new pantallaPreguntes(this);
+			}
+			catch(IOException ex)
+			{
+				throw new RuntimeException(ex);
+			}
+			catch(ClassNotFoundException ex)
+			{
+				throw new RuntimeException(ex);
+			}
+			setVisible(false);
+			pantallaPreguntes.setVisible(true);
 		}
 	}
 	
