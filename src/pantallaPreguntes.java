@@ -33,7 +33,7 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 	{
 		super("Preguntes");
 		setSize(1250, 720);
-		
+		setLocationRelativeTo(null);
 		this.tauler = tauler;
 		
 		JPanel preguntaPanell = new JPanel();
