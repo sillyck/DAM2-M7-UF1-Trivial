@@ -26,9 +26,9 @@ public class PopupFinal extends JFrame implements ActionListener
 		switch(finalPopupAction)
 		{
 			case J1_WINS: jlabelTitle.setText("Victoria per al jugador 1: "+j1+"!"); break;
-			case J2_WINS:  jlabelTitle.setText("Victoria per al jugador 2: "+j1+"!"); break;
+			case J2_WINS:  jlabelTitle.setText("Victoria per al jugador 2: "+j2+"!"); break;
 			case J1_WINS_BARELY: jlabelTitle.setText("Victoria per poc per al jugador 1: "+j1+"!"); break;
-			case J2_WINS_BARELY: jlabelTitle.setText("Victoria per poc per al jugador 2: "+j1+"!"); break;
+			case J2_WINS_BARELY: jlabelTitle.setText("Victoria per poc per al jugador 2: "+j2+"!"); break;
 			case BOTH: jlabelTitle.setText("Empat!"); break;
 		}
 		pack();
