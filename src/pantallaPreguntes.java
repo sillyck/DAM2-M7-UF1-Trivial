@@ -41,7 +41,7 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		JLabel preguntaText = new JLabel("¿Quién descubrió América?");
 //		JLabel preguntaText = new JLabel("<html><body style='width: 1000px'>"+"¿Quién descubrió América?"+"</body></html>");
 		preguntaText.setFont(new Font("Tahoma", Font.BOLD, 24));
-		
+		preguntaPanell.setBackground(Color.decode("#F9F5E7"));
 		preguntaPanell.add(preguntaText);
 		
 		JPanel botonsPanellr1r2 = new JPanel();
@@ -83,14 +83,17 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		r3.setFont(new Font("Tahoma", Font.BOLD, 16));
 		r4.setFont(new Font("Tahoma", Font.BOLD, 16));
 		
-		botonsPanellr1r2.setBackground(Color.decode("#22222"));
+//		botonsPanellr1r2.setBackground(Color.decode("#22222"));
+		botonsPanellr1r2.setBackground(Color.decode("#F9F5E7"));
 		
 		botonsPanellr3r4.add(r3);
 		botonsPanellr3r4.add(r4);
-		botonsPanellr3r4.setBackground(Color.decode("#BBBBB"));
+//		botonsPanellr3r4.setBackground(Color.decode("#BBBBB"));
+		botonsPanellr3r4.setBackground(Color.decode("#F9F5E7"));
 		
 		Container cp = getContentPane();
 		cp.setLayout(new GridBagLayout());
+		cp.setBackground(Color.decode("#F9F5E7"));
 		
 		Border jButtonBorderR1 = r1.getBorder();
 		Border jButtonMarginR1 = new EmptyBorder(20, 40, 20, 40);
@@ -146,9 +149,9 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		botonsGridr4.insets = new Insets(0, 150, 0, 0);
 		
 		//Colors
-		cp.setBackground(Color.decode("#F9F5E7"));
+//		cp.setBackground(Color.decode("#F9F5E7"));
 //		preguntaPanell.setBackground(Color.decode("#F9F5E7"));
-		preguntaPanell.setBackground(Color.decode("#BBBBBB"));
+//		preguntaPanell.setBackground(Color.decode("#BBBBBB"));
 		preguntaPanell.setPreferredSize(new Dimension(1000, 300));
 		
 		preguntaText.setPreferredSize(new Dimension(1000, (preguntaText.getPreferredSize().height*3))); // set the preferred width to 1000 pixels
@@ -166,8 +169,6 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		cp.add(r2, botonsGridr2);
 		cp.add(r3, botonsGridr3);
 		cp.add(r4, botonsGridr4);
-		
-		
 		
 		if(MetaController.isThisDebugMode)
 		{
