@@ -18,6 +18,7 @@ public class PopupFinal extends JFrame implements ActionListener
 	{
 		super("Final de la partida");
 		setSize(1500, 800);
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.j1 = j1;
 		this.j2 = j2;

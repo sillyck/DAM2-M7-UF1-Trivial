@@ -1,9 +1,4 @@
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -38,11 +33,13 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 	{
 		super("Preguntes");
 		setSize(1250, 720);
-		
+//		setSize(1400, 720);
+		setLocationRelativeTo(null);
 		this.tauler = tauler;
 		
 		JPanel preguntaPanell = new JPanel();
-		JLabel preguntaText = new JLabel("¿Quién descubrió América?");
+//		JLabel preguntaText = new JLabel("¿Quién descubrió América?");
+		JLabel preguntaText = new JLabel("<html><body style='width: 1000px'>"+"¿Quién descubrió América?"+"</body></html>");
 		preguntaText.setFont(new Font("Tahoma", Font.BOLD, 24));
 		
 		preguntaPanell.add(preguntaText);
@@ -123,7 +120,12 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		
 		//Colors
 		cp.setBackground(Color.decode("#F9F5E7"));
-		preguntaPanell.setBackground(Color.decode("#F9F5E7"));
+//		preguntaPanell.setBackground(Color.decode("#F9F5E7"));
+		preguntaPanell.setBackground(Color.decode("#BBBBBB"));
+//		preguntaPanell.setPreferredSize(new Dimension(1000, 300));
+		
+		preguntaText.setPreferredSize(new Dimension(1000, preguntaText.getPreferredSize().height)); // set the preferred width to 1000 pixels
+		preguntaText.setHorizontalAlignment(JLabel.LEFT);
 		
 		//Afegir-ho tot al container
 		cp.add(preguntaPanell, preguntaGrid);
@@ -134,7 +136,8 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		
 		preguntaActual = QuestionBank.ObtindrePregunta(true);
 		preguntaActual.BarrejarRespostes();
-		preguntaText.setText(preguntaActual.enunciat);
+		preguntaText.setText("<html><body style='width: 1000px'>"+preguntaActual.enunciat+"</body></html>");
+		
 		r1.setText(preguntaActual.respostes[0]);
 		r1.addActionListener(new BotoDePregunta(this,1,preguntaActual.respostes[0]));
 		r2.setText(preguntaActual.respostes[1]);
@@ -143,6 +146,19 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		r3.addActionListener(new BotoDePregunta(this,3,preguntaActual.respostes[2]));
 		r4.setText(preguntaActual.respostes[3]);
 		r4.addActionListener(new BotoDePregunta(this,4,preguntaActual.respostes[3]));
+		
+//		if(MetaController.isThisDebugMode)
+//		{
+			System.out.println("S'ha obtingut una pregunta");
+			System.out.println("==========================");
+			System.out.println(preguntaActual.enunciat);
+			System.out.println("\t"+preguntaActual.respostes[0]);
+			System.out.println("\t"+preguntaActual.respostes[1]);
+			System.out.println("\t"+preguntaActual.respostes[2]);
+			System.out.println("\t"+preguntaActual.respostes[3]);
+			System.out.println("\t -> "+preguntaActual.respostaCorrecta+" <-\n");
+			QuestionBank.PrintStatsForNerds();
+//		}
 	}
 	
 	/**
@@ -210,7 +226,7 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 				}
 			}
 			
-			switch(respostaCorrecta)
+			switch(respostaCorrecta+1)
 			{
 				case 1:
 					r1.setBackground(new Color(162,240,163));

@@ -28,7 +28,7 @@ public class pantallaInicial extends JFrame implements ActionListener
 	{
 		super("Trivial");
 		setSize(1250, 720);
-
+		setLocationRelativeTo(null);
 		JPanel benvinguda = new JPanel();
 		JPanel j1panel = new JPanel();
 		JPanel j2panel = new JPanel();

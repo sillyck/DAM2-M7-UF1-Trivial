@@ -560,7 +560,7 @@ public class Tauler extends JFrame implements ActionListener
 	 */
 	public void updateTitle()
 	{
-		jlabelTitle.setText("Ronda "+round+"; torn de: "+playerName[currentTurn-1]);
+		jlabelTitle.setText("|| Ronda "+round+" || Torn de: "+playerName[currentTurn-1]+" ||");
 	}
 	
 	/**
@@ -638,7 +638,7 @@ public class Tauler extends JFrame implements ActionListener
 				case 5: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.BOTH); break;
 			}
 			popupFinal.setVisible(true);
-			dispose();
+			setVisible(false);
 		}
 	}
 }
