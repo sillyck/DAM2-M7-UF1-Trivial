@@ -1,6 +1,13 @@
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.JButton;
@@ -10,6 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
+
+import jaco.mp3.player.MP3Player;
 
 public class pantallaPreguntes extends JFrame implements ActionListener
 {
@@ -28,6 +37,7 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 	JButton r3;
 	JButton r4;
 	
+	private MP3Player musicaPlayer;
 
 	public pantallaPreguntes(Tauler tauler) throws IOException, ClassNotFoundException
 	{
@@ -55,6 +65,10 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		r2.setFont(new Font("Tahoma", Font.BOLD, 16));
 		r3.setFont(new Font("Tahoma", Font.BOLD, 16));
 		r4.setFont(new Font("Tahoma", Font.BOLD, 16));
+		
+		File musica = new File("res/musica.mp3");
+		musicaPlayer = new MP3Player(musica);
+		musicaPlayer.play();
 		
 		botonsPanellr1r2.setBackground(Color.decode("#22222"));
 		
@@ -248,8 +262,10 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 	
 	private void Tancar() throws IOException
 	{
+		musicaPlayer.stop();
 		setVisible(false);
 		tauler.answer(respostaCorrecta);
 		tauler.setVisible(true);
 	}
+
 }
