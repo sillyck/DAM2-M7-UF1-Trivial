@@ -1822,93 +1822,93 @@
   </pregunta>
   <pregunta>
 		<texto>On es troba el "Palacio de westminster?"</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>Londres</correcta>
 				<incorrecta>París</incorrecta>
 				<incorrecta>Roma</incorrecta>
 				<incorrecta>Florencia</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>Com es diu en tennis un punt de servei directe?</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>Ace</correcta>
 				<incorrecta>Love</incorrecta>
 				<incorrecta>Revés</incorrecta>
 				<incorrecta>Net</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>A quina distància està el punt de penal de la porteria en futbol?</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>11m</correcta>
 				<incorrecta>12m</incorrecta>
 				<incorrecta>7m</incorrecta>
 				<incorrecta>10m</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>Si parlem de jugador boia, estem parlant de ...</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>waterpolo</correcta>
 				<incorrecta>voleibol</incorrecta>
 				<incorrecta>hockey</incorrecta>
 				<incorrecta>surf</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>A quina altura està l'aro de basquet?</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>3,05m</correcta>
 				<incorrecta>3,09m</incorrecta>
 				<incorrecta>3,10m</incorrecta>
 				<incorrecta>3,15m</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>Quants jugadors en pista hi ha en un equip de voleibol?</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>6</correcta>
 				<incorrecta>4</incorrecta>
 				<incorrecta>5</incorrecta>
 				<incorrecta>9</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>Quant fa de llargada una piscina olimpica?</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>50m</correcta>
 				<incorrecta>45m</incorrecta>
 				<incorrecta>30m</incorrecta>
 				<incorrecta>35m</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>Quants kilometres es corre en una marató?</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>42km</correcta>
 				<incorrecta>52km</incorrecta>
 				<incorrecta>65km</incorrecta>
 				<incorrecta>50km</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>Quants anells de la NBA té Shaquille O’Neal</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>4</correcta>
 				<incorrecta>3</incorrecta>
 				<incorrecta>5</incorrecta>
 				<incorrecta>CAP</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>Quin és l'esport nacional a Japó?</texto>
-			<respuestas>
+			<respuesta>
 				<correcta>Sumo</correcta>
 				<incorrecta>Karate</incorrecta>
 				<incorrecta>E-Sports</incorrecta>
 				<incorrecta>Les 3 son correctes</incorrecta>
-			</respuestas>
+			</respuesta>
 	</pregunta>
 	<pregunta>
 		<texto>Cuando se juntaron Ford y Shelby?</texto>
@@ -1921,8 +1921,8 @@
 		
 	</pregunta>
 	<pregunta>
-		<texto>Como se llamaba el fundador de ferrari?</texto>
 		<respuestas>
+		<texto>Como se llamaba el fundador de ferrari?</texto>
 			<correcta>Enzo</correcta>
 			<incorrecta>Corleone</incorrecta>
 			<incorrecta>Giuseppe</incorrecta>
@@ -1930,8 +1930,8 @@
 			</respuestas>
 	</pregunta>
 	<pregunta>
-		<texto>Cuantos aros tiene el logo de Audi?</texto>
 		<respuestas>
+		<texto>Cuantos aros tiene el logo de Audi?</texto>
 			<correcta>4</correcta>
 			<incorrecta>3</incorrecta>
 			<incorrecta>5</incorrecta>
@@ -1939,8 +1939,8 @@
 			</respuestas>
 	</pregunta>
 	<pregunta>
-		<texto>Que nombre de un Lamborghini comparte con un circuito Español?</texto>
 		<respuestas>
+		<texto>Que nombre de un Lamborghini comparte con un circuito Español?</texto>
 			<correcta>Jarama</correcta>
 			<incorrecta>Urraco</incorrecta>
 			<incorrecta>Countach</incorrecta>
@@ -1948,8 +1948,8 @@
 			</respuestas>
 	</pregunta>
 	<pregunta>
-		<texto>Cuál es el circuito más largo del mundo?</texto>
 		<respuestas>
+		<texto>Cuál es el circuito más largo del mundo?</texto>
 			<correcta>Nürburgring</correcta>
 			<incorrecta>Jarama</incorrecta>
 			<incorrecta>Yas Marina</incorrecta>
@@ -1957,8 +1957,8 @@
 			</respuestas>
 	</pregunta>
 	<pregunta>
-		<texto>Cuál es el circuito con más público del mundo?</texto>
 		<respuestas>
+		<texto>Cuál es el circuito con más público del mundo?</texto>
 			<correcta>Indianápolis</correcta>
 			<incorrecta>Silverstone </incorrecta>
 			<incorrecta>Mónaco</incorrecta>
@@ -1966,8 +1966,8 @@
 			</respuestas>
 	</pregunta>
 	<pregunta>
-		<texto>Cuál es el coche más rápido del mundo?</texto>
 		<respuestas>
+		<texto>Cuál es el coche más rápido del mundo?</texto>
 			<correcta>SSC Tuatara</correcta>
 			<incorrecta>Bugatti Chiron</incorrecta>
 			<incorrecta>Lamborghini Veneno</incorrecta>
@@ -1975,8 +1975,8 @@
 			</respuestas>
 	</pregunta>
 	<pregunta>
-		<texto>Cuál es el piloto con más victorias del Rally?</texto>
 		<respuestas>
+		<texto>Cuál es el piloto con más victorias del Rally?</texto>
 			<correcta>Sébastien Loeb</correcta>
 			<incorrecta>Carlos Sainz</incorrecta>
 			<incorrecta>Dani Sordo</incorrecta>
@@ -1984,8 +1984,8 @@
 			</respuestas>
 	</pregunta>
 	<pregunta>
-		<texto>Cuál es la velocidad máxima que alcanza un F1 (2021)?</texto>
 		<respuestas>
+		<texto>Cuál es la velocidad máxima que alcanza un F1 (2021)?</texto>
 			<correcta>378 km/h</correcta>
 			<incorrecta>388 km/h</incorrecta>
 			<incorrecta>368 km/h</incorrecta>
@@ -1993,8 +1993,8 @@
 			</respuestas>
 	</pregunta>
 	<pregunta>
-		<texto>Como se les llama a los vehículos con una sola plaza?</texto>
 		<respuestas>
+		<texto>Como se les llama a los vehículos con una sola plaza?</texto>
 			<correcta>Monoplaza</correcta>
 			<incorrecta>Biplaza</incorrecta>
 			<incorrecta>Compacto</incorrecta>
@@ -2089,1249 +2089,6 @@
 			<incorrecta>K2</incorrecta>
 			<incorrecta>Lhotse</incorrecta>
 			<incorrecta>Kilimanjaro</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-        <texto>¿Quien es el equipo de futbol con mas champions?</texto>
-        <respuestas>
-            <correcta>Real Madrid</correcta>
-            <incorrecta>Bayern de Munich</incorrecta>
-            <incorrecta>Fc Barcelona</incorrecta>
-            <incorrecta>AC Milan</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cuál es el verdadero nombre de goku?</texto>
-        <respuestas>
-            <correcta>Kakaroto</correcta>
-            <incorrecta>Luffy</incorrecta>
-            <incorrecta>Lechuga</incorrecta>
-            <incorrecta>Cor Petit</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cual es el estadio de futbol español con mas aforo?</texto>
-        <respuestas>
-            <correcta>Camp Nou</correcta>
-            <incorrecta>Santiago Bernabeu</incorrecta>
-            <incorrecta>San Mames</incorrecta>
-            <incorrecta>Benito Villamarin</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cual es el pais mas grande del mundo?</texto>
-        <respuestas>
-            <correcta>Rusia</correcta>
-            <incorrecta>China</incorrecta>
-            <incorrecta>Estados Unidos</incorrecta>
-            <incorrecta>Brazil</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cuantas veces a muerto krilin personaje de Dragon Ball?</texto>
-        <respuestas>
-            <correcta>3</correcta>
-            <incorrecta>2</incorrecta>
-            <incorrecta>5</incorrecta>
-            <incorrecta>10</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cual es el primero de la lista de los numeros primos?</texto>
-        <respuestas>
-            <correcta>2</correcta>
-            <incorrecta>0</incorrecta>
-            <incorrecta>1</incorrecta>
-            <incorrecta>4</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cual es el personaje mas fuerte en el anime de Bleach?</texto>
-        <respuestas>
-            <correcta>Ywatch</correcta>
-            <incorrecta>Ichigo</incorrecta>
-            <incorrecta>Kenpachi</incorrecta>
-            <incorrecta>Urahara</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cual es el jugador de tenis con mas titulos?</texto>
-        <respuestas>
-            <correcta>Jimmy Connors</correcta>
-            <incorrecta>Roger Federer</incorrecta>
-            <incorrecta>Rafa Nadal</incorrecta>
-            <incorrecta>Novak Dokovic</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cual es el personaje mas poderoso del universo 7 en Dragon Ball?</texto>
-        <respuestas>
-            <correcta>Beerus</correcta>
-            <incorrecta>Goku</incorrecta>
-            <incorrecta>Bulma</incorrecta>
-            <incorrecta>Broly</incorrecta>
-        </respuestas>
-    </pregunta>	
-    <pregunta>
-		<texto>¿En qué año empieza la Segunda Guerra Mundial?</texto>
-		<respuestas>
-			<correcta>1939</correcta>
-			<incorrecta>1936</incorrecta>
-			<incorrecta>1945</incorrecta>
-			<incorrecta>1941</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-    <texto>¿En qué año cayó el Imperio Romano de occidente?</texto>
-    <respuestas>
-      <correcta>476</correcta>
-      <incorrecta>1453</incorrecta>
-      <incorrecta>1120</incorrecta>
-      <incorrecta>523</incorrecta>
-    </respuestas>
-   </pregunta>
-  <pregunta>
-    <texto>¿Qué reyes reinaban en España cuando se descubrió América?</texto>
-    <respuestas>
-      <correcta>Fernando e Isabel</correcta>
-      <incorrecta>Felipe y Letizia</incorrecta>
-      <incorrecta>Fernando y Maria Cristina</incorrecta>
-      <incorrecta>Isabel y Francisco de Asís</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>¿De qué estilo arquitectónico es la catedral de Notre Dame?</texto>
-    <respuestas>
-      <correcta>Gótico</correcta>
-      <incorrecta>Románico</incorrecta>
-      <incorrecta>Neoclásico</incorrecta>
-      <incorrecta>Barroco</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>¿En qué año comienza la conquista musulmana de la península ibérica?</texto>
-    <respuestas>
-      <correcta>711</correcta>
-      <incorrecta>726</incorrecta>
-      <incorrecta>1492</incorrecta>
-      <incorrecta>1100</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>¿Cuándo entró en vigor la actual Constitución en España?</texto>
-    <respuestas>
-      <correcta>1978</correcta>
-      <incorrecta>1975</incorrecta>
-      <incorrecta>1980</incorrecta>
-      <incorrecta>1976</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>¿Cuál es el órgano de poder principal en España?</texto>
-    <respuestas>
-      <correcta>Tribunal supremo</correcta>
-      <incorrecta>Congreso de los Diputados</incorrecta>
-      <incorrecta>Tribunal constitucional</incorrecta>
-      <incorrecta>Senado</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>¿En qué año empieza la Guerra Civil Española?</texto>
-    <respuestas>
-      <correcta>1936</correcta>
-      <incorrecta>1939</incorrecta>
-      <incorrecta>1945</incorrecta>
-      <incorrecta>1937</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>¿Qué acontecimiento histórico sucedió en España entre 1923 y 1930?</texto>
-    <respuestas>
-      <correcta>Dictadura de Primo de Rivera</correcta>
-      <incorrecta>Guerra Civil Española</incorrecta>
-      <incorrecta>Regéncia de Maria Cristina</incorrecta>
-      <incorrecta>Primera república española</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>¿En qué año fue descubierta América?</texto>
-    <respuestas>
-      <correcta>1492</correcta>
-      <incorrecta>1460</incorrecta>
-      <incorrecta>1542</incorrecta>
-      <incorrecta>976</incorrecta>
-    </respuestas>
-  </pregunta>		
- <pregunta>
-    <texto>Qui va inventar el primer ordinador?</texto>
-    <respuestas>
-      <correcta>Konrad Zuse</correcta>
-      <incorrecta>Alva John Fisher</incorrecta>
-      <incorrecta>Percy Spencer</incorrecta>
-      <incorrecta>Alexander Graham Bell</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>A quina edat va debutar Ansu Fati al primer equip del FCB?</texto>
-    <respuestas>
-      <correcta>16 anys</correcta>
-      <incorrecta>17 anys</incorrecta>
-      <incorrecta>18 anys</incorrecta>
-      <incorrecta>19 anys</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>Quina companyia desarrolla de GTA V?</texto>
-    <respuestas>
-      <correcta>RockStar Games</correcta>
-      <incorrecta>Steam</incorrecta>
-      <incorrecta>Nintendo</incorrecta>
-      <incorrecta>Electronic Arts</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>Quina selecció va guanyar el mundial de Qatar del 2022?</texto>
-    <respuestas>
-      <correcta>Selecció Argentina</correcta>
-      <incorrecta>Selecció Espanyola</incorrecta>
-      <incorrecta>Selecció Francesa</incorrecta>
-      <incorrecta>Selecció de Portugal</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>Quin riu es el més cabalós del mon?</texto>
-    <respuestas>
-      <correcta>Amazones</correcta>
-      <incorrecta>Ebre</incorrecta>
-      <incorrecta>Tajo</incorrecta>
-      <incorrecta>Francolí</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>Quantes capitals hi han a Espanya?</texto>
-    <respuestas>
-      <correcta>52</correcta>
-      <incorrecta>60</incorrecta>
-      <incorrecta>48</incorrecta>
-      <incorrecta>56</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>A on trobem la Torre Eiffel?</texto>
-    <respuestas>
-      <correcta>París</correcta>
-      <incorrecta>Madrid</incorrecta>
-      <incorrecta>Berlín</incorrecta>
-      <incorrecta>Roma</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>De quina rassa és Goku?</texto>
-    <respuestas>
-      <correcta>Saiyajin</correcta>
-      <incorrecta>Humà</incorrecta>
-      <incorrecta>Androide</incorrecta>
-      <incorrecta>Namekiano</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>A quin monestir van ser enterrats Jaume I el Conqueridor i set monarques més?</texto>
-    <respuestas>
-      <correcta>Reial Monestir de Santa Maria de Poblet</correcta>
-      <incorrecta>Reial Monestir de Santes Creus</incorrecta>
-      <incorrecta>Monestir de Santa Maria de Ripoll</incorrecta>
-      <incorrecta>Monestir de Montserrat</incorrecta>
-    </respuestas>
-  </pregunta>
-  <pregunta>
-    <texto>A quin any es va fundar el Barça?</texto>
-    <respuestas>
-      <correcta>1899</correcta>
-      <incorrecta>1783</incorrecta>
-      <incorrecta>1852</incorrecta>
-      <incorrecta>1756</incorrecta>
-    </respuestas>
-  </pregunta>
-   <pregunta>
-        <texto>¿Qué juego de Wii trata sobre deportes?</texto>
-        <respuestas>
-            <correcta>Wii Sports</correcta>
-            <incorrecta>Super Mario 64</incorrecta>
-            <incorrecta>Tetris DS</incorrecta>
-            <incorrecta>Cthulhu Saves the World: Super Hyper Enhanced Championship Edition Alpha Diamond DX Plus Alpha FES HD Premium Enhanced Game of the Year Collector's Edition (without Avatars!)</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cuál de estos es un nombre real de un lugar del mundo?</texto>
-        <respuestas>
-            <correcta>Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</correcta>
-            <incorrecta>Musulmania</incorrecta>
-            <incorrecta>Islamistán</incorrecta>
-            <incorrecta>Kostenlosestelefonkaufen</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿En qué estado se encuentra Massachusetts?</texto>
-        <respuestas>
-            <correcta>Massachusetts es un estado</correcta>
-            <incorrecta>En Florida</incorrecta>
-            <incorrecta>En Dakota del Norte</incorrecta>
-            <incorrecta>En Dakota del Sur</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cuáles son los tres estados principales de la materia?</texto>
-        <respuestas>
-            <correcta>Sólido, líquido y gaseoso</correcta>
-            <incorrecta>Sólido, efímero y gaseoso</incorrecta>
-            <incorrecta>Efímero, lúcido e islámico</incorrecta>
-            <incorrecta>La UF1, UF2 y UF3 de la materia M05</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Qué significan las siglas de USB?</texto>
-        <respuestas>
-            <correcta>Universal Serial Bus</correcta>
-            <incorrecta>Ultimate Standalone Bus</incorrecta>
-            <incorrecta>Unusually Sexual Breastfeeding</incorrecta>
-            <incorrecta>Ultimate Salad Breakfast</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>El padre de Juan tiene 4 hijos. Uno se llama Ernesto, el segundo Raymundo y el tercero Efímero. ¿Cómo se llama el cuarto hijo?</texto>
-        <respuestas>
-            <correcta>Juan</correcta>
-            <incorrecta>Pablo</incorrecta>
-            <incorrecta>Wolfgang Amadeus Mozart</incorrecta>
-            <incorrecta>No se puede saber</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>En Dragon Ball, ¿Cuántas de las 7 esferas del dragón necesitas reunir para invocar a Shenlong?</texto>
-        <respuestas>
-            <correcta>7</correcta>
-            <incorrecta>4</incorrecta>
-            <incorrecta>Goku</incorrecta>
-            <incorrecta>8 por si acaso</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cómo se llama el protagonista de Avatar?</texto>
-        <respuestas>
-            <correcta>Jake Sully</correcta>
-            <incorrecta>Chop Suey</incorrecta>
-            <incorrecta>James Blowjob</incorrecta>
-            <incorrecta>Jack Blue</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Como norma general, ¿Cuántas veces puedes doblar una hoja de papel por la mitad?</texto>
-        <respuestas>
-            <correcta>7 veces</correcta>
-            <incorrecta>4 veces</incorrecta>
-            <incorrecta>12 veces</incorrecta>
-            <incorrecta>Más de 12 veces</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cuál de estos es un nombre de pez real?</texto>
-        <respuestas>
-            <correcta>Wahoo</correcta>
-            <incorrecta>El comepiedras volador</incorrecta>
-            <incorrecta>Webos</incorrecta>
-            <incorrecta>Chapaluca</incorrecta>
-        </respuestas>
-    </pregunta>
-   <pregunta>
-      <texto> Qué año murió la Reina Isabel II:</texto>
-      <respuestas>
-        <correcta>2022</correcta>
-        <incorrecta>1939</incorrecta>
-        <incorrecta>2021</incorrecta>
-        <incorrecta>No ha muerto, es un reptiliano</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>¿Donde está ubicado el instituto Jaume Huguet?</texto>
-      <respuestas>
-        <correcta>Valls</correcta>
-        <incorrecta>Tarragona</incorrecta>
-        <incorrecta>Afganistan</incorrecta>
-        <incorrecta>Alcover</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>¿Cuál es el videojuego más vendido de la historia?</texto>
-      <respuestas>
-        <correcta>Minecraft</correcta>
-        <incorrecta>Tetris</incorrecta>
-        <incorrecta>Grand Theft Auto V</incorrecta>
-        <incorrecta>Wii Sports</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>¿Qué elemento de la tabla periódica tiene como símbolo He?</texto>
-      <respuestas>
-        <correcta>Helio</correcta>
-        <incorrecta>Oxígeno</incorrecta>
-        <incorrecta>Oro</incorrecta>
-        <incorrecta>Ese elemento no existe</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>¿Cuál es el órgano más grande del ser humano?</texto>
-      <respuestas>
-        <correcta>La piel</correcta>
-        <incorrecta>El hígado</incorrecta>
-        <incorrecta>El cerebro</incorrecta>
-        <incorrecta>El intestino delgado</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>¿Qué significa "Google"?</texto>
-      <respuestas>
-        <correcta>Es el número 10 elevado a la potencia de 100</correcta>
-        <incorrecta>Se refiere a la palabra gafas</incorrecta>
-        <incorrecta>No tiene significado</incorrecta>
-        <incorrecta>En honor a su creador</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>¿Cual es el país mas endeudado de Europa?</texto>
-      <respuestas>
-        <correcta>España</correcta>
-        <incorrecta>Italia</incorrecta>
-        <incorrecta>Alemania</incorrecta>
-        <incorrecta>Países Bajos</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>Cuantas combinaciones se puede hacer con un cubo de rubik de 3x3?</texto>
-      <respuestas>
-        <correcta>43.252.003.274.489.856.000</correcta>
-        <incorrecta>324.234</incorrecta>
-        <incorrecta>564.345.312.006</incorrecta>
-        <incorrecta>10</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>En que año salio Android?</texto>
-      <respuestas>
-        <correcta>2003</correcta>
-        <incorrecta>2069</incorrecta>
-        <incorrecta>2011</incorrecta>
-        <incorrecta>1680</incorrecta>
-      </respuestas>
-    </pregunta>
-    <pregunta>
-      <texto>Quien fundó Twitter?</texto>
-      <respuestas>
-        <correcta>Jack Dorsey</correcta>
-        <incorrecta>Elon Musk</incorrecta>
-        <incorrecta>Steve Jobs</incorrecta>
-        <incorrecta>Jeff Bezos</incorrecta>
-      </respuestas>
-    </pregunta>
-   <pregunta>
-        <texto>¿A que grado de FP responden las siglas CAI?</texto>
-        <respuestas>
-            <correcta>Cuidados Auxiliares d'Infermeria</correcta>
-            <incorrecta>Cultura Anti Inmigrantes</incorrecta>
-            <incorrecta>Cancer Avanzado Incurable</incorrecta>
-            <incorrecta>Calvicie Alopecica Incurable</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿De que color es el caballo Blanco de Santiago?</texto>
-        <respuestas>
-            <correcta>Blanco</correcta>
-            <incorrecta>Negro</incorrecta>
-            <incorrecta>Rojo</incorrecta>
-            <incorrecta>Amarrillo</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Si recorro 2 metros hacia el sud, 2 metros hacia al este, 2 metros hacia el norte, y me encuentro en el sitio inicial. ¿Donde estoy?</texto>
-        <respuestas>
-            <correcta>Polo Norte</correcta>
-            <incorrecta>Murcia</incorrecta>
-            <incorrecta>La olla de la feria del pueblo</incorrecta>
-            <incorrecta>En alguna fiesta mayor</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cuales són los materiales minimos necesarios para hacer un portal al nether (minecraft)?</texto>
-        <respuestas>
-            <correcta>10 obsidiana + 1 lingote de hierro + 1 de pedernal</correcta>
-            <incorrecta>14 obsidianas + 1 lingote de hierro + 1 de pedernal</incorrecta>
-            <incorrecta>12 perlas de end</incorrecta>
-            <incorrecta>besar un creeper cerca de tu casa</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿En que tipo de triangulo se basa la aplicacion del teorema de pitagoras?</texto>
-        <respuestas>
-            <correcta>triangulo rectangulo</correcta>
-            <incorrecta>triangulo equilatero</incorrecta>
-            <incorrecta>triangulo isosceles</incorrecta>
-            <incorrecta>triangulo escaleno</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Si juntas amarillo y azul. ¿Que color sale?</texto>
-        <respuestas>
-            <correcta>Verde</correcta>
-            <incorrecta>Rojo</incorrecta>
-            <incorrecta>Lila</incorrecta>
-            <incorrecta>Purpura</incorrecta>
-        </respuestas>
-    </pregunta>
-	<pregunta>
-		<texto>Cual es el libro mas vendido de la historia</texto>
-		<respuestas>
-			<correcta>La biblia</correcta>
-			<incorrecta>Don Quijote de la Mancha</incorrecta>
-			<incorrecta>Citas del Presidente Mao Tse-Tung</incorrecta>
-			<incorrecta>Harry Potter</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Cuántos litros de sangre tiene una persona adulta</texto>
-		<respuestas>
-			<correcta>Tiene entre 4 y 6 litros</correcta>
-			<incorrecta>Tiene entre 2 y 4 litros</incorrecta>
-			<incorrecta>Tiene 7 litros</incorrecta>
-			<incorrecta>Tiene 9 litros</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>A que país pertenece Gibraltar</texto>
-		<respuestas>
-			<correcta>Reino Unido</correcta>
-			<incorrecta>España</incorrecta>
-			<incorrecta>Portugal</incorrecta>
-			<incorrecta>Marruecos</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Cual el pais mas poblado del mundo</texto>
-		<respuestas>
-			<correcta>China</correcta>
-			<incorrecta>India</incorrecta>
-			<incorrecta>Estados Unidos</incorrecta>
-			<incorrecta>Pakistan</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Quién pintó la bóveda de la capilla sixtina</texto>
-		<respuestas>
-			<correcta>Miguel Angel</correcta>
-			<incorrecta>Leonardo da Vinci</incorrecta>
-			<incorrecta>Rafael</incorrecta>
-			<incorrecta>Donatello</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Con que nombre se fundó el municipio de Valls</texto>
-		<respuestas>
-			<correcta>Vilar-Gros</correcta>
-			<incorrecta>Rocabruna</incorrecta>
-			<incorrecta>La Vall</incorrecta>
-			<incorrecta>Vilavall</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Cuántos decimales tiene el número pi</texto>
-		<respuestas>
-			<correcta>Infinitos</correcta>
-			<incorrecta>2</incorrecta>
-			<incorrecta>100</incorrecta>
-			<incorrecta>1000</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Cuántos jugadores pueden participar por equipo en el basquetbol?</texto>
-		<respuestas>
-			<correcta>5</correcta>
-			<incorrecta>4</incorrecta>
-			<incorrecta>6</incorrecta>
-			<incorrecta>7</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Cuál es el planeta más grande del sistema solar?</texto>
-		<respuestas>
-			<correcta>Jupiter</correcta>
-			<incorrecta>Saturno</incorrecta>
-			<incorrecta>Urano</incorrecta>
-			<incorrecta>Neptuno</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Marca la respuesta correcta de la siguiente operacion matematica: 3x(1+1+1+1)</texto>
-		<respuestas>
-			<correcta>12</correcta>
-			<incorrecta>1</incorrecta>
-			<incorrecta>3</incorrecta>
-			<incorrecta>4</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-        <texto>En quin any es va crear el primer Smartphone?</texto>
-        <respuestas>
-            <correcta>1999</correcta>
-            <incorrecta>2007</incorrecta>
-            <incorrecta>2004</incorrecta>
-            <incorrecta>1997</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Qui va crear la formula E=mc²?</texto>
-        <respuestas>
-            <correcta>Albert Einstein</correcta>
-            <incorrecta>Isaac Newton</incorrecta>
-            <incorrecta>Arquimedes</incorrecta>
-            <incorrecta>Niels Bohr</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Com es diu el primer àlbum de Kanye West?</texto>
-        <respuestas>
-            <correcta>The College Dropout</correcta>
-            <incorrecta>Graduation</incorrecta>
-            <incorrecta>My Beautiful Dark Twisted Fantasy</incorrecta>
-            <incorrecta>Jesus Is King</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Sobre quants paisos passa el riu més llarg del món</texto>
-        <respuestas>
-            <correcta>11</correcta>
-            <incorrecta>9</incorrecta>
-            <incorrecta>4</incorrecta>
-            <incorrecta>7</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Quantes Champions té el Recreativo de Huelva</texto>
-        <respuestas>
-            <correcta>0</correcta>
-            <incorrecta>2</incorrecta>
-            <incorrecta>1</incorrecta>
-            <incorrecta>4</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Qui va pintar la Mona Lisa?</texto>
-        <respuestas>
-            <correcta>Leonardo Da Vinci</correcta>
-            <incorrecta>Karl Marx</incorrecta>
-            <incorrecta>Adolf Hitler</incorrecta>
-            <incorrecta>Pablo Picasso</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Quina és la formula per a calcular el radi d'una circunferència?</texto>
-        <respuestas>
-            <correcta>Perimetre / 2π</correcta>
-            <incorrecta>(Base * Altura) / 2</incorrecta>
-            <incorrecta>(Sin * Cos) / Tan</incorrecta>
-            <incorrecta>4πr²</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>En quin any es va publicar la pel·licula "Titanic"?</texto>
-        <respuestas>
-            <correcta>1998</correcta>
-            <incorrecta>2001</incorrecta>
-            <incorrecta>1995</incorrecta>
-            <incorrecta>1996</incorrecta>
-        </respuestas>
-    </pregunta>
-      <pregunta>
-              <texto>¿Cual era la moneda que se usaba en España antes del Euro?</texto>
-              <respuestas>
-                    <correcta>Peseta</correcta>
-                    <incorrecta>Dolar</incorrecta>
-                    <incorrecta>Ling</incorrecta>
-                    <incorrecta>Libra</incorrecta>
-              </respuestas>
-      </pregunta>
-      <pregunta>
-              <texto>¿Como se llama la crisis del 1929?</texto>
-              <respuestas>
-                    <correcta>El Crack del 29</correcta>
-                    <incorrecta>La Gran Crisis</incorrecta>
-                    <incorrecta>El Año de la Seca</incorrecta>
-                    <incorrecta>Viladrau</incorrecta>
-              </respuestas>
-      </pregunta>
-      <pregunta>
-              <texto>¿De donde proviene la lengua del Castellano?</texto>
-              <respuestas>
-                    <correcta>Latin</correcta>
-                    <incorrecta>Español</incorrecta>
-                    <incorrecta>Valenciano</incorrecta>
-                    <incorrecta>Ingles</incorrecta>
-              </respuestas>
-      </pregunta>
-      <pregunta>
-              <texto>¿Quien dijo  " Solo se que no se nada" ?</texto>
-              <respuestas>
-                    <correcta>Socrates</correcta>
-                    <incorrecta>Napoleón</incorrecta>
-                    <incorrecta>Kanye West</incorrecta>
-                    <incorrecta>Ladybug</incorrecta>
-              </respuestas>
-      </pregunta>
-      <pregunta>
-              <texto>¿A que velocidad viaja la luz?</texto>
-              <respuestas>
-                    <correcta>300.000  Km/s</correcta>
-                    <incorrecta>300.000 M/s</incorrecta>
-                    <incorrecta>300.000 Km/m</incorrecta>
-                    <incorrecta>300.000 Km/h</incorrecta>
-              </respuestas>
-      </pregunta>
-      <pregunta>
-              <texto>¿Cual es nombre del perro de Tintin?</texto>
-              <respuestas>
-                    <correcta>Milu</correcta>
-                    <incorrecta>Tinta</incorrecta>
-                    <incorrecta>Borrador</incorrecta>
-                    <incorrecta>Rantamplan</incorrecta>
-              </respuestas>
-      </pregunta>
-      <pregunta>
-              <texto>¿Como se llamaba el cantante de QUEEN?</texto>
-              <respuestas>
-                    <correcta>Freddie Mercury</correcta>
-                    <incorrecta>Bon Jovi</incorrecta>
-                    <incorrecta>Lady Gaga</incorrecta>
-                    <incorrecta>Harry Potter</incorrecta>
-              </respuestas>
-      </pregunta>
-      
-	<pregunta>
-		<texto>¿Que usan los mudos para comunicarse?</texto>
-		<respuestas>
-			<correcta>Lenguaje de Signos</correcta>
-			<incorrecta>Código Morse</incorrecta>
-			<incorrecta>Lenguaje Java</incorrecta>
-			<incorrecta>Su idioma nativo</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Quién creó la teoria de la información de Shannon?</texto>
-		<respuestas>
-			<correcta>Claude E. Shannon</correcta>
-			<incorrecta>Warren Weaver</incorrecta>
-			<incorrecta>Alber Einstein</incorrecta>
-			<incorrecta>Nikola Tesla</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Cuál es el animal mas letal?</texto>
-		<respuestas>
-			<correcta>Avispa de mar</correcta>
-			<incorrecta>Pez Globo</incorrecta>
-			<incorrecta>Pulpo</incorrecta>
-			<incorrecta>Pez Payaso</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Que significan las siglas de CIA?</texto>
-		<respuestas>
-			<correcta>Central Intelligence Agency</correcta>
-			<incorrecta>Cocaine Importers of America</incorrecta>
-			<incorrecta>Club Inventado Anónimo</incorrecta>
-			<incorrecta>Centro Izquierda Arriba</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Quién era 'El Sombrerero?</texto>
-		<respuestas>
-			<correcta>Un Personaje del libro "Alicia en el pais de las maravillas"</correcta>
-			<incorrecta>Un Artesano de Sombreros</incorrecta>
-			<incorrecta>Johnny Depp</incorrecta>
-			<incorrecta>El Gerente de un Hotel, de nombre 'La Playa'</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿El fuego quema?</texto>
-		<respuestas>
-			<correcta>Sí</correcta>
-			<incorrecta>No</incorrecta>
-			<incorrecta>Solo emite luz</incorrecta>
-			<incorrecta>Emite luz y calor</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Que es Bangkok?</texto>
-		<respuestas>
-			<correcta>Una Ciudad</correcta>
-			<incorrecta>Un Pintor</incorrecta>
-			<incorrecta>No existe</incorrecta>
-			<incorrecta>Una Maquina</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Quién pintó "La última cena"?</texto>
-		<respuestas>
-			<correcta>Leonardo Da Vinci</correcta>
-			<incorrecta>Donatello</incorrecta>
-			<incorrecta>Rafael</incorrecta>
-			<incorrecta>Michelangelo</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿En que planeta vivimos?</texto>
-		<respuestas>
-			<correcta>La Tierra</correcta>
-			<incorrecta>Urano</incorrecta>
-			<incorrecta>Saturno</incorrecta>
-			<incorrecta>Mercurio</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿En qué año se estrenó la primera película de Iron Man, que lanzó el Marvel Cinematic Universe?</texto>
-			<respuestas>
-				<correcta>2008</correcta>
-				<incorrecta>2005</incorrecta>
-				<incorrecta>2010</incorrecta>
-				<incorrecta>2012</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Cómo se llama el martillo de Thor?</texto>
-			<respuestas>
-				<correcta>Mjolnir</correcta>
-				<incorrecta>Vanir</incorrecta>
-				<incorrecta>Aesir</incorrecta>
-				<incorrecta>Norn</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>En The Incredible Hulk, ¿qué le dice Tony a Thaddeus Ross al final de la película?</texto>
-			<respuestas>
-				<correcta>Que están formando un equipo</correcta>
-				<incorrecta>Que quiere estudiar The Hulk</incorrecta>
-				<incorrecta>Que él sabe sobre SHIELD</incorrecta>
-				<incorrecta>Que Thaddeus le debe dinero</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿De qué está hecho el escudo del Capitán América?</texto>
-			<respuestas>
-				<correcta>Vibranio</correcta>
-				<incorrecta>Adamantium</incorrecta>
-				<incorrecta>prometeo</incorrecta>
-				<incorrecta>Carbonadio</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Los Flerkens son una raza de alienígenas extremadamente peligrosos que se parece a qué.</texto>
-			<respuestas>
-				<correcta>Gatos</correcta>
-				<incorrecta>Patos</incorrecta>
-				<incorrecta>reptiles</incorrecta>
-				<incorrecta>Mapaches</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Antes de convertirse en Visión, ¿cómo se llama el mayordomo de inteligencia artificial de Iron Man?</texto>
-			<respuestas>
-				<correcta>JARVIS</correcta>
-				<incorrecta>HOMERO</incorrecta>
-				<incorrecta>ALFREDO</incorrecta>
-				<incorrecta>MARVIN</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Cuál es el verdadero nombre de la Pantera Negra?</texto>
-			<respuestas>
-				<correcta>T'Challa</correcta>
-				<incorrecta>M'Baku</incorrecta>
-				<incorrecta>N'Jadaka</incorrecta>
-				<incorrecta>N'Jobu</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Cuál es la raza alienígena que Loki envía para invadir la Tierra en The Avengers?</texto>
-			<respuestas>
-				<correcta>El chitauri</correcta>
-				<incorrecta>Los skrulls</incorrecta>
-				<incorrecta>El kree</incorrecta>
-				<incorrecta>Los flerkens</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Quién fue el último titular de la Piedra espacial antes de que Thanos lo reclame por su Infinity Gauntlet?</texto>
-			<respuestas>
-				<correcta>Loki</correcta>
-				<incorrecta>Thor</incorrecta>
-				<incorrecta>El coleccionista</incorrecta>
-				<incorrecta>Tony Stark</incorrecta>
-			</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Qué nombre falso usa Natasha cuando conoce a Tony por primera vez?</texto>
-			<respuestas>
-				<correcta>Natalie Rushman</correcta>
-				<incorrecta>Natalia Romanoff</incorrecta>
-				<incorrecta>nicole rohan</incorrecta>
-				<incorrecta>naya rabe</incorrecta>
-			</respuestas>
-	</pregunta>
-   <pregunta>
-        <texto>De que raza es Son Goku?</texto>
-        <respuestas>
-            <correcta>Saiyajin</correcta>
-            <incorrecta>Namekiano</incorrecta>
-            <incorrecta>Androide</incorrecta>
-            <incorrecta>Humano</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Cual es el primer hijo de Son Goku?</texto>
-        <respuestas>
-            <correcta>Gohan</correcta>
-            <incorrecta>Goten</incorrecta>
-            <incorrecta>Trunks</incorrecta>
-            <incorrecta>Pan</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Como se llama el dragon del planeta Namek?</texto>
-        <respuestas>
-            <correcta>Polunga</correcta>
-            <incorrecta>Shenlong</incorrecta>
-            <incorrecta>Shenlong Maligno</incorrecta>
-            <incorrecta>Super Shenlong</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Como se llama la mujer de Vegeta?</texto>
-        <respuestas>
-            <correcta>Bulma</correcta>
-            <incorrecta>Chi-Chi</incorrecta>
-            <incorrecta>Androide 18</incorrecta>
-            <incorrecta>Uranai Baba</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Con que tranformacion derroto Gohan a Cell?</texto>
-        <respuestas>
-            <correcta>Super Saiyajin 2</correcta>
-            <incorrecta>Super Saiyajin 4</incorrecta>
-            <incorrecta>Kaioken</incorrecta>
-            <incorrecta>Ultra Instinto Dominado</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Quien mato a Raditz?</texto>
-        <respuestas>
-            <correcta>Piccolo</correcta>
-            <incorrecta>Son Goku</incorrecta>
-            <incorrecta>Yamcha</incorrecta>
-            <incorrecta>Ten Shin-Han</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>En que universo pertenece Son Goku?</texto>
-        <respuestas>
-            <correcta>Universo 7</correcta>
-            <incorrecta>Universo 6</incorrecta>
-            <incorrecta>Universo 11</incorrecta>
-            <incorrecta>Universo 4</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Quien gano el torneo del poder?</texto>
-        <respuestas>
-            <correcta>Androide 17</correcta>
-            <incorrecta>Jiren</incorrecta>
-            <incorrecta>Son Goku</incorrecta>
-            <incorrecta>Maestro Roshi</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Quien es el Super Saiyajin Legendario?</texto>
-        <respuestas>
-            <correcta>Broly</correcta>
-            <incorrecta>Bardock</incorrecta>
-            <incorrecta>Rey Vegeta</incorrecta>
-            <incorrecta>Paragus</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>Quien destruyo el planeta Vegeta?</texto>
-        <respuestas>
-            <correcta>Freezer</correcta>
-            <incorrecta>Majin Boo</incorrecta>
-            <incorrecta>Lord Bills</incorrecta>
-            <incorrecta>Omega Shenron</incorrecta>
-        </respuestas>
-    </pregunta>
-   <pregunta>
-        <texto>¿MVP NBA Finals 2016?</texto>
-        <respuestas>
-            <correcta>Lebron James</correcta>
-            <incorrecta>Stephen Curry</incorrecta>
-            <incorrecta>Kevin Durant</incorrecta>
-            <incorrecta>Kyrie Irving</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Quien era el presidente de ESPAÑA en el año 2010?</texto>
-        <respuestas>
-			<correcta>José Luis Rodríguez Zapatero</correcta>
-            <incorrecta>José María Aznar</incorrecta>
-            <incorrecta>Mariano Rajoy Brey</incorrecta>
-            <incorrecta>Carles Puigdemont</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Quien gano el Mundial del 2010 que se jugo en Sud Africa?</texto>
-        <respuestas>
-			<correcta>España</correcta>
-            <incorrecta>Francia</incorrecta>
-            <incorrecta>Holanda</incorrecta>
-            <incorrecta>Italia</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cual a sido la pelicula mas taquillera de la historia?</texto>
-        <respuestas>
-            <correcta>Avatar</correcta>
-            <incorrecta>Avengers:End Game</incorrecta>
-            <incorrecta>Avengers: Infinity War</incorrecta>
-            <incorrecta>Titanic</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Que años fue la segunda guerra mundial?</texto>
-        <respuestas>
-			<correcta>1939-1945</correcta>
-            <incorrecta>1910-1920</incorrecta>
-            <incorrecta>1943-1950</incorrecta>
-            <incorrecta>1920-1925</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Dónde se encuentra la Sagrada Familia?</texto>
-        <respuestas>
-            <correcta>Barcelona</correcta>
-            <incorrecta>Madrid</incorrecta>
-            <incorrecta>Pamlpona</incorrecta>
-            <incorrecta>Sevilla</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿En qué año viajó al espacio el primer ser humano?</texto>
-        <respuestas>
-            <correcta>1961</correcta>
-            <incorrecta>1950</incorrecta>
-            <incorrecta>1967</incorrecta>
-            <incorrecta>1958</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cuál es el río más largo del mundo?</texto>
-        <respuestas>
-			<correcta>Nilo</correcta>
-            <incorrecta>Congo</incorrecta>
-            <incorrecta>Ebro</incorrecta>            
-            <incorrecta>Amazonas</incorrecta>
-        </respuestas>
-    </pregunta>
-    <pregunta>
-        <texto>¿Cuál es la montaña más alta del planeta?</texto>
-        <respuestas>
-			<correcta>Everest</correcta>
-            <incorrecta>Kangchenjunga</incorrecta>            
-            <incorrecta>Miramar</incorrecta>
-            <incorrecta>Manaslu</incorrecta>
-        </respuestas>
-    </pregunta> 
-   	<pregunta>
-		<texto>Qué nota musical hay entre re y fa?</texto>
-		<respuestas>
-			<correcta>Mi</correcta>
-			<incorrecta>Do</incorrecta>
-			<incorrecta>Sol</incorrecta>
-			<incorrecta>Fa</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Cuál es el río más largo de España?</texto>
-		<respuestas>
-			<correcta>Ebro</correcta>
-			<incorrecta>Tajo</incorrecta>
-			<incorrecta>Guadiana</incorrecta>
-			<incorrecta>Segura</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Cuál es la ciudad anfitriona de las Olimpiadas de 2020?</texto>
-		<respuestas>
-			<correcta>Tokio</correcta>
-			<incorrecta>Japón</incorrecta>
-			<incorrecta>Estados Unidos</incorrecta>
-			<incorrecta>Buenos aires</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Dónde nació Rafael Nadal?</texto>
-		<respuestas>
-			<correcta>España</correcta>
-			<incorrecta>Africa</incorrecta>
-			<incorrecta>Alemania</incorrecta>
-			<incorrecta>Noruega</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>Com s'anomena el text on apareix el nom d'usuari en una terminal?</texto>
-		<respuestas>
-			<correcta>Prompt</correcta>
-			<incorrecta>Bash</incorrecta>
-			<incorrecta>Shell</incorrecta>
-			<incorrecta>Zsh</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>Com s'anomena la part del desenvolupament que es centra interfícies i la part gràfica?</texto>
-		<respuestas>
-			<correcta>UX/UI</correcta>
-			<incorrecta>Backend</incorrecta>
-			<incorrecta>Frontend</incorrecta>
-			<incorrecta>Devops</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>Quants patrimonis de la humanitat té Espanya?</texto>
-		<respuestas>
-			<correcta>49</correcta>
-			<incorrecta>33</incorrecta>
-			<incorrecta>12</incorrecta>
-			<incorrecta>65</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>Què significa URL?</texto>
-		<respuestas>
-			<correcta>Uniform Resource Locator</correcta>
-			<incorrecta>Uniform Roll Landing</incorrecta>
-			<incorrecta>Under Real Laziness</incorrecta>
-			<incorrecta>Uniform Rescue Leader</incorrecta>
-		</respuestas>
-	</pregunta> 
-    <pregunta>
-		<texto>¿En qué país se encuentra el estadio de Wembley?</texto>
-		<respuestas>
-			<correcta>Inglaterra</correcta>
-			<incorrecta>España</incorrecta>
-			<incorrecta>Australia</incorrecta>
-			<incorrecta>Mozambique</incorrecta>
-		</respuestas>
-	</pregunta>
-	<pregunta>
-		<texto>¿Cuántos corazones tienen los pulpos?</texto>
-		<respuestas>
-			<correcta>3</correcta>
-			<incorrecta>5</incorrecta>
-			<incorrecta>2</incorrecta>
-			<incorrecta>4</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿Cuál es el continente más pequeño en extensión?</texto>
-		<respuestas>
-			<correcta>Oceania</correcta>
-			<incorrecta>Amarica</incorrecta>
-			<incorrecta>Africa</incorrecta>
-			<incorrecta>Asia</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿Quién fue Magic Johnson?</texto>
-		<respuestas>
-			<correcta>Un Jugador de Baloncesto</correcta>
-			<incorrecta>Un Jugador de Futbol</incorrecta>
-			<incorrecta>Un Narcotraficante</incorrecta>
-			<incorrecta>Un Jugador de Padel</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿En qué año se aprobó la actual Constitución española?</texto>
-		<respuestas>
-			<correcta>En 1978</correcta>
-			<incorrecta>En 1972</incorrecta>
-			<incorrecta>En 1974</incorrecta>
-			<incorrecta>En 1899</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿Cuántos años tiene un lustro?</texto>
-		<respuestas>
-			<correcta>5</correcta>
-			<incorrecta>8</incorrecta>
-			<incorrecta>500</incorrecta>
-			<incorrecta>10</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿Cuál es la capital de Croacia?</texto>
-		<respuestas>
-			<correcta>Zagreb</correcta>
-			<incorrecta>Praga</incorrecta>
-			<incorrecta>Bogota</incorrecta>
-			<incorrecta>Dinamo</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿Quién traicionó a Jesús?</texto>
-		<respuestas>
-			<correcta>Judas</correcta>
-			<incorrecta>Alberto</incorrecta>
-			<incorrecta>Pedro</incorrecta>
-			<incorrecta>Cain</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto> Si 50 es el 100%, ¿cuánto es el 90%?</texto>
-		<respuestas>
-			<correcta>45%</correcta>
-			<incorrecta>35%</incorrecta>
-			<incorrecta>25%</incorrecta>
-			<incorrecta>10%</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿Quién pintó “la última cena”?</texto>
-		<respuestas>
-			<correcta>Leonardo da Vinci</correcta>
-			<incorrecta>Miguel Angel</incorrecta>
-			<incorrecta>Dante Aligieri</incorrecta>
-			<incorrecta>Picasso</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿Quién escribió La Odisea?</texto>
-		<respuestas>
-			<correcta>Homero</correcta>
-			<incorrecta>Dante</incorrecta>
-			<incorrecta>J.K Rowlin</incorrecta>
-			<incorrecta>Picasso</incorrecta>
-		</respuestas>
-	</pregunta>
-    <pregunta>
-		<texto>¿Quién forma parte de la tripulacion de Luffy?</texto>
-		<respuestas>
-			<correcta>Sanji</correcta>
-			<incorrecta>Kaido</incorrecta>
-			<incorrecta>Shanks</incorrecta>
-			<incorrecta>Crocodile</incorrecta>
 		</respuestas>
 	</pregunta>
 </preguntas> 

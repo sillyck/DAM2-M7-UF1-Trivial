@@ -630,6 +630,7 @@ public class Tauler extends JFrame implements ActionListener
 		}
 		if(winningCondition==3 || winningCondition==4 || winningCondition==5)
 		{
+			setVisible(false);
 			PopupFinal popupFinal = null;
 			switch(winningCondition)
 			{
@@ -638,7 +639,6 @@ public class Tauler extends JFrame implements ActionListener
 				case 5: popupFinal = new PopupFinal(playerName[0],playerName[1],FinalPopupAction.BOTH); break;
 			}
 			popupFinal.setVisible(true);
-			setVisible(false);
 		}
 	}
 }

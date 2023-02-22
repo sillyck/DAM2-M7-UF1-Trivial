@@ -103,7 +103,8 @@ public class QuestionBank
 		}
 		else
 		{
-			int randomNumber = (new Random().nextInt(preguntesDisponibles.size()))+1;
+//			int randomNumber = (new Random().nextInt(preguntesDisponibles.size()))+1;
+			int randomNumber = (new Random().nextInt(preguntesDisponibles.size()));
 			CalcularPreguntesDisponibles();
 			if(marcarComJaFeta) MarcarPreguntaComUtilitzada(randomNumber);
 //			LecturaXml();

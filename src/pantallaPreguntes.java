@@ -23,10 +23,10 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 	
 	private Pregunta preguntaActual;
 	
-	JButton r1;
-	JButton r2;
-	JButton r3;
-	JButton r4;
+	ButtonPregunta r1;
+	ButtonPregunta r2;
+	ButtonPregunta r3;
+	ButtonPregunta r4;
 	
 
 	public pantallaPreguntes(Tauler tauler) throws IOException, ClassNotFoundException
@@ -46,10 +46,37 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		
 		JPanel botonsPanellr1r2 = new JPanel();
 		JPanel botonsPanellr3r4 = new JPanel();
-		r1 = new JButton("Cristobal Colon");
-		r2 = new JButton("Xavier Martínez");
-		r3 = new JButton("Leo Messi");
-		r4 = new JButton("Perro Sanchez");
+		r1 = new ButtonPregunta("Cristobal Colon");
+		r2 = new ButtonPregunta("Xavier Martínez");
+		r3 = new ButtonPregunta("Leo Messi");
+		r4 = new ButtonPregunta("Perro Sanchez");
+		
+		preguntaActual = QuestionBank.ObtindrePregunta(true);
+		preguntaActual.BarrejarRespostes();
+//		preguntaText.setText("<html><body style='width: 1000px'>"+preguntaActual.enunciat+"</body></html>");
+//		preguntaText.setText(preguntaActual.enunciat);
+		preguntaText.setText("<html>"+preguntaActual.enunciat.replaceAll("(?<=\\G.{1000})\\s", "<br>")+"</html>");
+		
+//		r1.setText(preguntaActual.respostes[0]);
+		r1 = new ButtonPregunta(preguntaActual.respostes[0]);
+//		r1.setText("<html>"+preguntaActual.respostes[0].replaceAll("(.{50})", "$1<br>")+"</html>");
+//		r1.setText("<html>"+preguntaActual.respostes[0].replaceAll("(?<=\\G.{800})\\s", "<br>")+"</html>");
+		r1.addActionListener(new BotoDePregunta(this,1,preguntaActual.respostes[0]));
+		r2 = new ButtonPregunta(preguntaActual.respostes[1]);
+//		r2.setText(preguntaActual.respostes[1]);
+//		r2.setText("<html>"+preguntaActual.respostes[1].replaceAll("(.{50})", "$1<br>")+"</html>");
+//		r2.setText("<html>"+preguntaActual.respostes[1].replaceAll("(?<=\\G.{800})\\s", "<br>")+"</html>");
+		r2.addActionListener(new BotoDePregunta(this,2,preguntaActual.respostes[1]));
+		r3 = new ButtonPregunta(preguntaActual.respostes[2]);
+//		r3.setText(preguntaActual.respostes[2]);
+//		r3.setText("<html>"+preguntaActual.respostes[2].replaceAll("(.{50})", "$1<br>")+"</html>");
+//		r3.setText("<html>"+preguntaActual.respostes[2].replaceAll("(?<=\\G.{800})\\s", "<br>")+"</html>");
+		r3.addActionListener(new BotoDePregunta(this,3,preguntaActual.respostes[2]));
+		r4 = new ButtonPregunta(preguntaActual.respostes[3]);
+//		r4.setText(preguntaActual.respostes[3]);
+//		r4.setText("<html>"+preguntaActual.respostes[3].replaceAll("(.{50})", "$1<br>")+"</html>");
+//		r4.setText("<html>"+preguntaActual.respostes[3].replaceAll("(?<=\\G.{800})\\s", "<br>")+"</html>");
+		r4.addActionListener(new BotoDePregunta(this,4,preguntaActual.respostes[3]));
 		
 		r1.setFont(new Font("Tahoma", Font.BOLD, 16));
 		r2.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -66,28 +93,28 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		cp.setLayout(new GridBagLayout());
 		
 		Border jButtonBorderR1 = r1.getBorder();
-		Border jButtonMarginR1 = new EmptyBorder(10, 10, 10, 10);
+		Border jButtonMarginR1 = new EmptyBorder(20, 40, 20, 40);
 		r1.setBorder(new CompoundBorder(jButtonBorderR1, jButtonMarginR1));
 		r1.setBackground(new Color(167, 114, 125));
 		r1.setForeground(new Color(255, 255, 255));
 		r1.setFocusPainted(false);
 		
 		Border jButtonBorderR2 = r2.getBorder();
-		Border jButtonMarginR2 = new EmptyBorder(10, 10, 10, 10);
+		Border jButtonMarginR2 = new EmptyBorder(20, 40, 20, 40);
 		r2.setBorder(new CompoundBorder(jButtonBorderR2, jButtonMarginR2));
 		r2.setBackground(new Color(167, 114, 125));
 		r2.setForeground(new Color(255, 255, 255));
 		r2.setFocusPainted(false);
 		
 		Border jButtonBorderR3 = r3.getBorder();
-		Border jButtonMarginR3 = new EmptyBorder(10, 10, 10, 10);
+		Border jButtonMarginR3 = new EmptyBorder(20, 40, 20, 40);
 		r3.setBorder(new CompoundBorder(jButtonBorderR3, jButtonMarginR3));
 		r3.setBackground(new Color(167, 114, 125));
 		r3.setForeground(new Color(255, 255, 255));
 		r3.setFocusPainted(false);
 		
 		Border jButtonBorderR4 = r4.getBorder();
-		Border jButtonMarginR4 = new EmptyBorder(10, 10, 10, 10);
+		Border jButtonMarginR4 = new EmptyBorder(20, 40, 20, 40);
 		r4.setBorder(new CompoundBorder(jButtonBorderR4, jButtonMarginR4));
 		r4.setBackground(new Color(167, 114, 125));
 		r4.setForeground(new Color(255, 255, 255));
@@ -128,6 +155,11 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 //		preguntaText.setHorizontalAlignment(JLabel.LEFT);
 		preguntaText.setHorizontalAlignment(JLabel.CENTER);
 		
+//		botonsGridr1.setPreferredSize(new Dimension(300, 300));
+//		botonsGridr1.setPreferredSize(new Dimension(300, 300));
+//		botonsGridr1.setPreferredSize(new Dimension(300, 300));
+//		botonsGridr1.setPreferredSize(new Dimension(300, 300));
+		
 		//Afegir-ho tot al container
 		cp.add(preguntaPanell, preguntaGrid);
 		cp.add(r1, botonsGridr1);
@@ -135,20 +167,7 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 		cp.add(r3, botonsGridr3);
 		cp.add(r4, botonsGridr4);
 		
-		preguntaActual = QuestionBank.ObtindrePregunta(true);
-		preguntaActual.BarrejarRespostes();
-//		preguntaText.setText("<html><body style='width: 1000px'>"+preguntaActual.enunciat+"</body></html>");
-//		preguntaText.setText(preguntaActual.enunciat);
-		preguntaText.setText("<html>"+preguntaActual.enunciat.replaceAll("(?<=\\G.{1000})\\s", "<br>")+"</html>");
 		
-		r1.setText(preguntaActual.respostes[0]);
-		r1.addActionListener(new BotoDePregunta(this,1,preguntaActual.respostes[0]));
-		r2.setText(preguntaActual.respostes[1]);
-		r2.addActionListener(new BotoDePregunta(this,2,preguntaActual.respostes[1]));
-		r3.setText(preguntaActual.respostes[2]);
-		r3.addActionListener(new BotoDePregunta(this,3,preguntaActual.respostes[2]));
-		r4.setText(preguntaActual.respostes[3]);
-		r4.addActionListener(new BotoDePregunta(this,4,preguntaActual.respostes[3]));
 		
 //		if(MetaController.isThisDebugMode)
 //		{
