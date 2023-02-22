@@ -271,7 +271,7 @@ public class pantallaPreguntes extends JFrame implements ActionListener
 	private void Tancar() throws IOException
 	{
 		setVisible(false);
-		tauler.answer(respostaCorrecta);
 		tauler.setVisible(true);
+		tauler.answer(respostaCorrecta);
 	}
 }

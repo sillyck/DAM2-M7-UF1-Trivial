@@ -46,6 +46,8 @@ public class Tauler extends JFrame implements ActionListener
 	@SuppressWarnings("unused")
 	private boolean inQuestion = false;
 	
+	private boolean haltAnimation = false;
+	
 	/**
 	 * <li>0 = Cap jugador pot guanyar inminentment</li>
 	 * <li>1 = el jugador 1 pot guanyar-li al jugador 2</li>
@@ -473,7 +475,7 @@ public class Tauler extends JFrame implements ActionListener
 			@Override
 			protected Void doInBackground() throws Exception
 			{
-				for(;;)
+				if(haltAnimation==false) for(;;)
 				{
 					overwriteWithEmptyCell(startPlayerCell);
 					Thread.sleep(1000);
@@ -549,7 +551,7 @@ public class Tauler extends JFrame implements ActionListener
 		inQuestion = false;
 		if(correct && (currentTurn==1 || currentTurn==2))
 		{
-			System.out.println("Sumo un punt al jugador "+(currentTurn-1)+"; que ara en te"+(score[currentTurn-1]+1));
+			System.out.println("Sumo un punt al jugador "+(currentTurn-1)+"; que ara en te "+(score[currentTurn-1]+1));
 			score[currentTurn-1]++;
 		}
 		advance();
@@ -630,6 +632,8 @@ public class Tauler extends JFrame implements ActionListener
 		}
 		if(winningCondition==3 || winningCondition==4 || winningCondition==5)
 		{
+			haltAnimation = true;
+			activePlayerCell = -1;
 			setVisible(false);
 			PopupFinal popupFinal = null;
 			switch(winningCondition)
