@@ -32,55 +32,74 @@ public class pantallaPreguntes extends JFrame{
 		JButton r1 = new JButton("Cristobal Colon");
 		JButton r2 = new JButton("Xavier Martínez");
 		JButton r3 = new JButton("Leo Messi");
-		JButton r4 = new JButton("Pedro Sanchez");
+		JButton r4 = new JButton("Perro Sanchez");
 		
-		r1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		r2.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		r3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		r4.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		r1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		r2.setFont(new Font("Tahoma", Font.BOLD, 16));
+		r3.setFont(new Font("Tahoma", Font.BOLD, 16));
+		r4.setFont(new Font("Tahoma", Font.BOLD, 16));
 		
-		botonsPanellr1r2.add(r1);
-		botonsPanellr1r2.add(r2);
+		botonsPanellr1r2.setBackground(Color.decode("#22222"));
+		
 		botonsPanellr3r4.add(r3);
 		botonsPanellr3r4.add(r4);
+		botonsPanellr3r4.setBackground(Color.decode("#BBBBB"));
 		
 		Container cp = getContentPane();
 		cp.setLayout(new GridBagLayout());
 		
-		preguntaPanell.setPreferredSize(new Dimension(700, 700));
-		
 		Border jButtonBorderR1 = r1.getBorder();
 		Border jButtonMarginR1 = new EmptyBorder(10, 10, 10, 10);
 		r1.setBorder(new CompoundBorder(jButtonBorderR1, jButtonMarginR1));
-		r1.setBackground(new Color(245, 175, 0));
-		r1.setForeground(new Color(6, 7, 14));
+		r1.setBackground(new Color(167, 114, 125));
+		r1.setForeground(new Color(255, 255, 255));
+		r1.setFocusPainted(false);
 		
 		Border jButtonBorderR2 = r2.getBorder();
 		Border jButtonMarginR2 = new EmptyBorder(10, 10, 10, 10);
 		r2.setBorder(new CompoundBorder(jButtonBorderR2, jButtonMarginR2));
-		r2.setBackground(new Color(245, 175, 0));
-		r2.setForeground(new Color(6, 7, 14));
+		r2.setBackground(new Color(167, 114, 125));
+		r2.setForeground(new Color(255, 255, 255));
+		r2.setFocusPainted(false);
 		
 		Border jButtonBorderR3 = r3.getBorder();
 		Border jButtonMarginR3 = new EmptyBorder(10, 10, 10, 10);
 		r3.setBorder(new CompoundBorder(jButtonBorderR3, jButtonMarginR3));
-		r3.setBackground(new Color(245, 175, 0));
-		r3.setForeground(new Color(6, 7, 14));
+		r3.setBackground(new Color(167, 114, 125));
+		r3.setForeground(new Color(255, 255, 255));
+		r3.setFocusPainted(false);
 		
 		Border jButtonBorderR4 = r4.getBorder();
 		Border jButtonMarginR4 = new EmptyBorder(10, 10, 10, 10);
 		r4.setBorder(new CompoundBorder(jButtonBorderR4, jButtonMarginR4));
-		r4.setBackground(new Color(245, 175, 0));
-		r4.setForeground(new Color(6, 7, 14));
+		r4.setBackground(new Color(167, 114, 125));
+		r4.setForeground(new Color(255, 255, 255));
+		r4.setFocusPainted(false);
 		
 		GridBagConstraints preguntaGrid = new GridBagConstraints();
-		preguntaGrid.insets = new Insets(0, 0, 500, 0);
+		preguntaGrid.gridx = 0;
+		preguntaGrid.gridy = 0;
+		preguntaGrid.insets = new Insets(-350, 0, 0, -300);
 		
-		GridBagConstraints botonsGridr1r2 = new GridBagConstraints();
-		botonsGridr1r2.insets = new Insets(0, 0, 0, 0);
+		GridBagConstraints botonsGridr1 = new GridBagConstraints();
+		botonsGridr1.gridx = 0;
+		botonsGridr1.gridy = 1;
+		botonsGridr1.insets = new Insets(0, 0, 100, 0);
+				
+		GridBagConstraints botonsGridr2 = new GridBagConstraints();
+		botonsGridr2.gridx = 1;
+		botonsGridr2.gridy = 1;
+		botonsGridr2.insets = new Insets(0, 150, 100, 0);
 		
-		GridBagConstraints botonsGridr3r4 = new GridBagConstraints();
-		botonsGridr3r4.insets = new Insets(0, 0, 0, 0);
+		GridBagConstraints botonsGridr3 = new GridBagConstraints();
+		botonsGridr3.gridx = 0;
+		botonsGridr3.gridy = 2;
+		botonsGridr3.insets = new Insets(0, 0, 0, 0);
+		
+		GridBagConstraints botonsGridr4 = new GridBagConstraints();
+		botonsGridr4.gridx = 1;
+		botonsGridr4.gridy = 2;
+		botonsGridr4.insets = new Insets(0, 150, 0, 0);
 		
 		//Colors
 		cp.setBackground(Color.decode("#F9F5E7"));
@@ -88,9 +107,9 @@ public class pantallaPreguntes extends JFrame{
 		
 		//Afegir-ho tot al container
 		cp.add(preguntaPanell, preguntaGrid);
-		cp.add(r1, botonsGridr1r2);
-		cp.add(r2, botonsGridr1r2);
-		cp.add(r3, botonsGridr3r4);
-		cp.add(r4, botonsGridr3r4);
+		cp.add(r1, botonsGridr1);
+		cp.add(r2, botonsGridr2);
+		cp.add(r3, botonsGridr3);
+		cp.add(r4, botonsGridr4);
 	}
 }
